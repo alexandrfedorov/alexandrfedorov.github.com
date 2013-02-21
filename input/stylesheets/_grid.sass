@@ -112,3 +112,12 @@ ul.grid, .columns ul
       :width 50%
       + ul
         :display none
+
+
+@media screen and (max-width: 700px)
+  .columns ul
+    :width 100%
+    > li
+      +margin-trailer(0.5)
+    + ul
+      :display none

@@ -75,12 +75,29 @@ header
   :background #fff url(../images/gplaypattern.png)
   +padding-leader(1)
   +drop-shadow-lifted-corners(26px, 15px, 6deg)
+  +clearfix
+
+  .left
+    :float left
+
   menu
     > li.selected
       a
         :color #666
   h1
     :white-space nowrap
-    +adjust-font-size-to(24px, 1)
     span 
       :color #666
+
+
+@media (max-width: 700px)
+  header
+    +padding-leader(0.5)
+    +padding-trailer(0.5)
+    nav
+      +padding-trailer(0.5)
+    address
+      :float none
+      :width auto
+    .left
+      :float none

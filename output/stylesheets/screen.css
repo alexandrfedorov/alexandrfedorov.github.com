@@ -95,12 +95,18 @@ h1 a, h2 a {
   text-shadow: 0 1px 1px white;
 }
 
-/* line 32, ../../input/stylesheets/screen.sass */
+/* line 31, ../../input/stylesheets/screen.sass */
+h1 {
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+/* line 34, ../../input/stylesheets/screen.sass */
 h1, h2 {
   font-family: "Open Sans Condensed";
 }
 
-/* line 35, ../../input/stylesheets/screen.sass */
+/* line 37, ../../input/stylesheets/screen.sass */
 header > section, main > section, .player > section, .contact > section, footer, .introduction > section {
   max-width: 1120px;
   min-width: 600px;
@@ -108,17 +114,16 @@ header > section, main > section, .player > section, .contact > section, footer,
   padding: 0 3em;
 }
 
-/* line 41, ../../input/stylesheets/screen.sass */
+/* line 43, ../../input/stylesheets/screen.sass */
 header > section, .player > section, .contact > section, footer, .introduction > section {
   max-width: 750px;
 }
 
-/* line 44, ../../input/stylesheets/screen.sass */
+/* line 46, ../../input/stylesheets/screen.sass */
 .introduction > section {
   padding-top: 1.5em;
-  padding-bottom: 1.5em;
 }
-/* line 48, ../../input/stylesheets/screen.sass */
+/* line 49, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote {
   font-family: Georgia;
   font-style: italic;
@@ -129,7 +134,7 @@ header > section, .player > section, .contact > section, footer, .introduction >
   margin: 0;
   margin-right: 230px;
 }
-/* line 58, ../../input/stylesheets/screen.sass */
+/* line 59, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote:before {
   display: block;
   content: "\201C";
@@ -139,7 +144,7 @@ header > section, .player > section, .contact > section, footer, .introduction >
   top: 0.223em;
   color: #7a7a7a;
 }
-/* line 66, ../../input/stylesheets/screen.sass */
+/* line 67, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote a {
   line-height: 0.85em;
   color: inherit;
@@ -148,7 +153,7 @@ header > section, .player > section, .contact > section, footer, .introduction >
   -o-transition: color 0.4s;
   transition: color 0.4s;
 }
-/* line 71, ../../input/stylesheets/screen.sass */
+/* line 72, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote:hover a {
   color: #007511;
 }
@@ -658,6 +663,8 @@ header {
   -webkit-box-shadow: 0 1px 6.5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 1px 6.5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 6.5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  *zoom: 1;
 }
 /* line 34, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-recipes-0.3.0/stylesheets/recipes/shadow/drop/_lifted-corners.scss */
 header::before, header::after {
@@ -693,20 +700,42 @@ header::after {
   transform: skew(15deg) rotate(6deg);
 }
 /* line 80, ../../input/stylesheets/_header.sass */
+header .left {
+  float: left;
+}
+/* line 85, ../../input/stylesheets/_header.sass */
 header menu > li.selected a {
   color: #666666;
 }
-/* line 82, ../../input/stylesheets/_header.sass */
+/* line 87, ../../input/stylesheets/_header.sass */
 header h1 {
   white-space: nowrap;
-  font-size: 1.5em;
-  line-height: 1em;
 }
-/* line 85, ../../input/stylesheets/_header.sass */
+/* line 89, ../../input/stylesheets/_header.sass */
 header h1 span {
   color: #666666;
 }
 
+@media (max-width: 700px) {
+  /* line 94, ../../input/stylesheets/_header.sass */
+  header {
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+  }
+  /* line 97, ../../input/stylesheets/_header.sass */
+  header nav {
+    padding-bottom: 0.75em;
+  }
+  /* line 99, ../../input/stylesheets/_header.sass */
+  header address {
+    float: none;
+    width: auto;
+  }
+  /* line 102, ../../input/stylesheets/_header.sass */
+  header .left {
+    float: none;
+  }
+}
 /* line 3, ../../input/stylesheets/_contact.sass */
 .contact {
   background-color: rgba(42, 85, 53, 0.1);
@@ -732,17 +761,17 @@ body.ready .contact {
 }
 /* line 12, ../../input/stylesheets/_contact.sass */
 body.ready .contact form {
-  -webkit-transition: all 0.7s;
-  -moz-transition: all 0.7s;
-  -o-transition: all 0.7s;
-  transition: all 0.7s;
+  -webkit-transition: margin-top 0.4s, margin-bottom 0.4s, padding-bottom 0.4s, padding-top 0.4s, max-height 0.4s, opacity 0.4s;
+  -moz-transition: margin-top 0.4s, margin-bottom 0.4s, padding-bottom 0.4s, padding-top 0.4s, max-height 0.4s, opacity 0.4s;
+  -o-transition: margin-top 0.4s, margin-bottom 0.4s, padding-bottom 0.4s, padding-top 0.4s, max-height 0.4s, opacity 0.4s;
+  transition: margin-top 0.4s, margin-bottom 0.4s, padding-bottom 0.4s, padding-top 0.4s, max-height 0.4s, opacity 0.4s;
 }
 /* line 15, ../../input/stylesheets/_contact.sass */
 body.ready .contact section.bar .cancel {
-  -webkit-transition: opacity 0.7s;
-  -moz-transition: opacity 0.7s;
-  -o-transition: opacity 0.7s;
-  transition: opacity 0.7s;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }
 /* line 18, ../../input/stylesheets/_contact.sass */
 .contact[hidden] {
@@ -870,7 +899,7 @@ body.ready .contact section.bar .cancel {
   border-radius: 2px 5px 5px 2px;
 }
 /* line 98, ../../input/stylesheets/_contact.sass */
-.contact a.button:after, .contact a.button:before, .contact a.button span:after, .contact a.button span:before {
+.contact a.button:after, .contact a.button:before, .contact a.button > span:after, .contact a.button > span:before {
   position: absolute;
   left: 100%;
   margin-left: -2px;
@@ -884,38 +913,94 @@ body.ready .contact section.bar .cancel {
   z-index: 20;
 }
 /* line 106, ../../input/stylesheets/_contact.sass */
-.contact a.button:after, .contact a.button span:after {
+.contact a.button:after, .contact a.button > span:after {
   border-bottom-width: 0;
   top: 0;
   border-left-color: #5aaf6f;
 }
 /* line 110, ../../input/stylesheets/_contact.sass */
-.contact a.button:before, .contact a.button span:before {
+.contact a.button:before, .contact a.button > span:before {
   bottom: 0;
   border-top-width: 0;
 }
 /* line 113, ../../input/stylesheets/_contact.sass */
-.contact a.button:hover:after, .contact a.button span:hover:after {
+.contact a.button:hover:after, .contact a.button > span:hover:after {
   border-left-color: #4d9d61;
 }
 /* line 115, ../../input/stylesheets/_contact.sass */
-.contact a.button:hover:before, .contact a.button span:hover:before {
+.contact a.button:hover:before, .contact a.button > span:hover:before {
   border-left-color: #3f8250;
 }
 /* line 118, ../../input/stylesheets/_contact.sass */
-.contact a.button span:after, .contact a.button span:before {
+.contact a.button > span:after, .contact a.button > span:before {
   margin-left: -1px;
   z-index: 10;
 }
 /* line 121, ../../input/stylesheets/_contact.sass */
-.contact a.button span:after {
+.contact a.button > span:after {
   border-left-color: #438954;
 }
 /* line 123, ../../input/stylesheets/_contact.sass */
-.contact a.button span:before {
+.contact a.button > span:before {
   border-left-color: #3a784a;
 }
 
+@media (max-width: 700px) {
+  /* line 128, ../../input/stylesheets/_contact.sass */
+  .contact a.button > span > span {
+    display: none;
+  }
+  /* line 130, ../../input/stylesheets/_contact.sass */
+  .contact form {
+    padding-right: 0;
+  }
+  /* line 132, ../../input/stylesheets/_contact.sass */
+  .contact form .error {
+    overflow: hidden;
+    max-height: 0;
+    position: static;
+    width: auto;
+    display: block;
+    -webkit-transition: opacity 0.4s, max-height 0.4s;
+    -moz-transition: opacity 0.4s, max-height 0.4s;
+    -o-transition: opacity 0.4s, max-height 0.4s;
+    transition: opacity 0.4s, max-height 0.4s;
+  }
+  /* line 140, ../../input/stylesheets/_contact.sass */
+  .contact form fieldset.errored .error {
+    max-height: 24px;
+  }
+  /* line 142, ../../input/stylesheets/_contact.sass */
+  .contact[hidden] {
+    margin-top: -3.9em;
+    margin-bottom: 0em;
+  }
+  /* line 146, ../../input/stylesheets/_contact.sass */
+  .contact[hidden] section.bar a.button {
+    margin-left: 238px;
+  }
+  /* line 148, ../../input/stylesheets/_contact.sass */
+  .contact a.button {
+    -webkit-transition: margin-left 0.25s;
+    -moz-transition: margin-left 0.25s;
+    -o-transition: margin-left 0.25s;
+    transition: margin-left 0.25s;
+    margin-left: 100px;
+  }
+  /* line 151, ../../input/stylesheets/_contact.sass */
+  .contact section.bar {
+    float: none;
+    width: auto;
+    padding-right: 0.75em;
+  }
+  /* line 155, ../../input/stylesheets/_contact.sass */
+  .contact section.bar a.cancel {
+    right: auto;
+    text-align: right;
+    left: 0;
+    width: 90px;
+  }
+}
 /* line 4, ../../input/stylesheets/_main.sass */
 main a {
   border-bottom-color: #aaaaaa;
@@ -938,8 +1023,17 @@ main > section:after {
   overflow: hidden;
   visibility: hidden;
 }
-
 /* line 13, ../../input/stylesheets/_main.sass */
+main h1 {
+  display: inline-block;
+}
+/* line 15, ../../input/stylesheets/_main.sass */
+main h1 + menu {
+  margin-left: 0.8em;
+  display: inline-block;
+}
+
+/* line 19, ../../input/stylesheets/_main.sass */
 .tooltip {
   position: absolute;
   width: 240px;
@@ -950,12 +1044,12 @@ main > section:after {
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 19, ../../input/stylesheets/_main.sass */
+/* line 25, ../../input/stylesheets/_main.sass */
 .tooltip[hidden] {
   opacity: 0;
   display: block;
 }
-/* line 24, ../../input/stylesheets/_main.sass */
+/* line 30, ../../input/stylesheets/_main.sass */
 .tooltip:not(.invert) > span {
   position: relative;
   -webkit-border-radius: 6px;
@@ -996,7 +1090,7 @@ main > section:after {
   top: 50%;
   margin-top: -12px;
 }
-/* line 26, ../../input/stylesheets/_main.sass */
+/* line 32, ../../input/stylesheets/_main.sass */
 .tooltip > span {
   display: block;
   color: white;
@@ -1005,7 +1099,7 @@ main > section:after {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 33, ../../input/stylesheets/_main.sass */
+/* line 39, ../../input/stylesheets/_main.sass */
 .tooltip.invert > span {
   position: relative;
   -webkit-border-radius: 6px;
@@ -1262,6 +1356,20 @@ ul.grid > li dl dd.tooltipped:after, .columns ul > li dl dd.tooltipped:after {
     display: none;
   }
 }
+@media screen and (max-width: 700px) {
+  /* line 118, ../../input/stylesheets/_grid.sass */
+  .columns ul {
+    width: 100%;
+  }
+  /* line 120, ../../input/stylesheets/_grid.sass */
+  .columns ul > li {
+    margin-bottom: 0.75em;
+  }
+  /* line 122, ../../input/stylesheets/_grid.sass */
+  .columns ul + ul {
+    display: none;
+  }
+}
 /* line 10, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 html, body {
   height: 100%;
@@ -1297,4 +1405,34 @@ footer p {
   float: right;
   font-size: 0.875em;
   line-height: 1.71429em;
+}
+
+@media screen and (max-width: 700px) {
+  /* line 14, ../../input/stylesheets/_footer.sass */
+  footer p {
+    float: none;
+    width: auto;
+  }
+}
+@media (max-width: 700px) {
+  /* line 87, ../../input/stylesheets/screen.sass */
+  menu .russian.language.icon {
+    display: none;
+  }
+
+  /* line 90, ../../input/stylesheets/screen.sass */
+  header > section, main > section, .player > section, .contact > section, footer, .introduction > section {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    min-width: 304px;
+  }
+
+  /* line 95, ../../input/stylesheets/screen.sass */
+  .introduction > section {
+    padding-top: 1.125em;
+  }
+  /* line 96, ../../input/stylesheets/screen.sass */
+  .introduction > section blockquote {
+    margin-right: 0;
+  }
 }

@@ -17,6 +17,26 @@
 		#root
 			%header
 				%section
+					.left
+						%h1 
+							Alexandr Fedorov 
+							%span<> , a sound magiciain
+
+						%nav
+							%menu
+								%li.selected
+									%a{:href => "/"}
+										Works							
+								%li
+									%a{:href => "/"}
+										Services
+								%li
+									%a{:href => "/"}
+										About me
+								%li
+									%a.russian.language{:href => "/"}<
+										По-русски
+									%a.russian.language.icon{:href => "/"}<>
 					%address
 						%dl
 							%dt.tel
@@ -27,25 +47,6 @@
 								email: 
 							%dd
 								%a{:href => "#"} alexandr.fedorov@gmail.com
-					%h1 
-						Alexandr Fedorov 
-						%span<> , a sound magiciain
-
-					%nav
-						%menu
-							%li.selected
-								%a{:href => "/"}
-									Portfolio							
-							%li
-								%a{:href => "/"}
-									Services
-							%li
-								%a{:href => "/"}
-									About me
-							%li
-								%a.russian.language{:href => "/"}<>
-									По-русски
-								%a.russian.language.icon{:href => "/"}<>
 				.player.compact{:hidden => true}
 					%section
 						.progress{:max => 100, :value => 50}
@@ -65,13 +66,13 @@
 				%section
 					%form
 						%fieldset
+							%span.error I'd like to know your name
 							%label{:for => :name} Your name
 							%input#name
-							%span.error I'd like to know your name
 						%fieldset
+							%span.error How can I reach you back?
 							%label{:for => :email} Email
 							%input#email
-							%span.error How can I reach you back?
 						%fieldset
 							%label{:for => :phone} Telephone
 							%input#phone
@@ -85,15 +86,16 @@
 								%option TUTOR me in the sound craft 
 								%option TELL me more about your services
 						%fieldset
+							%span.error Please, elaborate
 							%label{:for => :message} Message
 							%textarea#message{:rows => 5, :required => true}
-							%span.error Please, elaborate
 					%section.bar
 						%a.cancel{:href => "#", :rel => "uncontact"}<>
 							Cancel
 						%a.button{:href => "#contact", :rel => "contact"}
 							%span
-								Contact me now
+								Contact 
+								%span.verbose me now
 
 
 				
@@ -104,10 +106,8 @@
 
 			%main
 				%section
+					%h1 All works
 					%menu
-						%li.selected
-							%a{:href => "/"}
-								Everything
 						%li
 							%a{:href => "/"}
 								Audio
@@ -184,7 +184,7 @@
 			%menu
 				%li.selected
 					%a{:href => "/"}
-						Portfolio							
+						Works							
 				%li
 					%a{:href => "/"}
 						Services
@@ -192,7 +192,7 @@
 					%a{:href => "/"}
 						About me
 				%li
-					%a.russian.language{:href => "/"}<>
+					%a.russian.language{:href => "/"}<
 						По-русски
 					%a.russian.language.icon{:href => "/"}<>
 

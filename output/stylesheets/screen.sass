@@ -28,6 +28,8 @@ h1, h2
   a
     +text-shadow(0 1px 1px #fff)
 
+h1
+  +adjust-font-size-to(24px, 1)
 
 h1, h2
   :font-family 'Open Sans Condensed'
@@ -43,7 +45,6 @@ header > section, .player > section, .contact > section, footer, .introduction >
 
 .introduction > section
   +padding-leader
-  +padding-trailer
 
   blockquote
     :font-family Georgia
@@ -79,3 +80,19 @@ header > section, .player > section, .contact > section, footer, .introduction >
 @import main
 @import grid
 @import footer
+
+
+
+@media (max-width: 700px)
+  menu .russian.language.icon
+    :display none
+
+  header > section, main > section, .player > section, .contact > section, footer, .introduction > section
+    :padding-left 0.5em
+    :padding-right 0.5em
+    :min-width 304px
+
+  .introduction > section
+    blockquote
+      :margin-right 0
+    +padding-leader(0.75)

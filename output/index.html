@@ -18,6 +18,31 @@
     <div id='root'>
       <header>
         <section>
+          <div class='left'>
+            <h1>
+              Alexandr Fedorov<span>, a sound magiciain</span></h1>
+            <nav>
+              <menu>
+                <li class='selected'>
+                  <a href='/'>
+                    Works
+                  </a>
+                </li>
+                <li>
+                  <a href='/'>
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a href='/'>
+                    About me
+                  </a>
+                </li>
+                <li>
+                  <a class='russian language' href='/'>По-русски</a><a class='russian language icon' href='/'></a></li>
+              </menu>
+            </nav>
+          </div>
           <address>
             <dl>
               <dt class='tel'>
@@ -34,28 +59,6 @@
               </dd>
             </dl>
           </address>
-          <h1>
-            Alexandr Fedorov<span>, a sound magiciain</span></h1>
-          <nav>
-            <menu>
-              <li class='selected'>
-                <a href='/'>
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a href='/'>
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href='/'>
-                  About me
-                </a>
-              </li>
-              <li><a class='russian language' href='/'>По-русски</a><a class='russian language icon' href='/'></a></li>
-            </menu>
-          </nav>
         </section>
         <div class='player compact' hidden='hidden'>
           <section>
@@ -81,14 +84,14 @@
         <section>
           <form>
             <fieldset>
+              <span class='error'>I'd like to know your name</span>
               <label for='name'>Your name</label>
               <input id='name' />
-              <span class='error'>I'd like to know your name</span>
             </fieldset>
             <fieldset>
+              <span class='error'>How can I reach you back?</span>
               <label for='email'>Email</label>
               <input id='email' />
-              <span class='error'>How can I reach you back?</span>
             </fieldset>
             <fieldset>
               <label for='phone'>Telephone</label>
@@ -106,14 +109,15 @@
               </select>
             </fieldset>
             <fieldset>
+              <span class='error'>Please, elaborate</span>
               <label for='message'>Message</label>
               <textarea id='message' required='required' rows='5'></textarea>
-              <span class='error'>Please, elaborate</span>
             </fieldset>
           </form>
           <section class='bar'><a class='cancel' href='#' rel='uncontact'>Cancel</a><a class='button' href='#contact' rel='contact'>
               <span>
-                Contact me now
+                Contact
+                <span class='verbose'>me now</span>
               </span>
             </a>
           </section>
@@ -128,12 +132,8 @@
       </div>
       <main>
         <section>
+          <h1>All works</h1>
           <menu>
-            <li class='selected'>
-              <a href='/'>
-                Everything
-              </a>
-            </li>
             <li>
               <a href='/'>
                 Audio
@@ -400,7 +400,7 @@
       <menu>
         <li class='selected'>
           <a href='/'>
-            Portfolio
+            Works
           </a>
         </li>
         <li>
@@ -413,7 +413,8 @@
             About me
           </a>
         </li>
-        <li><a class='russian language' href='/'>По-русски</a><a class='russian language icon' href='/'></a></li>
+        <li>
+          <a class='russian language' href='/'>По-русски</a><a class='russian language icon' href='/'></a></li>
       </menu>
     </footer>
   </body>
