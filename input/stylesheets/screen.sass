@@ -28,17 +28,43 @@ a
   &:hover
     :border-bottom-color transparent
 
+h1, h2
+  a
+    +text-shadow(0 1px 1px #fff)
 
 
 h1, h2
   :font-family 'Open Sans Condensed'
 
-header > section, main > section, .player > section, .contact > section, footer
+header > section, main > section, .player > section, .contact > section, footer, .introduction > section
   :max-width 1120px
   :min-width 600px
   :margin 0 auto
-  :padding 0 2.5em
+  :padding 0 3em
 
+.introduction > section
+  +padding-leader
+  +padding-trailer
+
+  blockquote
+    :font-family Georgia
+    :font-style italic
+    :max-width 750px
+    :color #454545
+    +margin-trailer(0.5)
+    :position relative
+    :margin 0
+
+    &:before
+      display: block
+      content: "\201C"
+      font-size: 80px
+      position: absolute
+      left: -0.57em
+      top: 0.223em
+      color: #7a7a7a
+    a
+      :line-height 0.85em
 
 @import buttons
 @import icons

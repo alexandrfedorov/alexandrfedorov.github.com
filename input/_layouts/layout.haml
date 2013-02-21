@@ -61,7 +61,6 @@
 						%a.button
 
 
-				
 			.contact#contact{:hidden => true}
 				%section
 					%form
@@ -95,6 +94,14 @@
 						%a.button{:href => "#contact", :rel => "contact"}
 							%span
 								Contact me now
+
+
+				
+
+			.introduction
+				%section
+					{{content}}
+					
 			%main
 				%section
 					%menu
@@ -110,9 +117,6 @@
 						%li
 							%a{:href => "/"}
 								Production
-
-
-					{{content}}
 
 					%ul.grid
 						%li.video.selected

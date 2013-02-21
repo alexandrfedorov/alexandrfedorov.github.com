@@ -94,17 +94,52 @@ a:hover {
   border-bottom-color: transparent;
 }
 
-/* line 33, ../../input/stylesheets/screen.sass */
+/* line 32, ../../input/stylesheets/screen.sass */
+h1 a, h2 a {
+  text-shadow: 0 1px 1px white;
+}
+
+/* line 36, ../../input/stylesheets/screen.sass */
 h1, h2 {
   font-family: "Open Sans Condensed";
 }
 
-/* line 36, ../../input/stylesheets/screen.sass */
-header > section, main > section, .player > section, .contact > section, footer {
+/* line 39, ../../input/stylesheets/screen.sass */
+header > section, main > section, .player > section, .contact > section, footer, .introduction > section {
   max-width: 1120px;
   min-width: 600px;
   margin: 0 auto;
-  padding: 0 2.5em;
+  padding: 0 3em;
+}
+
+/* line 45, ../../input/stylesheets/screen.sass */
+.introduction > section {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+/* line 49, ../../input/stylesheets/screen.sass */
+.introduction > section blockquote {
+  font-family: Georgia;
+  font-style: italic;
+  max-width: 750px;
+  color: #454545;
+  margin-bottom: 0.75em;
+  position: relative;
+  margin: 0;
+}
+/* line 58, ../../input/stylesheets/screen.sass */
+.introduction > section blockquote:before {
+  display: block;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: -0.57em;
+  top: 0.223em;
+  color: #7a7a7a;
+}
+/* line 66, ../../input/stylesheets/screen.sass */
+.introduction > section blockquote a {
+  line-height: 0.85em;
 }
 
 /* line 36, ../../input/stylesheets/_buttons.sass */
@@ -353,7 +388,7 @@ body.playing.fixed .player {
 /* line 57, ../../input/stylesheets/_player.sass */
 .player > section .button {
   position: absolute;
-  left: 0.15em;
+  left: 0.55em;
   top: 0.25em;
   top--webkit-border-radius: 0 0 0.9em 0.9em;
   top--moz-border-radius: 0 0 0.9em 0.9em;
@@ -569,23 +604,19 @@ menu > li + li {
 menu > li + li:before {
   content: "\b7\a0";
 }
-/* line 49, ../../input/stylesheets/_header.sass */
-menu > li a {
-  color: #4c6148;
-}
-/* line 52, ../../input/stylesheets/_header.sass */
+/* line 50, ../../input/stylesheets/_header.sass */
 menu > li.selected > a {
   border-bottom: 0;
   color: #333333;
 }
 
-/* line 56, ../../input/stylesheets/_header.sass */
+/* line 54, ../../input/stylesheets/_header.sass */
 nav {
   padding-top: 0.3375em;
   padding-bottom: 1.5em;
 }
 
-/* line 60, ../../input/stylesheets/_header.sass */
+/* line 58, ../../input/stylesheets/_header.sass */
 menu .russian.language.icon {
   width: 23px;
   height: 18px;
@@ -597,16 +628,16 @@ menu .russian.language.icon {
   opacity: 0.7;
 }
 
-/* line 69, ../../input/stylesheets/_header.sass */
+/* line 67, ../../input/stylesheets/_header.sass */
 main {
   display: block;
 }
-/* line 71, ../../input/stylesheets/_header.sass */
+/* line 69, ../../input/stylesheets/_header.sass */
 main menu {
   margin-bottom: 1.5em;
 }
 
-/* line 75, ../../input/stylesheets/_header.sass */
+/* line 73, ../../input/stylesheets/_header.sass */
 header {
   background: white url(../images/gplaypattern.png);
   padding-top: 1.5em;
@@ -648,17 +679,17 @@ header::after {
   -o-transform: skew(15deg) rotate(6deg);
   transform: skew(15deg) rotate(6deg);
 }
-/* line 81, ../../input/stylesheets/_header.sass */
+/* line 79, ../../input/stylesheets/_header.sass */
 header menu > li.selected a {
   color: #666666;
 }
-/* line 83, ../../input/stylesheets/_header.sass */
+/* line 81, ../../input/stylesheets/_header.sass */
 header h1 {
   white-space: nowrap;
   font-size: 1.5em;
   line-height: 1em;
 }
-/* line 86, ../../input/stylesheets/_header.sass */
+/* line 84, ../../input/stylesheets/_header.sass */
 header h1 span {
   color: #666666;
 }
@@ -885,31 +916,7 @@ main > section {
   background-color: rgba(255, 255, 255, 0.2);
   padding-top: 1.5em;
 }
-/* line 13, ../../input/stylesheets/_main.sass */
-main blockquote {
-  font-family: Georgia;
-  font-style: italic;
-  max-width: 750px;
-  color: #454545;
-  margin-bottom: 0.75em;
-  position: relative;
-  margin: 0;
-}
-/* line 22, ../../input/stylesheets/_main.sass */
-main blockquote:before {
-  display: block;
-  content: "\201C";
-  font-size: 80px;
-  position: absolute;
-  left: -0.54em;
-  top: 0.223em;
-  color: #7a7a7a;
-}
-/* line 30, ../../input/stylesheets/_main.sass */
-main blockquote a {
-  line-height: 0.85em;
-}
-/* line 34, ../../input/stylesheets/_main.sass */
+/* line 15, ../../input/stylesheets/_main.sass */
 main > section {
   *zoom: 1;
 }
@@ -923,7 +930,7 @@ main > section:after {
   visibility: hidden;
 }
 
-/* line 37, ../../input/stylesheets/_main.sass */
+/* line 18, ../../input/stylesheets/_main.sass */
 .tooltip {
   position: absolute;
   width: 240px;
@@ -934,12 +941,12 @@ main > section:after {
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 43, ../../input/stylesheets/_main.sass */
+/* line 24, ../../input/stylesheets/_main.sass */
 .tooltip[hidden] {
   opacity: 0;
   display: block;
 }
-/* line 46, ../../input/stylesheets/_main.sass */
+/* line 27, ../../input/stylesheets/_main.sass */
 .tooltip > span {
   display: block;
   position: relative;
@@ -986,7 +993,7 @@ main > section:after {
   top: 50%;
   margin-top: -21px;
 }
-/* line 54, ../../input/stylesheets/_main.sass */
+/* line 35, ../../input/stylesheets/_main.sass */
 .tooltip.top > span {
   position: relative;
   -webkit-border-radius: 6px;
@@ -1100,11 +1107,15 @@ ul.grid > li:hover, ul.grid > li.selected, ul.grid ~ ul > li:hover, ul.grid ~ ul
   -o-border-radius: 0.35em 1.4em 0.35em 0.35em;
   border-radius: 0.35em 1.4em 0.35em 0.35em;
 }
-/* line 41, ../../input/stylesheets/_grid.sass */
+/* line 42, ../../input/stylesheets/_grid.sass */
+ul.grid > li:hover h2 a, ul.grid > li.selected h2 a, ul.grid ~ ul > li:hover h2 a, ul.grid ~ ul > li.selected h2 a {
+  color: #111111;
+}
+/* line 44, ../../input/stylesheets/_grid.sass */
 ul.grid > li:hover .play.button, ul.grid > li.selected .play.button, ul.grid ~ ul > li:hover .play.button, ul.grid ~ ul > li.selected .play.button {
   opacity: 1;
 }
-/* line 45, ../../input/stylesheets/_grid.sass */
+/* line 48, ../../input/stylesheets/_grid.sass */
 ul.grid > li h2, ul.grid ~ ul > li h2 {
   font-size: 1.25em;
   line-height: 1.2em;
@@ -1112,55 +1123,55 @@ ul.grid > li h2, ul.grid ~ ul > li h2 {
   position: relative;
   display: inline-block;
 }
-/* line 50, ../../input/stylesheets/_grid.sass */
+/* line 53, ../../input/stylesheets/_grid.sass */
 ul.grid > li h2 a, ul.grid ~ ul > li h2 a {
   line-height: 0.9em;
 }
-/* line 53, ../../input/stylesheets/_grid.sass */
+/* line 56, ../../input/stylesheets/_grid.sass */
 ul.grid > li h2 + strong, ul.grid ~ ul > li h2 + strong {
   font-family: Georgia;
 }
-/* line 57, ../../input/stylesheets/_grid.sass */
+/* line 60, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip, ul.grid ~ ul > li dl .tooltip {
   margin-left: -1.3em;
   font-family: Helvetica;
 }
-/* line 59, ../../input/stylesheets/_grid.sass */
+/* line 62, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.top, ul.grid ~ ul > li dl .tooltip.top {
   margin-left: 1.15em;
   margin-top: 12px;
   z-index: 101;
   text-align: center;
 }
-/* line 64, ../../input/stylesheets/_grid.sass */
+/* line 67, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.top > span, ul.grid ~ ul > li dl .tooltip.top > span {
   padding-left: 4px;
 }
-/* line 67, ../../input/stylesheets/_grid.sass */
+/* line 70, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
   font-size: 1em;
 }
-/* line 69, ../../input/stylesheets/_grid.sass */
+/* line 72, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
   padding-left: 1.5em;
 }
-/* line 71, ../../input/stylesheets/_grid.sass */
+/* line 74, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid > li dl dd, ul.grid ~ ul > li dl dt, ul.grid ~ ul > li dl dd {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 73, ../../input/stylesheets/_grid.sass */
+/* line 76, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid ~ ul > li dl dt {
   float: left;
   width: 10em;
   color: #555555;
 }
-/* line 77, ../../input/stylesheets/_grid.sass */
+/* line 80, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd, ul.grid ~ ul > li dl dd {
   font-family: Georgia;
   margin-left: 11em;
 }
-/* line 81, ../../input/stylesheets/_grid.sass */
+/* line 84, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd[tooltip]:after, ul.grid ~ ul > li dl dd[tooltip]:after {
   font-family: "fontello";
   font-style: normal;
@@ -1183,21 +1194,21 @@ ul.grid > li dl dd[tooltip]:after, ul.grid ~ ul > li dl dd[tooltip]:after {
   position: relative;
   z-index: 100;
 }
-/* line 91, ../../input/stylesheets/_grid.sass */
+/* line 94, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd.tooltipped:after, ul.grid ~ ul > li dl dd.tooltipped:after {
   color: #eeeeee;
   text-shadow: 0px 1px 0px #333333;
 }
-/* line 96, ../../input/stylesheets/_grid.sass */
+/* line 99, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul, ul.grid ~ ul ~ ul {
   width: 32.6666%;
   float: left;
 }
-/* line 99, ../../input/stylesheets/_grid.sass */
+/* line 102, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul + ul, ul.grid ~ ul ~ ul + ul {
   margin-left: 1%;
 }
-/* line 101, ../../input/stylesheets/_grid.sass */
+/* line 104, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul > li, ul.grid ~ ul ~ ul > li {
   float: none;
   width: auto;
@@ -1205,15 +1216,15 @@ ul.grid ~ ul > li, ul.grid ~ ul ~ ul > li {
 }
 
 @media screen and (max-width: 1124px) {
-  /* line 107, ../../input/stylesheets/_grid.sass */
+  /* line 110, ../../input/stylesheets/_grid.sass */
   ul.grid + ul {
     width: 49.5%;
   }
-  /* line 109, ../../input/stylesheets/_grid.sass */
+  /* line 112, ../../input/stylesheets/_grid.sass */
   ul.grid + ul + ul {
     width: 49.5%;
   }
-  /* line 111, ../../input/stylesheets/_grid.sass */
+  /* line 114, ../../input/stylesheets/_grid.sass */
   ul.grid + ul + ul + ul {
     display: none;
   }
