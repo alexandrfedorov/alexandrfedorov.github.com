@@ -1145,13 +1145,13 @@ ul.grid > li dl dt, ul.grid > li dl dd, ul.grid ~ ul > li dl dt, ul.grid ~ ul > 
 /* line 70, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid ~ ul > li dl dt {
   float: left;
-  width: 10em;
+  width: 9em;
   color: #555555;
 }
 /* line 74, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd, ul.grid ~ ul > li dl dd {
   font-family: Georgia;
-  margin-left: 11em;
+  margin-left: 10em;
 }
 /* line 78, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd[tooltip]:after, ul.grid ~ ul > li dl dd[tooltip]:after {
@@ -1197,6 +1197,20 @@ ul.grid ~ ul > li, ul.grid ~ ul ~ ul > li {
   margin-right: 0;
 }
 
+@media screen and (max-width: 1024px) {
+  /* line 104, ../../input/stylesheets/_grid.sass */
+  ul.grid + ul {
+    width: 49.5%;
+  }
+  /* line 106, ../../input/stylesheets/_grid.sass */
+  ul.grid + ul + ul {
+    width: 49.5%;
+  }
+  /* line 108, ../../input/stylesheets/_grid.sass */
+  ul.grid + ul + ul + ul {
+    display: none;
+  }
+}
 /* line 10, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 html, body {
   height: 100%;

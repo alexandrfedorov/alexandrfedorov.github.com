@@ -1,3 +1,13 @@
+
+
+var getComputedStyleShim = function(el, camelCase, hyphenated) {
+  if (el.currentStyle) return el.currentStyle[camelCase];
+  var defaultView = document.defaultView,
+    computed = defaultView ? defaultView.getComputedStyle(el, null) : null;
+  return (computed) ? computed.getPropertyValue(hyphenated) : null;
+};
+
+
 document.body.className = 'ready'
 document.body.onclick = function(e) {
 	for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
@@ -62,17 +72,22 @@ document.body.onclick = function(e) {
 
 
 var grids = document.getElementsByClassName('grid');
-for (var i = 0, grid; grid = grids[i++];) {
+var itemsByGrid = [];
+var columnsByGrid = [];
+for (var i = 0, grid; grid = grids[i]; i++) {
 	var parent = grid.parentNode;
 	var next = grid.nextSibling;
-	var items = [];
-	var columns = [];
-
+	var items = itemsByGrid[i] = [];
+	var columns = columnsByGrid[i] = [];
 	for (var j = 0; j < 3; j++) {
 		var column = document.createElement('ul');
 		columns.push(column)
 		parent.insertBefore(column, next);
 	}
+
+	columns = columns.filter(function(column) {
+		return getComputedStyleShim(column, 'display', 'display') != 'none';
+	})
 
 	for (var j = 0, child; child = grid.childNodes[j++];)
 		if (child.tagName == 'LI')
@@ -86,6 +101,24 @@ for (var i = 0, grid; grid = grids[i++];) {
 	}
 
 	grid.className += ' distributed'
+}
+
+window.onresize = function() {
+	for (var i = 0, grid; grid = grids[i]; i++) {
+		var columns = columnsByGrid[i].filter(function(column) {
+			return getComputedStyleShim(column, 'display', 'display') != 'none';
+		})
+		var items = itemsByGrid[i];
+		for (var j = items.length, child; child = items[--j]; )
+			child.parentNode.removeChild(child);
+
+		for (var j = 0, child, min; child = items[j++];) {
+			for (var k = 0, col; col = columns[k++];)
+				if (!min || min.offsetHeight > col.offsetHeight)
+					min = col;
+			min.appendChild(child);
+		}
+	}
 }
 
 tooltip = document.createElement('div');
@@ -102,14 +135,6 @@ for (var i = 0, el; el = all[i++];) {
 		el.removeAttribute('title')
 	}
 }
-
-var getComputedStyleShim = function(el, camelCase, hyphenated) {
-  if (el.currentStyle) return el.currentStyle[camelCase];
-  var defaultView = document.defaultView,
-    computed = defaultView ? defaultView.getComputedStyle(el, null) : null;
-  return (computed) ? computed.getPropertyValue(hyphenated) : null;
-};
-
 
 document.body.onmouseover = function(e) {
 	for (var el = e.target; el; el = el.parentNode) {

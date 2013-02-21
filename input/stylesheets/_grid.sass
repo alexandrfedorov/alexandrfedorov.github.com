@@ -69,11 +69,11 @@ ul.grid, ul.grid ~ ul
         +adjust-font-size-to(14px)
       dt
         :float left
-        :width 10em
+        :width 9em
         :color #555
       dd
         :font-family Georgia
-        :margin-left 11em
+        :margin-left 10em
         &[tooltip]
           &:after
             +iconed
@@ -99,3 +99,11 @@ ul.grid, ul.grid ~ ul
       :float none
       :width auto
       :margin-right 0
+
+@media screen and (max-width: 1024px)
+  ul.grid + ul
+    :width 49.5%
+    + ul
+      :width 49.5%
+      + ul
+        :display none
