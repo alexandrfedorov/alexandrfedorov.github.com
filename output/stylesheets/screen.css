@@ -83,28 +83,24 @@ html {
 
 /* line 22, ../../input/stylesheets/screen.sass */
 a {
-  text-decoration: none;
-  border-bottom: 1px solid #bbbbbb;
-  line-height: 13px;
-  display: inline-block;
   color: #007511;
 }
-/* line 28, ../../input/stylesheets/screen.sass */
+/* line 24, ../../input/stylesheets/screen.sass */
 a:hover {
   border-bottom-color: transparent;
 }
 
-/* line 32, ../../input/stylesheets/screen.sass */
+/* line 28, ../../input/stylesheets/screen.sass */
 h1 a, h2 a {
   text-shadow: 0 1px 1px white;
 }
 
-/* line 36, ../../input/stylesheets/screen.sass */
+/* line 32, ../../input/stylesheets/screen.sass */
 h1, h2 {
   font-family: "Open Sans Condensed";
 }
 
-/* line 39, ../../input/stylesheets/screen.sass */
+/* line 35, ../../input/stylesheets/screen.sass */
 header > section, main > section, .player > section, .contact > section, footer, .introduction > section {
   max-width: 1120px;
   min-width: 600px;
@@ -112,12 +108,12 @@ header > section, main > section, .player > section, .contact > section, footer,
   padding: 0 3em;
 }
 
-/* line 45, ../../input/stylesheets/screen.sass */
+/* line 41, ../../input/stylesheets/screen.sass */
 .introduction > section {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
-/* line 49, ../../input/stylesheets/screen.sass */
+/* line 45, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote {
   font-family: Georgia;
   font-style: italic;
@@ -126,8 +122,9 @@ header > section, main > section, .player > section, .contact > section, footer,
   margin-bottom: 0.75em;
   position: relative;
   margin: 0;
+  margin-right: 230px;
 }
-/* line 58, ../../input/stylesheets/screen.sass */
+/* line 55, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote:before {
   display: block;
   content: "\201C";
@@ -137,7 +134,7 @@ header > section, main > section, .player > section, .contact > section, footer,
   top: 0.223em;
   color: #7a7a7a;
 }
-/* line 66, ../../input/stylesheets/screen.sass */
+/* line 63, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote a {
   line-height: 0.85em;
 }
@@ -1042,7 +1039,6 @@ ul.grid.distributed {
 
 /* line 4, ../../input/stylesheets/_grid.sass */
 ul.grid, ul.grid ~ ul {
-  padding-top: 1.5em;
   padding-bottom: 0.75em;
   *zoom: 1;
 }
@@ -1055,7 +1051,7 @@ ul.grid:after, ul.grid ~ ul:after {
   overflow: hidden;
   visibility: hidden;
 }
-/* line 8, ../../input/stylesheets/_grid.sass */
+/* line 7, ../../input/stylesheets/_grid.sass */
 ul.grid > li, ul.grid ~ ul > li {
   float: left;
   width: 20em;
@@ -1075,7 +1071,7 @@ ul.grid > li, ul.grid ~ ul > li {
   transition: border-color 0.3s, border-radius 0.3s, background-color 0.3s;
   background-color: rgba(255, 255, 255, 0.2);
 }
-/* line 23, ../../input/stylesheets/_grid.sass */
+/* line 22, ../../input/stylesheets/_grid.sass */
 ul.grid > li video, ul.grid ~ ul > li video {
   display: block;
   background: #333333;
@@ -1085,7 +1081,7 @@ ul.grid > li video, ul.grid ~ ul > li video {
   width: 100%;
   margin-bottom: 0.75em;
 }
-/* line 31, ../../input/stylesheets/_grid.sass */
+/* line 30, ../../input/stylesheets/_grid.sass */
 ul.grid > li .play.button, ul.grid ~ ul > li .play.button {
   position: absolute;
   right: 0.25em;
@@ -1096,7 +1092,7 @@ ul.grid > li .play.button, ul.grid ~ ul > li .play.button {
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-/* line 37, ../../input/stylesheets/_grid.sass */
+/* line 36, ../../input/stylesheets/_grid.sass */
 ul.grid > li:hover, ul.grid > li.selected, ul.grid ~ ul > li:hover, ul.grid ~ ul > li.selected {
   border-color: #888888;
   background-color: rgba(63, 111, 37, 0.1);
@@ -1107,15 +1103,15 @@ ul.grid > li:hover, ul.grid > li.selected, ul.grid ~ ul > li:hover, ul.grid ~ ul
   -o-border-radius: 0.35em 1.4em 0.35em 0.35em;
   border-radius: 0.35em 1.4em 0.35em 0.35em;
 }
-/* line 42, ../../input/stylesheets/_grid.sass */
+/* line 41, ../../input/stylesheets/_grid.sass */
 ul.grid > li:hover h2 a, ul.grid > li.selected h2 a, ul.grid ~ ul > li:hover h2 a, ul.grid ~ ul > li.selected h2 a {
   color: #111111;
 }
-/* line 44, ../../input/stylesheets/_grid.sass */
+/* line 43, ../../input/stylesheets/_grid.sass */
 ul.grid > li:hover .play.button, ul.grid > li.selected .play.button, ul.grid ~ ul > li:hover .play.button, ul.grid ~ ul > li.selected .play.button {
   opacity: 1;
 }
-/* line 48, ../../input/stylesheets/_grid.sass */
+/* line 47, ../../input/stylesheets/_grid.sass */
 ul.grid > li h2, ul.grid ~ ul > li h2 {
   font-size: 1.25em;
   line-height: 1.2em;
@@ -1123,55 +1119,55 @@ ul.grid > li h2, ul.grid ~ ul > li h2 {
   position: relative;
   display: inline-block;
 }
-/* line 53, ../../input/stylesheets/_grid.sass */
+/* line 52, ../../input/stylesheets/_grid.sass */
 ul.grid > li h2 a, ul.grid ~ ul > li h2 a {
   line-height: 0.9em;
 }
-/* line 56, ../../input/stylesheets/_grid.sass */
+/* line 55, ../../input/stylesheets/_grid.sass */
 ul.grid > li h2 + strong, ul.grid ~ ul > li h2 + strong {
   font-family: Georgia;
 }
-/* line 60, ../../input/stylesheets/_grid.sass */
+/* line 59, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip, ul.grid ~ ul > li dl .tooltip {
   margin-left: -1.3em;
   font-family: Helvetica;
 }
-/* line 62, ../../input/stylesheets/_grid.sass */
+/* line 61, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.top, ul.grid ~ ul > li dl .tooltip.top {
   margin-left: 1.15em;
   margin-top: 12px;
   z-index: 101;
   text-align: center;
 }
-/* line 67, ../../input/stylesheets/_grid.sass */
+/* line 66, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.top > span, ul.grid ~ ul > li dl .tooltip.top > span {
   padding-left: 4px;
 }
-/* line 70, ../../input/stylesheets/_grid.sass */
+/* line 69, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
   font-size: 1em;
 }
-/* line 72, ../../input/stylesheets/_grid.sass */
+/* line 71, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
   padding-left: 1.5em;
 }
-/* line 74, ../../input/stylesheets/_grid.sass */
+/* line 73, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid > li dl dd, ul.grid ~ ul > li dl dt, ul.grid ~ ul > li dl dd {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 76, ../../input/stylesheets/_grid.sass */
+/* line 75, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid ~ ul > li dl dt {
   float: left;
   width: 10em;
   color: #555555;
 }
-/* line 80, ../../input/stylesheets/_grid.sass */
+/* line 79, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd, ul.grid ~ ul > li dl dd {
   font-family: Georgia;
   margin-left: 11em;
 }
-/* line 84, ../../input/stylesheets/_grid.sass */
+/* line 83, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd[tooltip]:after, ul.grid ~ ul > li dl dd[tooltip]:after {
   font-family: "fontello";
   font-style: normal;
@@ -1194,21 +1190,21 @@ ul.grid > li dl dd[tooltip]:after, ul.grid ~ ul > li dl dd[tooltip]:after {
   position: relative;
   z-index: 100;
 }
-/* line 94, ../../input/stylesheets/_grid.sass */
+/* line 93, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd.tooltipped:after, ul.grid ~ ul > li dl dd.tooltipped:after {
   color: #eeeeee;
   text-shadow: 0px 1px 0px #333333;
 }
-/* line 99, ../../input/stylesheets/_grid.sass */
+/* line 98, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul, ul.grid ~ ul ~ ul {
   width: 32.6666%;
   float: left;
 }
-/* line 102, ../../input/stylesheets/_grid.sass */
+/* line 101, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul + ul, ul.grid ~ ul ~ ul + ul {
   margin-left: 1%;
 }
-/* line 104, ../../input/stylesheets/_grid.sass */
+/* line 103, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul > li, ul.grid ~ ul ~ ul > li {
   float: none;
   width: auto;
@@ -1216,15 +1212,15 @@ ul.grid ~ ul > li, ul.grid ~ ul ~ ul > li {
 }
 
 @media screen and (max-width: 1124px) {
-  /* line 110, ../../input/stylesheets/_grid.sass */
+  /* line 109, ../../input/stylesheets/_grid.sass */
   ul.grid + ul {
     width: 49.5%;
   }
-  /* line 112, ../../input/stylesheets/_grid.sass */
+  /* line 111, ../../input/stylesheets/_grid.sass */
   ul.grid + ul + ul {
     width: 49.5%;
   }
-  /* line 114, ../../input/stylesheets/_grid.sass */
+  /* line 113, ../../input/stylesheets/_grid.sass */
   ul.grid + ul + ul + ul {
     display: none;
   }

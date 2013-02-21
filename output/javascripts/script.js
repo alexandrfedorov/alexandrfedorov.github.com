@@ -22,7 +22,7 @@ window.onscroll = function() {
 	}
 }
 
-document.body.className = 'ready playing';
+document.body.className = 'ready';
 
 document.body.onclick = function(e) {
 	for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {

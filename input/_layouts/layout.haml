@@ -46,7 +46,7 @@
 								%a.russian.language{:href => "/"}
 									По-русски
 								%a.russian.language.icon{:href => "/"}<>
-				.player.compact
+				.player.compact{:hidden => true}
 					%section
 						.progress{:max => 100, :value => 50}
 							%strong
@@ -101,7 +101,7 @@
 			.introduction
 				%section
 					{{content}}
-					
+
 			%main
 				%section
 					%menu
