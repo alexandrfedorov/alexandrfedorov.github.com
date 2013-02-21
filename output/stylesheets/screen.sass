@@ -1,0 +1,50 @@
+
+@import compass/reset
+@import compass/utilities
+@import compass/css3
+@import compass/typography/vertical_rhythm
+@import compass/layout/sticky-footer
+@import recipes/shadow/drop/lifted-corners
+@import recipes/shape/polygon/triangle
+@import recipes/effect/ribbon
+@import recipes/ui/tooltip
+
+$base-font-size: 16px
+$base-line-height: 24px
+
++establish-baseline
+
+html
+  :background #d6d2ca url(../images/bedge_grunge.png)
+  :height 100%
+  :color #333
+
+a
+  :text-decoration none
+  :border-bottom 1px solid #bbb
+  :line-height 13px
+  :display inline-block
+  :color darken(#007f12, 2%)
+  &:hover
+    :border-bottom-color transparent
+
+
+
+h1, h2
+  :font-family 'Open Sans Condensed'
+
+header > section, main > section, .player > section, .contact > section, footer
+  :max-width 1120px
+  :min-width 600px
+  :margin 0 auto
+  :padding 0 2.5em
+
+
+@import buttons
+@import icons
+@import player
+@import header
+@import contact
+@import main
+@import grid
+@import footer

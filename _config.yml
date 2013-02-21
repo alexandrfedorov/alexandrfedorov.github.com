@@ -5,9 +5,9 @@ server_port: 4000
 baseurl:    /
 url: http://localhost:4000
 
-source:      ./input/html
+source:      ./input
 destination: ./output
-plugins:     ./input/html/_plugins
+plugins:     ./input/_plugins
 
 future:      true
 lsi:         false
