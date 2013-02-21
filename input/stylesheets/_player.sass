@@ -1,0 +1,80 @@
+.player 
+  :background #333 url(../images/escheresque_ste.png)
+  > section
+    :position relative
+    > .more
+      > p
+        +adjust-font-size-to(14px, 1.35)
+        span
+          :vertical-align middle
+          :color #aaa
+          :font-size 1.5em
+      :right 0
+      :top 0
+      :line-height 1.5em
+      :width 260px
+      :position absolute
+      :color #eaeaea
+    > *
+      :position relative
+      :z-index 5
+    > .progress
+      +sassy-button("matte", 5px, false, rgba(#555, 0.6))
+      :display block
+      :height 1.5em * 2
+      :margin -2px 230px 0 -0.25em
+      :position relative
+      :white-space nowrap
+      :text-overflow ellipsis
+      :overflow hidden
+      .bar
+        :position absolute
+        :left 0
+        :top 0
+        :border-right 1px solid rgba(255, 255, 255, 0.2)
+        :width 55%
+        :background rgba(255, 255, 255, 0.3)
+        :height 1.5em
+      strong
+        :padding-left 0.35em
+        +sassy-button-text-style(#333, #333, #eaeaea)
+        +adjust-font-size-to(14px)
+    +padding-leader(0.25)
+    +padding-trailer(0.2)
+    :margin-top -1px
+    .button
+      :position absolute
+      :left 0.15em
+      :top 0.25em
+        +border-radius(0 0 0.9em 0.9em)
+      + .button
+        &:before
+          :content '\2139'
+        :top auto
+        :bottom 0.25em
+        +border-radius(0 0 0.9em 0.9em)
+
+  &.compact
+    > section
+      > .progress
+        :height 1.5em
+
+      .button + .button
+        :display none
+      .button
+        +border-radius(0.9em)
+
+.play.button, .player .button
+  +iconed
+  &:before
+    :content '\25b6'
+  :padding-left 0
+  +sassy-button("glass", 0.9em, false, #aaa)
+  +text-shadow(none)
+  :border-width 0.2em
+  :border-color #666
+  :color #333
+  :padding-right 0
+  :width 1.45em
+  :line-height 1.45em
+  :text-align center

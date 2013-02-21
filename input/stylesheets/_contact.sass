@@ -1,0 +1,124 @@
+
+
+.contact
+  :background-color rgba(darken(#4b9a5f, 20%), 0.1)
+  +legacy-pie-clearfix
+  +padding-trailer(0.5)
+  :clear right
+
+  body.ready &
+    +transition(all 0.3s)
+
+  body.ready & form
+    +transition(all 0.7s)
+
+  body.ready & section.bar .cancel
+    +transition(opacity 0.7s)
+
+  &[hidden]
+    :display block
+    :border-top 0
+    +margin-trailer(-2.5)
+    :background-color rgba(darken(#4b9a5f, 20%), 0)
+    form 
+      :max-height 0
+      :padding-top 0
+      :border 0
+      :opacity 0
+    section.bar
+      :padding-bottom 0
+      .cancel
+        :opacity 0
+  form
+    +box-sizing(borderbox)
+    :padding-right 230px
+    :padding-left 100px
+    > fieldset + fieldset
+      +margin-leader(0.25)
+    fieldset
+      :position relative
+
+    label
+      :width 100px
+      :display block
+      :float left
+      :white-space nowrap
+      :text-align right
+      :margin-left -110px
+      +adjust-font-size-to(14px)
+      + select, + input, + textarea
+        :width 100%
+        :max-width 100%
+        +box-sizing(borderbox)
+        :font-size 1em
+        :padding 0
+        :margin-top -1px
+        :line-height 1.5em
+        :border 1px solid #aaa
+        :font-family Georgia
+        +border-radius(2px)
+      + input, + textarea
+        :padding 0 0.5em
+        :background-color rgba(255, 255, 255, 0.7)
+    fieldset.errored
+      .error
+        :opacity 1
+    .error
+      +adjust-font-size-to(14px)
+      +transition(opacity 0.5s)
+      :opacity 0
+      :width 225px
+      :position absolute
+      :right -235px
+      :top 0
+      :color #a9390d
+
+    :margin-top -1px
+    +padding-leader(1)
+    :max-height 600px
+    :opacity 1
+    :overflow hidden
+  section.bar
+    :width 220px
+    :float right
+    +padding-leader(1)
+    :position relative
+    .cancel
+      :position absolute
+      :opacity 1
+      +adjust-font-size-to(14px)
+      :right 230px
+      :color #555
+      :border-bottom 0
+      :text-decoration underline
+  a.button
+    +adjust-font-size-to(14px)
+    +border-radius(2px 5px 5px 2px)
+    &, span
+      &:after, &:before
+        :position absolute
+        :left 100%
+        :margin-left -2px
+        :content ""
+        :display block
+        +triangle("right", 1.6em / 14 * 16, 0.75em / 14 * 16, #4b9a5f)
+        :z-index 20
+      &:after
+        :border-bottom-width 0
+        :top 0
+        :border-left-color lighten(#4b9a5f, 7%)
+      &:before
+        :bottom 0
+        :border-top-width 0
+      &:hover:after
+        :border-left-color lighten(#4b9a5f, 1%)
+      &:hover:before
+        :border-left-color darken(#4b9a5f, 7%)
+    span
+      &:after, &:before
+        :margin-left -1px
+        :z-index 10
+      &:after
+        :border-left-color darken(#4b9a5f, 5%)
+      &:before
+        :border-left-color darken(#4b9a5f, 10%)

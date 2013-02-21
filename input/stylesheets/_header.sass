@@ -1,0 +1,87 @@
+
+body
+  :height 100%
+  :font-family Helvetica, Tahoma
+
+address
+  :float right
+  :min-width 220px
+  +border-radius(0.5em)
+  :position relative
+  dl
+    +clearfix
+    +margin-leader(0.225)
+    +margin-trailer(0.05)
+    dd
+      +adjust-font-size-to(14px)
+    dt
+      :width 3em
+      :padding-right 1em
+      :float left
+      :clear left
+      :color #666
+      :text-align right
+    dt.tel
+      :display none
+      + dd
+        &:before
+          +iconed
+          :color #666
+          :content '\1f4de'
+    dt.email
+      :display none
+      + dd
+        a
+          :color #000
+        &:before
+          +iconed
+          :color #666
+          :content '\2709'
+          :vertical-align -0.1em 
+menu
+  > li
+    :font-family Georgia
+    :display inline-block
+    + li
+      :margin-left 0.2em
+      &:before
+        :content "\b7\a0"
+    a
+      :color #4c6148
+    &.selected
+      > a
+        :border-bottom 0
+        :color #333
+
+nav
+  +padding-leader(.225)
+  +padding-trailer(1)
+menu
+  .russian.language.icon
+    :width 23px
+    :height 18px
+    :line-height 1em
+    :border 0
+    :vertical-align middle
+    :background url(../images/russian.png) center top no-repeat
+    :background-size 16px 16px
+    :opacity 0.7
+main
+  :display block
+  menu
+    +margin-trailer(1)
+
+
+header
+  :background #fff url(../images/gplaypattern.png)
+  +padding-leader(1)
+  +drop-shadow-lifted-corners(26px, 15px, 6deg)
+  menu
+    > li.selected
+      a
+        :color #666
+  h1
+    :white-space nowrap
+    +adjust-font-size-to(24px, 1)
+    span 
+      :color #666

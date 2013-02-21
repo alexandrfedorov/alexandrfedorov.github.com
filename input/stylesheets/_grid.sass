@@ -1,0 +1,101 @@
+ul.grid
+  &.distributed
+    :padding 0
+ul.grid, ul.grid ~ ul
+  +padding-leader
+  +padding-trailer(0.5)
+  +legacy-pie-clearfix
+  > li
+    :float left
+    :width 20em
+    :margin-right 3em
+    :border 2px solid #bbb
+    :padding-left 1em
+    :padding-right 1em
+    +padding-trailer(0.5)
+    +padding-leader(0.5)
+    +margin-trailer(0.5)
+    :margin-right 1em
+    :position relative
+    :cursor pointer
+    +transition(border-color 0.3s, border-radius 0.3s, background-color 0.3s)
+    video
+      :display block
+      :background #333
+      :clear both
+      :margin 0
+      :display block
+      :width 100%
+      +margin-trailer(0.5)
+    .play.button
+      :position absolute
+      :right 0.25em
+      :top 0.5em
+      :opacity 0
+      +transition(opacity 0.3s)
+    &:hover, &.selected
+      :border-color #888
+      :background-color rgba(#3f6f25, 0.1)
+      :border-style solid
+      .play.button
+        :opacity 1
+      +border-radius(0.35em 1.4em 0.35em 0.35em)
+
+    h2
+      +adjust-font-size-to(20px)
+      +margin-trailer(0.5)
+      :position relative
+      :display inline-block
+      a
+        :line-height 0.9em
+
+      + strong
+        :font-family Georgia
+
+    dl
+      .tooltip
+        :margin-left -1.3em
+        &.top
+          :margin-left 1em
+          :margin-top 8px
+          > span
+            :padding-left 4px
+        :font-family Helvetica
+        > span
+          :font-size 1em
+        > span
+          :padding-left 1.5em
+      dt, dd
+        +adjust-font-size-to(14px)
+      dt
+        :float left
+        :width 10em
+        :color #555
+      dd
+        :font-family Georgia
+        :margin-left 11em
+        &[tooltip]
+          &:after
+            +iconed
+            +transition(color 0.4s)
+            :color #777
+            :float right
+            :margin-left 0.3em
+            :content '\2139'
+            :position relative
+            :z-index 100
+        &.tooltipped
+          &:after
+            :color #eee
+            +text-shadow(0px 1px 0px #333)
+
+
+  ~ ul
+    :width 32.6666%
+    :float left
+    + ul
+      :margin-left 1%
+    > li
+      :float none
+      :width auto
+      :margin-right 0

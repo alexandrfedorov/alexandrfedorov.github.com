@@ -1,0 +1,60 @@
+
+
+main
+  a
+    :border-bottom-color #aaa
+  menu
+    > li
+      :display inline-block
+  > section
+    :background-color rgba(255, 255, 255, 0.2)
+    +padding-leader(1)
+  
+  blockquote
+    :font-family Georgia
+    :font-style italic
+    :max-width 750px
+    :color #454545
+    +margin-trailer(0.5)
+    :position relative
+    :margin 0
+
+    &:before
+      display: block
+      content: "\201C"
+      font-size: 80px
+      position: absolute
+      left: -0.54em
+      top: 0.223em
+      color: #7a7a7a
+    a
+      :line-height 0.85em
+
+
+  > section
+    +legacy-pie-clearfix
+
+.tooltip
+  :position absolute
+  :width 240px
+  :z-index 50
+  :opacity 1
+  +transition(opacity 0.5s)
+  &[hidden]
+    :opacity 0
+    :display block
+  > span
+    :display block
+    +ui-tooltip(left, $border-radius: 6px, $tip-color: #88b7d5, $tip-color-alt: #c2e1f5, $tip-width: 30px, $tip-height: 15px, $border-width: 4px)
+    :color #fff
+    +text-shadow(0 1px 0px #333)
+    :padding 4px
+    +adjust-font-size-to(14px)
+  &.top
+    > span
+      +ui-tooltip(top, $border-radius: 6px, $tip-color: #88b7d5, $tip-color-alt: #c2e1f5, $tip-width: 30px, $tip-height: 15px, $border-width: 4px)
+      &:before, &:after
+        :right 0
+        :left auto
+      &:after
+        :margin-right 5px
