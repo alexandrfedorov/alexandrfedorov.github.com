@@ -56,8 +56,10 @@ ul.grid, ul.grid ~ ul
       .tooltip
         :margin-left -1.3em
         &.top
-          :margin-left 1em
-          :margin-top 8px
+          :margin-left 1.15em
+          :margin-top 12px
+          :z-index 101
+          :text-align center
           > span
             :padding-left 4px
         :font-family Helvetica
@@ -69,11 +71,11 @@ ul.grid, ul.grid ~ ul
         +adjust-font-size-to(14px)
       dt
         :float left
-        :width 9em
+        :width 10em
         :color #555
       dd
         :font-family Georgia
-        :margin-left 10em
+        :margin-left 11em
         &[tooltip]
           &:after
             +iconed
@@ -100,7 +102,7 @@ ul.grid, ul.grid ~ ul
       :width auto
       :margin-right 0
 
-@media screen and (max-width: 1024px)
+@media screen and (max-width: 1124px)
   ul.grid + ul
     :width 49.5%
     + ul

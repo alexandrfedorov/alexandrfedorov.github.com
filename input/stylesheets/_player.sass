@@ -1,3 +1,15 @@
+body
+  &.playing
+    &.fixed
+      header
+        +padding-trailer(1.35)
+      .player
+        :position fixed
+        :z-index 200
+        :top 0
+        :left 0
+        :right 0
+
 .player 
   :background #333 url(../images/escheresque_ste.png)
   > section

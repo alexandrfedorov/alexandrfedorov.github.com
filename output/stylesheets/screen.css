@@ -218,18 +218,31 @@ a.button {
   content: "\e705";
 }
 
-/* line 1, ../../input/stylesheets/_player.sass */
+/* line 4, ../../input/stylesheets/_player.sass */
+body.playing.fixed header {
+  padding-bottom: 2.025em;
+}
+/* line 6, ../../input/stylesheets/_player.sass */
+body.playing.fixed .player {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* line 13, ../../input/stylesheets/_player.sass */
 .player {
   background: #333333 url(../images/escheresque_ste.png);
 }
-/* line 3, ../../input/stylesheets/_player.sass */
+/* line 15, ../../input/stylesheets/_player.sass */
 .player > section {
   position: relative;
   padding-top: 0.375em;
   padding-bottom: 0.3em;
   margin-top: -1px;
 }
-/* line 5, ../../input/stylesheets/_player.sass */
+/* line 17, ../../input/stylesheets/_player.sass */
 .player > section > .more {
   right: 0;
   top: 0;
@@ -238,23 +251,23 @@ a.button {
   position: absolute;
   color: #eaeaea;
 }
-/* line 6, ../../input/stylesheets/_player.sass */
+/* line 18, ../../input/stylesheets/_player.sass */
 .player > section > .more > p {
   font-size: 0.875em;
   line-height: 2.31429em;
 }
-/* line 8, ../../input/stylesheets/_player.sass */
+/* line 20, ../../input/stylesheets/_player.sass */
 .player > section > .more > p span {
   vertical-align: middle;
   color: #aaaaaa;
   font-size: 1.5em;
 }
-/* line 18, ../../input/stylesheets/_player.sass */
+/* line 30, ../../input/stylesheets/_player.sass */
 .player > section > * {
   position: relative;
   z-index: 5;
 }
-/* line 21, ../../input/stylesheets/_player.sass */
+/* line 33, ../../input/stylesheets/_player.sass */
 .player > section > .progress {
   font-size: false;
   padding: false;
@@ -319,7 +332,7 @@ a.button {
   padding: 0 !important;
   margin: -1px !important;
 }
-/* line 30, ../../input/stylesheets/_player.sass */
+/* line 42, ../../input/stylesheets/_player.sass */
 .player > section > .progress .bar {
   position: absolute;
   left: 0;
@@ -329,7 +342,7 @@ a.button {
   background: rgba(255, 255, 255, 0.3);
   height: 1.5em;
 }
-/* line 38, ../../input/stylesheets/_player.sass */
+/* line 50, ../../input/stylesheets/_player.sass */
 .player > section > .progress strong {
   padding-left: 0.35em;
   color: #eaeaea;
@@ -337,7 +350,7 @@ a.button {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 45, ../../input/stylesheets/_player.sass */
+/* line 57, ../../input/stylesheets/_player.sass */
 .player > section .button {
   position: absolute;
   left: 0.15em;
@@ -348,7 +361,7 @@ a.button {
   top--o-border-radius: 0 0 0.9em 0.9em;
   top-border-radius: 0 0 0.9em 0.9em;
 }
-/* line 50, ../../input/stylesheets/_player.sass */
+/* line 62, ../../input/stylesheets/_player.sass */
 .player > section .button + .button {
   top: auto;
   bottom: 0.25em;
@@ -358,19 +371,19 @@ a.button {
   -o-border-radius: 0 0 0.9em 0.9em;
   border-radius: 0 0 0.9em 0.9em;
 }
-/* line 51, ../../input/stylesheets/_player.sass */
+/* line 63, ../../input/stylesheets/_player.sass */
 .player > section .button + .button:before {
   content: "\2139";
 }
-/* line 59, ../../input/stylesheets/_player.sass */
+/* line 71, ../../input/stylesheets/_player.sass */
 .player.compact > section > .progress {
   height: 1.5em;
 }
-/* line 62, ../../input/stylesheets/_player.sass */
+/* line 74, ../../input/stylesheets/_player.sass */
 .player.compact > section .button + .button {
   display: none;
 }
-/* line 64, ../../input/stylesheets/_player.sass */
+/* line 76, ../../input/stylesheets/_player.sass */
 .player.compact > section .button {
   -webkit-border-radius: 0.9em;
   -moz-border-radius: 0.9em;
@@ -379,7 +392,7 @@ a.button {
   border-radius: 0.9em;
 }
 
-/* line 67, ../../input/stylesheets/_player.sass */
+/* line 79, ../../input/stylesheets/_player.sass */
 .play.button, .player .button {
   font-family: "fontello";
   font-style: normal;
@@ -423,7 +436,7 @@ a.button {
   line-height: 1.45em;
   text-align: center;
 }
-/* line 69, ../../input/stylesheets/_player.sass */
+/* line 81, ../../input/stylesheets/_player.sass */
 .play.button:before, .player .button:before {
   content: "\25b6";
 }
@@ -935,8 +948,8 @@ main > section:after {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   border-radius: 6px;
-  background: #88b7d5;
-  border: 4px solid #c2e1f5;
+  background: #5aaf6f;
+  border: 4px solid #4b9a5f;
   color: white;
   text-shadow: 0 1px 0px #333333;
   padding: 4px;
@@ -951,7 +964,7 @@ main > section:after {
   width: 0;
   height: 0;
   border-top: 15px solid transparent;
-  border-right: 15px solid #88b7d5;
+  border-right: 15px solid #5aaf6f;
   border-bottom: 15px solid transparent;
   position: absolute;
   left: -15px;
@@ -966,7 +979,7 @@ main > section:after {
   width: 0;
   height: 0;
   border-top: 21px solid transparent;
-  border-right: 21px solid #c2e1f5;
+  border-right: 21px solid #4b9a5f;
   border-bottom: 21px solid transparent;
   position: absolute;
   left: -21px;
@@ -981,8 +994,8 @@ main > section:after {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   border-radius: 6px;
-  background: #88b7d5;
-  border: 4px solid #c2e1f5;
+  background: #5aaf6f;
+  border: 4px solid #4b9a5f;
 }
 /* line 53, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-recipes-0.3.0/stylesheets/recipes/ui/_tooltip.scss */
 .tooltip.top > span:after {
@@ -992,7 +1005,7 @@ main > section:after {
   width: 0;
   height: 0;
   border-right: 15px solid transparent;
-  border-bottom: 15px solid #88b7d5;
+  border-bottom: 15px solid #5aaf6f;
   border-left: 15px solid transparent;
   position: absolute;
   top: -15px;
@@ -1007,21 +1020,12 @@ main > section:after {
   width: 0;
   height: 0;
   border-right: 21px solid transparent;
-  border-bottom: 21px solid #c2e1f5;
+  border-bottom: 21px solid #4b9a5f;
   border-left: 21px solid transparent;
   position: absolute;
   top: -21px;
   left: 50%;
   margin-left: -21px;
-}
-/* line 56, ../../input/stylesheets/_main.sass */
-.tooltip.top > span:before, .tooltip.top > span:after {
-  right: 0;
-  left: auto;
-}
-/* line 59, ../../input/stylesheets/_main.sass */
-.tooltip.top > span:after {
-  margin-right: 5px;
 }
 
 /* line 2, ../../input/stylesheets/_grid.sass */
@@ -1122,38 +1126,40 @@ ul.grid > li dl .tooltip, ul.grid ~ ul > li dl .tooltip {
 }
 /* line 58, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.top, ul.grid ~ ul > li dl .tooltip.top {
-  margin-left: 1em;
-  margin-top: 8px;
+  margin-left: 1.15em;
+  margin-top: 12px;
+  z-index: 101;
+  text-align: center;
 }
-/* line 61, ../../input/stylesheets/_grid.sass */
+/* line 63, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.top > span, ul.grid ~ ul > li dl .tooltip.top > span {
   padding-left: 4px;
 }
-/* line 64, ../../input/stylesheets/_grid.sass */
+/* line 66, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
   font-size: 1em;
 }
-/* line 66, ../../input/stylesheets/_grid.sass */
+/* line 68, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
   padding-left: 1.5em;
 }
-/* line 68, ../../input/stylesheets/_grid.sass */
+/* line 70, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid > li dl dd, ul.grid ~ ul > li dl dt, ul.grid ~ ul > li dl dd {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 70, ../../input/stylesheets/_grid.sass */
+/* line 72, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid ~ ul > li dl dt {
   float: left;
-  width: 9em;
+  width: 10em;
   color: #555555;
 }
-/* line 74, ../../input/stylesheets/_grid.sass */
+/* line 76, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd, ul.grid ~ ul > li dl dd {
   font-family: Georgia;
-  margin-left: 10em;
+  margin-left: 11em;
 }
-/* line 78, ../../input/stylesheets/_grid.sass */
+/* line 80, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd[tooltip]:after, ul.grid ~ ul > li dl dd[tooltip]:after {
   font-family: "fontello";
   font-style: normal;
@@ -1176,37 +1182,37 @@ ul.grid > li dl dd[tooltip]:after, ul.grid ~ ul > li dl dd[tooltip]:after {
   position: relative;
   z-index: 100;
 }
-/* line 88, ../../input/stylesheets/_grid.sass */
+/* line 90, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd.tooltipped:after, ul.grid ~ ul > li dl dd.tooltipped:after {
   color: #eeeeee;
   text-shadow: 0px 1px 0px #333333;
 }
-/* line 93, ../../input/stylesheets/_grid.sass */
+/* line 95, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul, ul.grid ~ ul ~ ul {
   width: 32.6666%;
   float: left;
 }
-/* line 96, ../../input/stylesheets/_grid.sass */
+/* line 98, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul + ul, ul.grid ~ ul ~ ul + ul {
   margin-left: 1%;
 }
-/* line 98, ../../input/stylesheets/_grid.sass */
+/* line 100, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul > li, ul.grid ~ ul ~ ul > li {
   float: none;
   width: auto;
   margin-right: 0;
 }
 
-@media screen and (max-width: 1024px) {
-  /* line 104, ../../input/stylesheets/_grid.sass */
+@media screen and (max-width: 1124px) {
+  /* line 106, ../../input/stylesheets/_grid.sass */
   ul.grid + ul {
     width: 49.5%;
   }
-  /* line 106, ../../input/stylesheets/_grid.sass */
+  /* line 108, ../../input/stylesheets/_grid.sass */
   ul.grid + ul + ul {
     width: 49.5%;
   }
-  /* line 108, ../../input/stylesheets/_grid.sass */
+  /* line 110, ../../input/stylesheets/_grid.sass */
   ul.grid + ul + ul + ul {
     display: none;
   }
