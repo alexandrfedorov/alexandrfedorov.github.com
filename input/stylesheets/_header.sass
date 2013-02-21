@@ -44,8 +44,10 @@ menu
     :display inline-block
     + li
       :margin-left 0.2em
+      > a
+        :margin-left 0.2em
       &:before
-        :content "\b7\a0"
+        :content "\b7"
     &.selected
       > a
         :border-bottom 0
@@ -68,7 +70,7 @@ menu
 main
   :display block
   menu
-    +margin-trailer(1)
+    +margin-trailer(0.5)
 
 
 header
@@ -91,6 +93,12 @@ header
 
 
 @media (max-width: 700px)
+  menu
+    > li
+      + li
+        :margin-left 0.05em
+        > a
+          :margin-left 0.05em
   header
     +padding-leader(0.5)
     +padding-trailer(0.5)

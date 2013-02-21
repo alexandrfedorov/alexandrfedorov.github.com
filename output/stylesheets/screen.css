@@ -618,22 +618,26 @@ menu > li + li {
   margin-left: 0.2em;
 }
 /* line 47, ../../input/stylesheets/_header.sass */
-menu > li + li:before {
-  content: "\b7\a0";
+menu > li + li > a {
+  margin-left: 0.2em;
 }
-/* line 50, ../../input/stylesheets/_header.sass */
+/* line 49, ../../input/stylesheets/_header.sass */
+menu > li + li:before {
+  content: "\b7";
+}
+/* line 52, ../../input/stylesheets/_header.sass */
 menu > li.selected > a {
   border-bottom: 0;
   color: #333333;
 }
 
-/* line 54, ../../input/stylesheets/_header.sass */
+/* line 56, ../../input/stylesheets/_header.sass */
 nav {
   padding-top: 0.3375em;
   padding-bottom: 1.5em;
 }
 
-/* line 58, ../../input/stylesheets/_header.sass */
+/* line 60, ../../input/stylesheets/_header.sass */
 menu .russian.language.icon {
   width: 23px;
   height: 18px;
@@ -646,16 +650,16 @@ menu .russian.language.icon {
   display: inline-block;
 }
 
-/* line 68, ../../input/stylesheets/_header.sass */
+/* line 70, ../../input/stylesheets/_header.sass */
 main {
   display: block;
 }
-/* line 70, ../../input/stylesheets/_header.sass */
+/* line 72, ../../input/stylesheets/_header.sass */
 main menu {
-  margin-bottom: 1.5em;
+  margin-bottom: 0.75em;
 }
 
-/* line 74, ../../input/stylesheets/_header.sass */
+/* line 76, ../../input/stylesheets/_header.sass */
 header {
   background: white url(../images/gplaypattern.png);
   padding-top: 1.5em;
@@ -699,39 +703,48 @@ header::after {
   -o-transform: skew(15deg) rotate(6deg);
   transform: skew(15deg) rotate(6deg);
 }
-/* line 80, ../../input/stylesheets/_header.sass */
+/* line 82, ../../input/stylesheets/_header.sass */
 header .left {
   float: left;
 }
-/* line 85, ../../input/stylesheets/_header.sass */
+/* line 87, ../../input/stylesheets/_header.sass */
 header menu > li.selected a {
   color: #666666;
 }
-/* line 87, ../../input/stylesheets/_header.sass */
+/* line 89, ../../input/stylesheets/_header.sass */
 header h1 {
   white-space: nowrap;
 }
-/* line 89, ../../input/stylesheets/_header.sass */
+/* line 91, ../../input/stylesheets/_header.sass */
 header h1 span {
   color: #666666;
 }
 
 @media (max-width: 700px) {
-  /* line 94, ../../input/stylesheets/_header.sass */
+  /* line 98, ../../input/stylesheets/_header.sass */
+  menu > li + li {
+    margin-left: 0.05em;
+  }
+  /* line 100, ../../input/stylesheets/_header.sass */
+  menu > li + li > a {
+    margin-left: 0.05em;
+  }
+
+  /* line 102, ../../input/stylesheets/_header.sass */
   header {
     padding-top: 0.75em;
     padding-bottom: 0.75em;
   }
-  /* line 97, ../../input/stylesheets/_header.sass */
+  /* line 105, ../../input/stylesheets/_header.sass */
   header nav {
     padding-bottom: 0.75em;
   }
-  /* line 99, ../../input/stylesheets/_header.sass */
+  /* line 107, ../../input/stylesheets/_header.sass */
   header address {
     float: none;
     width: auto;
   }
-  /* line 102, ../../input/stylesheets/_header.sass */
+  /* line 110, ../../input/stylesheets/_header.sass */
   header .left {
     float: none;
   }
@@ -977,7 +990,7 @@ body.ready .contact section.bar .cancel {
   }
   /* line 146, ../../input/stylesheets/_contact.sass */
   .contact[hidden] section.bar a.button {
-    margin-left: 238px;
+    margin-left: 220px;
   }
   /* line 148, ../../input/stylesheets/_contact.sass */
   .contact a.button {
@@ -1434,5 +1447,10 @@ footer p {
   /* line 96, ../../input/stylesheets/screen.sass */
   .introduction > section blockquote {
     margin-right: 0;
+  }
+  /* line 98, ../../input/stylesheets/screen.sass */
+  .introduction > section blockquote > p {
+    font-size: 0.875em;
+    line-height: 1.71429em;
   }
 }
