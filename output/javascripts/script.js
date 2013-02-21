@@ -91,13 +91,15 @@ var itemsByGrid = [];
 var columnsByGrid = [];
 for (var i = 0, grid; grid = grids[i]; i++) {
 	var parent = grid.parentNode;
-	var next = grid.nextSibling;
 	var items = itemsByGrid[i] = [];
 	var columns = columnsByGrid[i] = [];
+	var wrapper = document.createElement('div');
+	wrapper.className = 'columns';
+	parent.insertBefore(wrapper, grid)
 	for (var j = 0; j < 3; j++) {
 		var column = document.createElement('ul');
 		columns.push(column)
-		parent.insertBefore(column, next);
+		wrapper.appendChild(column);
 	}
 
 	columns = columns.filter(function(column) {

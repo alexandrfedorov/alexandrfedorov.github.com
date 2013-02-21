@@ -109,11 +109,16 @@ header > section, main > section, .player > section, .contact > section, footer,
 }
 
 /* line 41, ../../input/stylesheets/screen.sass */
+header > section, .player > section, .contact > section, footer, .introduction > section {
+  max-width: 750px;
+}
+
+/* line 44, ../../input/stylesheets/screen.sass */
 .introduction > section {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
-/* line 45, ../../input/stylesheets/screen.sass */
+/* line 48, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote {
   font-family: Georgia;
   font-style: italic;
@@ -124,7 +129,7 @@ header > section, main > section, .player > section, .contact > section, footer,
   margin: 0;
   margin-right: 230px;
 }
-/* line 55, ../../input/stylesheets/screen.sass */
+/* line 58, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote:before {
   display: block;
   content: "\201C";
@@ -134,7 +139,7 @@ header > section, main > section, .player > section, .contact > section, footer,
   top: 0.223em;
   color: #7a7a7a;
 }
-/* line 63, ../../input/stylesheets/screen.sass */
+/* line 66, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote a {
   line-height: 0.85em;
   color: inherit;
@@ -143,7 +148,7 @@ header > section, main > section, .player > section, .contact > section, footer,
   -o-transition: color 0.4s;
   transition: color 0.4s;
 }
-/* line 68, ../../input/stylesheets/screen.sass */
+/* line 71, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote:hover a {
   color: #007511;
 }
@@ -921,11 +926,7 @@ main menu > li {
 }
 /* line 9, ../../input/stylesheets/_main.sass */
 main > section {
-  background-color: rgba(255, 255, 255, 0.2);
   padding-top: 1.5em;
-}
-/* line 15, ../../input/stylesheets/_main.sass */
-main > section {
   *zoom: 1;
 }
 /* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -938,7 +939,7 @@ main > section:after {
   visibility: hidden;
 }
 
-/* line 18, ../../input/stylesheets/_main.sass */
+/* line 13, ../../input/stylesheets/_main.sass */
 .tooltip {
   position: absolute;
   width: 240px;
@@ -949,12 +950,12 @@ main > section:after {
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 24, ../../input/stylesheets/_main.sass */
+/* line 19, ../../input/stylesheets/_main.sass */
 .tooltip[hidden] {
   opacity: 0;
   display: block;
 }
-/* line 29, ../../input/stylesheets/_main.sass */
+/* line 24, ../../input/stylesheets/_main.sass */
 .tooltip:not(.invert) > span {
   position: relative;
   -webkit-border-radius: 6px;
@@ -962,8 +963,8 @@ main > section:after {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   border-radius: 6px;
-  background: #5aaf6f;
-  border: 4px solid #4b9a5f;
+  background: #abb09a;
+  border: 3px solid #bcc0ae;
 }
 /* line 53, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-recipes-0.3.0/stylesheets/recipes/ui/_tooltip.scss */
 .tooltip:not(.invert) > span:after {
@@ -972,13 +973,13 @@ main > section:after {
   display: block;
   width: 0;
   height: 0;
-  border-top: 15px solid transparent;
-  border-right: 15px solid #5aaf6f;
-  border-bottom: 15px solid transparent;
+  border-top: 8px solid transparent;
+  border-right: 8px solid #abb09a;
+  border-bottom: 8px solid transparent;
   position: absolute;
-  left: -15px;
+  left: -8px;
   top: 50%;
-  margin-top: -15px;
+  margin-top: -8px;
 }
 /* line 84, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-recipes-0.3.0/stylesheets/recipes/ui/_tooltip.scss */
 .tooltip:not(.invert) > span:before {
@@ -987,24 +988,24 @@ main > section:after {
   display: block;
   width: 0;
   height: 0;
-  border-top: 21px solid transparent;
-  border-right: 21px solid #4b9a5f;
-  border-bottom: 21px solid transparent;
+  border-top: 12px solid transparent;
+  border-right: 12px solid #bcc0ae;
+  border-bottom: 12px solid transparent;
   position: absolute;
-  left: -21px;
+  left: -12px;
   top: 50%;
-  margin-top: -21px;
+  margin-top: -12px;
 }
-/* line 31, ../../input/stylesheets/_main.sass */
+/* line 26, ../../input/stylesheets/_main.sass */
 .tooltip > span {
   display: block;
   color: white;
   text-shadow: 0 1px 0px #333333;
-  padding: 5px;
+  padding: 0 5px;
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 38, ../../input/stylesheets/_main.sass */
+/* line 33, ../../input/stylesheets/_main.sass */
 .tooltip.invert > span {
   position: relative;
   -webkit-border-radius: 6px;
@@ -1012,8 +1013,8 @@ main > section:after {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   border-radius: 6px;
-  background: #5aaf6f;
-  border: 4px solid #4b9a5f;
+  background: #abb09a;
+  border: 3px solid #bcc0ae;
 }
 /* line 53, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-recipes-0.3.0/stylesheets/recipes/ui/_tooltip.scss */
 .tooltip.invert > span:after {
@@ -1022,13 +1023,13 @@ main > section:after {
   display: block;
   width: 0;
   height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 15px solid #5aaf6f;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #abb09a;
   position: absolute;
-  right: -15px;
+  right: -8px;
   top: 50%;
-  margin-top: -15px;
+  margin-top: -8px;
 }
 /* line 84, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-recipes-0.3.0/stylesheets/recipes/ui/_tooltip.scss */
 .tooltip.invert > span:before {
@@ -1037,13 +1038,13 @@ main > section:after {
   display: block;
   width: 0;
   height: 0;
-  border-top: 21px solid transparent;
-  border-bottom: 21px solid transparent;
-  border-left: 21px solid #4b9a5f;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #bcc0ae;
   position: absolute;
-  right: -21px;
+  right: -12px;
   top: 50%;
-  margin-top: -21px;
+  margin-top: -12px;
 }
 
 /* line 2, ../../input/stylesheets/_grid.sass */
@@ -1052,12 +1053,12 @@ ul.grid.distributed {
 }
 
 /* line 4, ../../input/stylesheets/_grid.sass */
-ul.grid, ul.grid ~ ul {
+ul.grid, .columns ul {
   padding-bottom: 0.75em;
   *zoom: 1;
 }
 /* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-ul.grid:after, ul.grid ~ ul:after {
+ul.grid:after, .columns ul:after {
   content: "\0020";
   display: block;
   height: 0;
@@ -1066,7 +1067,7 @@ ul.grid:after, ul.grid ~ ul:after {
   visibility: hidden;
 }
 /* line 7, ../../input/stylesheets/_grid.sass */
-ul.grid > li, ul.grid ~ ul > li {
+ul.grid > li, .columns ul > li {
   float: left;
   width: 20em;
   margin-right: 3em;
@@ -1074,7 +1075,7 @@ ul.grid > li, ul.grid ~ ul > li {
   padding-right: 1em;
   padding-bottom: 0.75em;
   padding-top: 0.75em;
-  margin-bottom: 0.75em;
+  margin-bottom: 1.125em;
   margin-right: 1em;
   position: relative;
   cursor: pointer;
@@ -1085,7 +1086,7 @@ ul.grid > li, ul.grid ~ ul > li {
   background-color: rgba(255, 255, 255, 0.4);
 }
 /* line 21, ../../input/stylesheets/_grid.sass */
-ul.grid > li video, ul.grid ~ ul > li video {
+ul.grid > li video, .columns ul > li video {
   display: block;
   background: #333333;
   clear: both;
@@ -1096,11 +1097,12 @@ ul.grid > li video, ul.grid ~ ul > li video {
   margin-top: 0.375em;
 }
 /* line 30, ../../input/stylesheets/_grid.sass */
-ul.grid > li .play.button, ul.grid ~ ul > li .play.button {
+ul.grid > li .play.button, .columns ul > li .play.button {
   position: absolute;
-  right: 0.7em;
-  top: 0.45em;
+  right: 1em;
+  top: 0.65em;
   opacity: 0;
+  margin: 0;
   -webkit-transition: opacity 0.3s;
   -moz-transition: opacity 0.3s;
   -o-transition: opacity 0.3s;
@@ -1120,11 +1122,11 @@ ul.grid > li .play.button, ul.grid ~ ul > li .play.button {
   text-shadow: rgba(24, 43, 14, 0.6) 0 -1px 0;
 }
 /* line 15, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-ul.grid > li .play.button:hover, ul.grid ~ ul > li .play.button:hover {
+ul.grid > li .play.button:hover, .columns ul > li .play.button:hover {
   text-decoration: none;
 }
 /* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-ul.grid > li .play.button:hover, ul.grid ~ ul > li .play.button:hover {
+ul.grid > li .play.button:hover, .columns ul > li .play.button:hover {
   background-color: rgba(48, 84, 28, 0.6);
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, rgba(65, 115, 38, 0.6)), color-stop(51%, rgba(48, 84, 28, 0.6)));
   background: -webkit-linear-gradient(rgba(65, 115, 38, 0.6) 50%, rgba(48, 84, 28, 0.6) 51%);
@@ -1133,13 +1135,13 @@ ul.grid > li .play.button:hover, ul.grid ~ ul > li .play.button:hover {
   background: linear-gradient(rgba(65, 115, 38, 0.6) 50%, rgba(48, 84, 28, 0.6) 51%);
 }
 /* line 33, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-ul.grid > li .play.button:active, ul.grid ~ ul > li .play.button:active {
+ul.grid > li .play.button:active, .columns ul > li .play.button:active {
   -webkit-box-shadow: rgba(46, 80, 27, 0.6) 0 1px 2px inset;
   -moz-box-shadow: rgba(46, 80, 27, 0.6) 0 1px 2px inset;
   box-shadow: rgba(46, 80, 27, 0.6) 0 1px 2px inset;
 }
 /* line 6, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
-ul.grid > li .play.button.disabled, ul.grid > li .play.button[disabled], ul.grid ~ ul > li .play.button.disabled, ul.grid ~ ul > li .play.button[disabled] {
+ul.grid > li .play.button.disabled, ul.grid > li .play.button[disabled], .columns ul > li .play.button.disabled, .columns ul > li .play.button[disabled] {
   opacity: 0.6;
   background: rgba(63, 111, 37, 0.6);
   cursor: default;
@@ -1147,111 +1149,116 @@ ul.grid > li .play.button.disabled, ul.grid > li .play.button[disabled], ul.grid
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 37, ../../input/stylesheets/_grid.sass */
-ul.grid > li:hover, ul.grid > li.selected, ul.grid ~ ul > li:hover, ul.grid ~ ul > li.selected {
+/* line 38, ../../input/stylesheets/_grid.sass */
+ul.grid > li:hover, ul.grid > li.selected, .columns ul > li:hover, .columns ul > li.selected {
   border-color: #888888;
   background-color: rgba(63, 111, 37, 0.15);
   border-style: solid;
 }
-/* line 42, ../../input/stylesheets/_grid.sass */
-ul.grid > li:hover h2 a, ul.grid > li.selected h2 a, ul.grid ~ ul > li:hover h2 a, ul.grid ~ ul > li.selected h2 a {
+/* line 43, ../../input/stylesheets/_grid.sass */
+ul.grid > li:hover h2 a, ul.grid > li.selected h2 a, .columns ul > li:hover h2 a, .columns ul > li.selected h2 a {
   color: #111111;
 }
-/* line 44, ../../input/stylesheets/_grid.sass */
-ul.grid > li:hover .play.button, ul.grid > li.selected .play.button, ul.grid ~ ul > li:hover .play.button, ul.grid ~ ul > li.selected .play.button {
+/* line 45, ../../input/stylesheets/_grid.sass */
+ul.grid > li:hover .play.button, ul.grid > li.selected .play.button, .columns ul > li:hover .play.button, .columns ul > li.selected .play.button {
   opacity: 1;
 }
-/* line 47, ../../input/stylesheets/_grid.sass */
-ul.grid > li h2, ul.grid ~ ul > li h2 {
+/* line 48, ../../input/stylesheets/_grid.sass */
+ul.grid > li h2, .columns ul > li h2 {
   font-size: 1.25em;
   line-height: 1.2em;
   margin-bottom: 0.375em;
   position: relative;
   display: inline-block;
 }
-/* line 52, ../../input/stylesheets/_grid.sass */
-ul.grid > li h2 a, ul.grid ~ ul > li h2 a {
+/* line 53, ../../input/stylesheets/_grid.sass */
+ul.grid > li h2 a, .columns ul > li h2 a {
   line-height: 0.9em;
 }
-/* line 55, ../../input/stylesheets/_grid.sass */
-ul.grid > li h2 + strong, ul.grid ~ ul > li h2 + strong {
+/* line 56, ../../input/stylesheets/_grid.sass */
+ul.grid > li h2 + strong, .columns ul > li h2 + strong {
   font-family: Georgia;
 }
-/* line 59, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl .tooltip, ul.grid ~ ul > li dl .tooltip {
+/* line 60, ../../input/stylesheets/_grid.sass */
+ul.grid > li dl .tooltip, .columns ul > li dl .tooltip {
   margin-left: 1.5em;
   font-family: Helvetica;
 }
-/* line 62, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl .tooltip.invert, ul.grid ~ ul > li dl .tooltip.invert {
+/* line 63, ../../input/stylesheets/_grid.sass */
+ul.grid > li dl .tooltip.invert, .columns ul > li dl .tooltip.invert {
   margin-left: -12.5em;
   z-index: 101;
   text-align: center;
 }
-/* line 66, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl .tooltip.invert > span, ul.grid ~ ul > li dl .tooltip.invert > span {
+/* line 67, ../../input/stylesheets/_grid.sass */
+ul.grid > li dl .tooltip.invert > span, .columns ul > li dl .tooltip.invert > span {
   padding-left: 4px;
 }
-/* line 71, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
+/* line 72, ../../input/stylesheets/_grid.sass */
+ul.grid > li dl .tooltip > span, .columns ul > li dl .tooltip > span {
   font-size: 1em;
 }
-/* line 73, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
-  padding-left: 1.5em;
-}
-/* line 75, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl dt, ul.grid > li dl dd, ul.grid ~ ul > li dl dt, ul.grid ~ ul > li dl dd {
+/* line 74, ../../input/stylesheets/_grid.sass */
+ul.grid > li dl dt, ul.grid > li dl dd, .columns ul > li dl dt, .columns ul > li dl dd {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 77, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl dt, ul.grid ~ ul > li dl dt {
+/* line 76, ../../input/stylesheets/_grid.sass */
+ul.grid > li dl dt, .columns ul > li dl dt {
   float: left;
   width: 10em;
   color: #555555;
 }
-/* line 81, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl dd, ul.grid ~ ul > li dl dd {
+/* line 80, ../../input/stylesheets/_grid.sass */
+ul.grid > li dl dd, .columns ul > li dl dd {
   font-family: Georgia;
   margin-left: 11em;
 }
-/* line 84, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl dd span[tooltip], ul.grid ~ ul > li dl dd span[tooltip] {
+/* line 83, ../../input/stylesheets/_grid.sass */
+ul.grid > li dl dd span[tooltip], .columns ul > li dl dd span[tooltip] {
   border-bottom: 1px dotted #333333;
 }
-/* line 88, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl dd.tooltipped:after, ul.grid ~ ul > li dl dd.tooltipped:after {
+/* line 87, ../../input/stylesheets/_grid.sass */
+ul.grid > li dl dd.tooltipped:after, .columns ul > li dl dd.tooltipped:after {
   color: #eeeeee;
   text-shadow: 0px 1px 0px #333333;
 }
-/* line 93, ../../input/stylesheets/_grid.sass */
-ul.grid ~ ul, ul.grid ~ ul ~ ul {
-  width: 32.6666%;
+
+/* line 92, ../../input/stylesheets/_grid.sass */
+.columns {
+  margin: 0 -1em;
+}
+/* line 94, ../../input/stylesheets/_grid.sass */
+.columns ul {
+  width: 33.333%;
   float: left;
 }
-/* line 96, ../../input/stylesheets/_grid.sass */
-ul.grid ~ ul + ul, ul.grid ~ ul ~ ul + ul {
-  margin-left: 1%;
-}
 /* line 98, ../../input/stylesheets/_grid.sass */
-ul.grid ~ ul > li, ul.grid ~ ul ~ ul > li {
+.columns ul + ul > li {
+  margin-left: 1em;
+}
+/* line 101, ../../input/stylesheets/_grid.sass */
+.columns ul + ul + ul > li {
+  margin-left: 1em;
+}
+/* line 103, ../../input/stylesheets/_grid.sass */
+.columns ul > li {
   float: none;
   width: auto;
   margin-right: 0;
 }
 
 @media screen and (max-width: 1124px) {
-  /* line 104, ../../input/stylesheets/_grid.sass */
-  ul.grid + ul {
-    width: 49.5%;
+  /* line 109, ../../input/stylesheets/_grid.sass */
+  .columns ul {
+    width: 50%;
   }
-  /* line 106, ../../input/stylesheets/_grid.sass */
-  ul.grid + ul + ul {
-    width: 49.5%;
+  /* line 111, ../../input/stylesheets/_grid.sass */
+  .columns ul + ul {
+    width: 50%;
   }
-  /* line 108, ../../input/stylesheets/_grid.sass */
-  ul.grid + ul + ul + ul {
+  /* line 113, ../../input/stylesheets/_grid.sass */
+  .columns ul + ul + ul {
     display: none;
   }
 }

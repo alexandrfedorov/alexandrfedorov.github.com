@@ -1,7 +1,7 @@
 ul.grid
   &.distributed
     :padding 0
-ul.grid, ul.grid ~ ul
+ul.grid, .columns ul
   +padding-trailer(0.5)
   +legacy-pie-clearfix
   > li
@@ -12,7 +12,7 @@ ul.grid, ul.grid ~ ul
     :padding-right 1em
     +padding-trailer(0.5)
     +padding-leader(0.5)
-    +margin-trailer(0.5)
+    +margin-trailer(0.75)
     :margin-right 1em
     :position relative
     :cursor pointer
@@ -29,9 +29,10 @@ ul.grid, ul.grid ~ ul
       +margin-leader(0.25)
     .play.button
       :position absolute
-      :right 0.7em
-      :top 0.45em
+      :right 1em
+      :top 0.65em
       :opacity 0
+      :margin 0
       +transition(opacity 0.3s)
       +sassy-button-gradient("glass", rgba(#3f6f25, 0.6))
     &:hover, &.selected
@@ -70,8 +71,6 @@ ul.grid, ul.grid ~ ul
         :font-family Helvetica
         > span
           :font-size 1em
-        > span
-          :padding-left 1.5em
       dt, dd
         +adjust-font-size-to(14px)
       dt
@@ -90,20 +89,26 @@ ul.grid, ul.grid ~ ul
             +text-shadow(0px 1px 0px #333)
 
 
-  ~ ul
-    :width 32.6666%
+.columns
+  :margin 0 -1em
+  ul
+    :width 33.333%
     :float left
     + ul
-      :margin-left 1%
+      > li
+        :margin-left 1em
+      + ul
+        > li
+          :margin-left 1em
     > li
       :float none
       :width auto
       :margin-right 0
 
 @media screen and (max-width: 1124px)
-  ul.grid + ul
-    :width 49.5%
+  .columns ul
+    :width 50%
     + ul
-      :width 49.5%
+      :width 50%
       + ul
         :display none
