@@ -1066,8 +1066,9 @@ ul.grid > li, ul.grid ~ ul > li {
   -moz-transition: border-color 0.3s, border-radius 0.3s, background-color 0.3s;
   -o-transition: border-color 0.3s, border-radius 0.3s, background-color 0.3s;
   transition: border-color 0.3s, border-radius 0.3s, background-color 0.3s;
+  background-color: rgba(255, 255, 255, 0.2);
 }
-/* line 22, ../../input/stylesheets/_grid.sass */
+/* line 23, ../../input/stylesheets/_grid.sass */
 ul.grid > li video, ul.grid ~ ul > li video {
   display: block;
   background: #333333;
@@ -1077,7 +1078,7 @@ ul.grid > li video, ul.grid ~ ul > li video {
   width: 100%;
   margin-bottom: 0.75em;
 }
-/* line 30, ../../input/stylesheets/_grid.sass */
+/* line 31, ../../input/stylesheets/_grid.sass */
 ul.grid > li .play.button, ul.grid ~ ul > li .play.button {
   position: absolute;
   right: 0.25em;
@@ -1088,7 +1089,7 @@ ul.grid > li .play.button, ul.grid ~ ul > li .play.button {
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-/* line 36, ../../input/stylesheets/_grid.sass */
+/* line 37, ../../input/stylesheets/_grid.sass */
 ul.grid > li:hover, ul.grid > li.selected, ul.grid ~ ul > li:hover, ul.grid ~ ul > li.selected {
   border-color: #888888;
   background-color: rgba(63, 111, 37, 0.1);
@@ -1099,11 +1100,11 @@ ul.grid > li:hover, ul.grid > li.selected, ul.grid ~ ul > li:hover, ul.grid ~ ul
   -o-border-radius: 0.35em 1.4em 0.35em 0.35em;
   border-radius: 0.35em 1.4em 0.35em 0.35em;
 }
-/* line 40, ../../input/stylesheets/_grid.sass */
+/* line 41, ../../input/stylesheets/_grid.sass */
 ul.grid > li:hover .play.button, ul.grid > li.selected .play.button, ul.grid ~ ul > li:hover .play.button, ul.grid ~ ul > li.selected .play.button {
   opacity: 1;
 }
-/* line 44, ../../input/stylesheets/_grid.sass */
+/* line 45, ../../input/stylesheets/_grid.sass */
 ul.grid > li h2, ul.grid ~ ul > li h2 {
   font-size: 1.25em;
   line-height: 1.2em;
@@ -1111,55 +1112,55 @@ ul.grid > li h2, ul.grid ~ ul > li h2 {
   position: relative;
   display: inline-block;
 }
-/* line 49, ../../input/stylesheets/_grid.sass */
+/* line 50, ../../input/stylesheets/_grid.sass */
 ul.grid > li h2 a, ul.grid ~ ul > li h2 a {
   line-height: 0.9em;
 }
-/* line 52, ../../input/stylesheets/_grid.sass */
+/* line 53, ../../input/stylesheets/_grid.sass */
 ul.grid > li h2 + strong, ul.grid ~ ul > li h2 + strong {
   font-family: Georgia;
 }
-/* line 56, ../../input/stylesheets/_grid.sass */
+/* line 57, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip, ul.grid ~ ul > li dl .tooltip {
   margin-left: -1.3em;
   font-family: Helvetica;
 }
-/* line 58, ../../input/stylesheets/_grid.sass */
+/* line 59, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.top, ul.grid ~ ul > li dl .tooltip.top {
   margin-left: 1.15em;
   margin-top: 12px;
   z-index: 101;
   text-align: center;
 }
-/* line 63, ../../input/stylesheets/_grid.sass */
+/* line 64, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.top > span, ul.grid ~ ul > li dl .tooltip.top > span {
   padding-left: 4px;
 }
-/* line 66, ../../input/stylesheets/_grid.sass */
+/* line 67, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
   font-size: 1em;
 }
-/* line 68, ../../input/stylesheets/_grid.sass */
+/* line 69, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
   padding-left: 1.5em;
 }
-/* line 70, ../../input/stylesheets/_grid.sass */
+/* line 71, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid > li dl dd, ul.grid ~ ul > li dl dt, ul.grid ~ ul > li dl dd {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 72, ../../input/stylesheets/_grid.sass */
+/* line 73, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid ~ ul > li dl dt {
   float: left;
   width: 10em;
   color: #555555;
 }
-/* line 76, ../../input/stylesheets/_grid.sass */
+/* line 77, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd, ul.grid ~ ul > li dl dd {
   font-family: Georgia;
   margin-left: 11em;
 }
-/* line 80, ../../input/stylesheets/_grid.sass */
+/* line 81, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd[tooltip]:after, ul.grid ~ ul > li dl dd[tooltip]:after {
   font-family: "fontello";
   font-style: normal;
@@ -1182,21 +1183,21 @@ ul.grid > li dl dd[tooltip]:after, ul.grid ~ ul > li dl dd[tooltip]:after {
   position: relative;
   z-index: 100;
 }
-/* line 90, ../../input/stylesheets/_grid.sass */
+/* line 91, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd.tooltipped:after, ul.grid ~ ul > li dl dd.tooltipped:after {
   color: #eeeeee;
   text-shadow: 0px 1px 0px #333333;
 }
-/* line 95, ../../input/stylesheets/_grid.sass */
+/* line 96, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul, ul.grid ~ ul ~ ul {
   width: 32.6666%;
   float: left;
 }
-/* line 98, ../../input/stylesheets/_grid.sass */
+/* line 99, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul + ul, ul.grid ~ ul ~ ul + ul {
   margin-left: 1%;
 }
-/* line 100, ../../input/stylesheets/_grid.sass */
+/* line 101, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul > li, ul.grid ~ ul ~ ul > li {
   float: none;
   width: auto;
@@ -1204,15 +1205,15 @@ ul.grid ~ ul > li, ul.grid ~ ul ~ ul > li {
 }
 
 @media screen and (max-width: 1124px) {
-  /* line 106, ../../input/stylesheets/_grid.sass */
+  /* line 107, ../../input/stylesheets/_grid.sass */
   ul.grid + ul {
     width: 49.5%;
   }
-  /* line 108, ../../input/stylesheets/_grid.sass */
+  /* line 109, ../../input/stylesheets/_grid.sass */
   ul.grid + ul + ul {
     width: 49.5%;
   }
-  /* line 110, ../../input/stylesheets/_grid.sass */
+  /* line 111, ../../input/stylesheets/_grid.sass */
   ul.grid + ul + ul + ul {
     display: none;
   }
