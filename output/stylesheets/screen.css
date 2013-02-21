@@ -137,6 +137,15 @@ header > section, main > section, .player > section, .contact > section, footer,
 /* line 63, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote a {
   line-height: 0.85em;
+  color: inherit;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+}
+/* line 68, ../../input/stylesheets/screen.sass */
+.introduction > section blockquote:hover a {
+  color: #007511;
 }
 
 /* line 36, ../../input/stylesheets/_buttons.sass */
@@ -471,6 +480,7 @@ body.playing.fixed .player {
 /* line 81, ../../input/stylesheets/_player.sass */
 .play.button:before, .player .button:before {
   content: "\25b6";
+  margin-right: -2px;
 }
 /* line 15, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
 .play.button:hover, .player .button:hover {
@@ -623,18 +633,19 @@ menu .russian.language.icon {
   background: url(../images/russian.png) center top no-repeat;
   background-size: 16px 16px;
   opacity: 0.7;
+  display: inline-block;
 }
 
-/* line 67, ../../input/stylesheets/_header.sass */
+/* line 68, ../../input/stylesheets/_header.sass */
 main {
   display: block;
 }
-/* line 69, ../../input/stylesheets/_header.sass */
+/* line 70, ../../input/stylesheets/_header.sass */
 main menu {
   margin-bottom: 1.5em;
 }
 
-/* line 73, ../../input/stylesheets/_header.sass */
+/* line 74, ../../input/stylesheets/_header.sass */
 header {
   background: white url(../images/gplaypattern.png);
   padding-top: 1.5em;
@@ -676,17 +687,17 @@ header::after {
   -o-transform: skew(15deg) rotate(6deg);
   transform: skew(15deg) rotate(6deg);
 }
-/* line 79, ../../input/stylesheets/_header.sass */
+/* line 80, ../../input/stylesheets/_header.sass */
 header menu > li.selected a {
   color: #666666;
 }
-/* line 81, ../../input/stylesheets/_header.sass */
+/* line 82, ../../input/stylesheets/_header.sass */
 header h1 {
   white-space: nowrap;
   font-size: 1.5em;
   line-height: 1em;
 }
-/* line 84, ../../input/stylesheets/_header.sass */
+/* line 85, ../../input/stylesheets/_header.sass */
 header h1 span {
   color: #666666;
 }
@@ -943,9 +954,8 @@ main > section:after {
   opacity: 0;
   display: block;
 }
-/* line 27, ../../input/stylesheets/_main.sass */
-.tooltip > span {
-  display: block;
+/* line 29, ../../input/stylesheets/_main.sass */
+.tooltip:not(.invert) > span {
   position: relative;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -954,14 +964,9 @@ main > section:after {
   border-radius: 6px;
   background: #5aaf6f;
   border: 4px solid #4b9a5f;
-  color: white;
-  text-shadow: 0 1px 0px #333333;
-  padding: 4px;
-  font-size: 0.875em;
-  line-height: 1.71429em;
 }
 /* line 53, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-recipes-0.3.0/stylesheets/recipes/ui/_tooltip.scss */
-.tooltip > span:after {
+.tooltip:not(.invert) > span:after {
   content: "";
   position: absolute;
   display: block;
@@ -976,7 +981,7 @@ main > section:after {
   margin-top: -15px;
 }
 /* line 84, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-recipes-0.3.0/stylesheets/recipes/ui/_tooltip.scss */
-.tooltip > span:before {
+.tooltip:not(.invert) > span:before {
   content: "";
   position: absolute;
   display: block;
@@ -990,8 +995,17 @@ main > section:after {
   top: 50%;
   margin-top: -21px;
 }
-/* line 35, ../../input/stylesheets/_main.sass */
-.tooltip.top > span {
+/* line 31, ../../input/stylesheets/_main.sass */
+.tooltip > span {
+  display: block;
+  color: white;
+  text-shadow: 0 1px 0px #333333;
+  padding: 5px;
+  font-size: 0.875em;
+  line-height: 1.71429em;
+}
+/* line 38, ../../input/stylesheets/_main.sass */
+.tooltip.invert > span {
   position: relative;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -1002,34 +1016,34 @@ main > section:after {
   border: 4px solid #4b9a5f;
 }
 /* line 53, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-recipes-0.3.0/stylesheets/recipes/ui/_tooltip.scss */
-.tooltip.top > span:after {
+.tooltip.invert > span:after {
   content: "";
   position: absolute;
   display: block;
   width: 0;
   height: 0;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid #5aaf6f;
-  border-left: 15px solid transparent;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #5aaf6f;
   position: absolute;
-  top: -15px;
-  left: 50%;
-  margin-left: -15px;
+  right: -15px;
+  top: 50%;
+  margin-top: -15px;
 }
 /* line 84, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-recipes-0.3.0/stylesheets/recipes/ui/_tooltip.scss */
-.tooltip.top > span:before {
+.tooltip.invert > span:before {
   content: "";
   position: absolute;
   display: block;
   width: 0;
   height: 0;
-  border-right: 21px solid transparent;
-  border-bottom: 21px solid #4b9a5f;
-  border-left: 21px solid transparent;
+  border-top: 21px solid transparent;
+  border-bottom: 21px solid transparent;
+  border-left: 21px solid #4b9a5f;
   position: absolute;
-  top: -21px;
-  left: 50%;
-  margin-left: -21px;
+  right: -21px;
+  top: 50%;
+  margin-top: -21px;
 }
 
 /* line 2, ../../input/stylesheets/_grid.sass */
@@ -1056,9 +1070,8 @@ ul.grid > li, ul.grid ~ ul > li {
   float: left;
   width: 20em;
   margin-right: 3em;
-  border: 2px solid #bbbbbb;
   padding-left: 1em;
-  padding-right: 0.5em;
+  padding-right: 1em;
   padding-bottom: 0.75em;
   padding-top: 0.75em;
   margin-bottom: 0.75em;
@@ -1069,9 +1082,9 @@ ul.grid > li, ul.grid ~ ul > li {
   -moz-transition: border-color 0.3s, border-radius 0.3s, background-color 0.3s;
   -o-transition: border-color 0.3s, border-radius 0.3s, background-color 0.3s;
   transition: border-color 0.3s, border-radius 0.3s, background-color 0.3s;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.4);
 }
-/* line 22, ../../input/stylesheets/_grid.sass */
+/* line 21, ../../input/stylesheets/_grid.sass */
 ul.grid > li video, ul.grid ~ ul > li video {
   display: block;
   background: #333333;
@@ -1080,34 +1093,71 @@ ul.grid > li video, ul.grid ~ ul > li video {
   display: block;
   width: 100%;
   margin-bottom: 0.75em;
+  margin-top: 0.375em;
 }
 /* line 30, ../../input/stylesheets/_grid.sass */
 ul.grid > li .play.button, ul.grid ~ ul > li .play.button {
   position: absolute;
-  right: 0.25em;
-  top: 0.5em;
+  right: 0.7em;
+  top: 0.45em;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   -moz-transition: opacity 0.3s;
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#993F6F25', endColorstr='#9914230C');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, rgba(80, 142, 47, 0.6)), color-stop(51%, rgba(63, 111, 37, 0.6)));
+  background: -webkit-linear-gradient(rgba(80, 142, 47, 0.6) 50%, rgba(63, 111, 37, 0.6) 51%);
+  background: -moz-linear-gradient(rgba(80, 142, 47, 0.6) 50%, rgba(63, 111, 37, 0.6) 51%);
+  background: -o-linear-gradient(rgba(80, 142, 47, 0.6) 50%, rgba(63, 111, 37, 0.6) 51%);
+  background: linear-gradient(rgba(80, 142, 47, 0.6) 50%, rgba(63, 111, 37, 0.6) 51%);
+  -webkit-box-shadow: rgba(114, 194, 71, 0.6) 0 1px 0 inset;
+  -moz-box-shadow: rgba(114, 194, 71, 0.6) 0 1px 0 inset;
+  box-shadow: rgba(114, 194, 71, 0.6) 0 1px 0 inset;
+  border: 1px solid rgba(52, 92, 31, 0.6);
+  color: white;
+  text-shadow: rgba(24, 43, 14, 0.6) 0 -1px 0;
 }
-/* line 36, ../../input/stylesheets/_grid.sass */
+/* line 15, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+ul.grid > li .play.button:hover, ul.grid ~ ul > li .play.button:hover {
+  text-decoration: none;
+}
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+ul.grid > li .play.button:hover, ul.grid ~ ul > li .play.button:hover {
+  background-color: rgba(48, 84, 28, 0.6);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, rgba(65, 115, 38, 0.6)), color-stop(51%, rgba(48, 84, 28, 0.6)));
+  background: -webkit-linear-gradient(rgba(65, 115, 38, 0.6) 50%, rgba(48, 84, 28, 0.6) 51%);
+  background: -moz-linear-gradient(rgba(65, 115, 38, 0.6) 50%, rgba(48, 84, 28, 0.6) 51%);
+  background: -o-linear-gradient(rgba(65, 115, 38, 0.6) 50%, rgba(48, 84, 28, 0.6) 51%);
+  background: linear-gradient(rgba(65, 115, 38, 0.6) 50%, rgba(48, 84, 28, 0.6) 51%);
+}
+/* line 33, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+ul.grid > li .play.button:active, ul.grid ~ ul > li .play.button:active {
+  -webkit-box-shadow: rgba(46, 80, 27, 0.6) 0 1px 2px inset;
+  -moz-box-shadow: rgba(46, 80, 27, 0.6) 0 1px 2px inset;
+  box-shadow: rgba(46, 80, 27, 0.6) 0 1px 2px inset;
+}
+/* line 6, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+ul.grid > li .play.button.disabled, ul.grid > li .play.button[disabled], ul.grid ~ ul > li .play.button.disabled, ul.grid ~ ul > li .play.button[disabled] {
+  opacity: 0.6;
+  background: rgba(63, 111, 37, 0.6);
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 37, ../../input/stylesheets/_grid.sass */
 ul.grid > li:hover, ul.grid > li.selected, ul.grid ~ ul > li:hover, ul.grid ~ ul > li.selected {
   border-color: #888888;
-  background-color: rgba(63, 111, 37, 0.1);
+  background-color: rgba(63, 111, 37, 0.15);
   border-style: solid;
-  -webkit-border-radius: 0.35em 1.4em 0.35em 0.35em;
-  -moz-border-radius: 0.35em 1.4em 0.35em 0.35em;
-  -ms-border-radius: 0.35em 1.4em 0.35em 0.35em;
-  -o-border-radius: 0.35em 1.4em 0.35em 0.35em;
-  border-radius: 0.35em 1.4em 0.35em 0.35em;
 }
-/* line 41, ../../input/stylesheets/_grid.sass */
+/* line 42, ../../input/stylesheets/_grid.sass */
 ul.grid > li:hover h2 a, ul.grid > li.selected h2 a, ul.grid ~ ul > li:hover h2 a, ul.grid ~ ul > li.selected h2 a {
   color: #111111;
 }
-/* line 43, ../../input/stylesheets/_grid.sass */
+/* line 44, ../../input/stylesheets/_grid.sass */
 ul.grid > li:hover .play.button, ul.grid > li.selected .play.button, ul.grid ~ ul > li:hover .play.button, ul.grid ~ ul > li.selected .play.button {
   opacity: 1;
 }
@@ -1115,7 +1165,7 @@ ul.grid > li:hover .play.button, ul.grid > li.selected .play.button, ul.grid ~ u
 ul.grid > li h2, ul.grid ~ ul > li h2 {
   font-size: 1.25em;
   line-height: 1.2em;
-  margin-bottom: 0.75em;
+  margin-bottom: 0.375em;
   position: relative;
   display: inline-block;
 }
@@ -1129,82 +1179,62 @@ ul.grid > li h2 + strong, ul.grid ~ ul > li h2 + strong {
 }
 /* line 59, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip, ul.grid ~ ul > li dl .tooltip {
-  margin-left: -1.3em;
+  margin-left: 1.5em;
   font-family: Helvetica;
 }
-/* line 61, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl .tooltip.top, ul.grid ~ ul > li dl .tooltip.top {
-  margin-left: 1.15em;
-  margin-top: 12px;
+/* line 62, ../../input/stylesheets/_grid.sass */
+ul.grid > li dl .tooltip.invert, ul.grid ~ ul > li dl .tooltip.invert {
+  margin-left: -12.5em;
   z-index: 101;
   text-align: center;
 }
 /* line 66, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl .tooltip.top > span, ul.grid ~ ul > li dl .tooltip.top > span {
+ul.grid > li dl .tooltip.invert > span, ul.grid ~ ul > li dl .tooltip.invert > span {
   padding-left: 4px;
-}
-/* line 69, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
-  font-size: 1em;
 }
 /* line 71, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
-  padding-left: 1.5em;
+  font-size: 1em;
 }
 /* line 73, ../../input/stylesheets/_grid.sass */
+ul.grid > li dl .tooltip > span, ul.grid ~ ul > li dl .tooltip > span {
+  padding-left: 1.5em;
+}
+/* line 75, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid > li dl dd, ul.grid ~ ul > li dl dt, ul.grid ~ ul > li dl dd {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 75, ../../input/stylesheets/_grid.sass */
+/* line 77, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid ~ ul > li dl dt {
   float: left;
   width: 10em;
   color: #555555;
 }
-/* line 79, ../../input/stylesheets/_grid.sass */
+/* line 81, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd, ul.grid ~ ul > li dl dd {
   font-family: Georgia;
   margin-left: 11em;
 }
-/* line 83, ../../input/stylesheets/_grid.sass */
-ul.grid > li dl dd[tooltip]:after, ul.grid ~ ul > li dl dd[tooltip]:after {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0.2em;
-  text-align: center;
-  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
-  -webkit-transition: color 0.4s;
-  -moz-transition: color 0.4s;
-  -o-transition: color 0.4s;
-  transition: color 0.4s;
-  color: #777777;
-  float: right;
-  margin-left: 0.3em;
-  content: "\2139";
-  position: relative;
-  z-index: 100;
+/* line 84, ../../input/stylesheets/_grid.sass */
+ul.grid > li dl dd span[tooltip], ul.grid ~ ul > li dl dd span[tooltip] {
+  border-bottom: 1px dotted #333333;
 }
-/* line 93, ../../input/stylesheets/_grid.sass */
+/* line 88, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd.tooltipped:after, ul.grid ~ ul > li dl dd.tooltipped:after {
   color: #eeeeee;
   text-shadow: 0px 1px 0px #333333;
 }
-/* line 98, ../../input/stylesheets/_grid.sass */
+/* line 93, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul, ul.grid ~ ul ~ ul {
   width: 32.6666%;
   float: left;
 }
-/* line 101, ../../input/stylesheets/_grid.sass */
+/* line 96, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul + ul, ul.grid ~ ul ~ ul + ul {
   margin-left: 1%;
 }
-/* line 103, ../../input/stylesheets/_grid.sass */
+/* line 98, ../../input/stylesheets/_grid.sass */
 ul.grid ~ ul > li, ul.grid ~ ul ~ ul > li {
   float: none;
   width: auto;
@@ -1212,15 +1242,15 @@ ul.grid ~ ul > li, ul.grid ~ ul ~ ul > li {
 }
 
 @media screen and (max-width: 1124px) {
-  /* line 109, ../../input/stylesheets/_grid.sass */
+  /* line 104, ../../input/stylesheets/_grid.sass */
   ul.grid + ul {
     width: 49.5%;
   }
-  /* line 111, ../../input/stylesheets/_grid.sass */
+  /* line 106, ../../input/stylesheets/_grid.sass */
   ul.grid + ul + ul {
     width: 49.5%;
   }
-  /* line 113, ../../input/stylesheets/_grid.sass */
+  /* line 108, ../../input/stylesheets/_grid.sass */
   ul.grid + ul + ul + ul {
     display: none;
   }

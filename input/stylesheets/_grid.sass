@@ -8,9 +8,8 @@ ul.grid, ul.grid ~ ul
     :float left
     :width 20em
     :margin-right 3em
-    :border 2px solid #bbb
     :padding-left 1em
-    :padding-right 0.5em
+    :padding-right 1em
     +padding-trailer(0.5)
     +padding-leader(0.5)
     +margin-trailer(0.5)
@@ -18,7 +17,7 @@ ul.grid, ul.grid ~ ul
     :position relative
     :cursor pointer
     +transition(border-color 0.3s, border-radius 0.3s, background-color 0.3s)
-    :background-color rgba(#fff, 0.2)
+    :background-color rgba(#fff, 0.4)
     video
       :display block
       :background #333
@@ -27,26 +26,27 @@ ul.grid, ul.grid ~ ul
       :display block
       :width 100%
       +margin-trailer(0.5)
+      +margin-leader(0.25)
     .play.button
       :position absolute
-      :right 0.25em
-      :top 0.5em
+      :right 0.7em
+      :top 0.45em
       :opacity 0
       +transition(opacity 0.3s)
+      +sassy-button-gradient("glass", rgba(#3f6f25, 0.6))
     &:hover, &.selected
       :border-color #888
-      :background-color rgba(#3f6f25, 0.1)
+      :background-color rgba(#3f6f25, 0.15)
       :border-style solid
       h2
         a
           :color #111
       .play.button
         :opacity 1
-      +border-radius(0.35em 1.4em 0.35em 0.35em)
 
     h2
       +adjust-font-size-to(20px)
-      +margin-trailer(0.5)
+      +margin-trailer(0.25)
       :position relative
       :display inline-block
       a
@@ -57,14 +57,16 @@ ul.grid, ul.grid ~ ul
 
     dl
       .tooltip
-        :margin-left -1.3em
-        &.top
-          :margin-left 1.15em
-          :margin-top 12px
+        :margin-left 1.5em
+
+        &.invert
+          :margin-left -12.5em
           :z-index 101
           :text-align center
           > span
             :padding-left 4px
+
+
         :font-family Helvetica
         > span
           :font-size 1em
@@ -79,16 +81,9 @@ ul.grid, ul.grid ~ ul
       dd
         :font-family Georgia
         :margin-left 11em
-        &[tooltip]
-          &:after
-            +iconed
-            +transition(color 0.4s)
-            :color #777
-            :float right
-            :margin-left 0.3em
-            :content '\2139'
-            :position relative
-            :z-index 100
+        span[tooltip]
+          :border-bottom 1px dotted #333
+
         &.tooltipped
           &:after
             :color #eee

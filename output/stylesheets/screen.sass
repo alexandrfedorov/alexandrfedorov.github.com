@@ -62,6 +62,11 @@ header > section, main > section, .player > section, .contact > section, footer,
       color: #7a7a7a
     a
       :line-height 0.85em
+      :color inherit
+      +transition(color 0.4s)
+    &:hover
+      a
+        :color darken(#007f12, 2%)
 
 @import buttons
 @import icons

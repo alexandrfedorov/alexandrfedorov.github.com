@@ -146,7 +146,11 @@ var all = document.body.getElementsByTagName('*');
 for (var i = 0, el; el = all[i++];) {
 	var title = el.getAttribute('title');
 	if (title) {
-		el.setAttribute('tooltip', title);
+		var span = document.createElement('span');
+		for (var j = el.childNodes.length, child; child = el.childNodes[--j];)
+			span.appendChild(child);
+		el.appendChild(span);
+		span.setAttribute('tooltip', title);
 		el.removeAttribute('title')
 	}
 }
@@ -171,12 +175,12 @@ document.body.onmouseover = function(e) {
 						offset += p.offsetLeft
 					}
 				if (el.offsetLeft + el.offsetWidth + offset + tooltip.offsetWidth > window.innerWidth) {
-					if (tooltip.className.indexOf('top') == -1)
-					tooltip.className += ' top'
-					tooltip.style.top = el.offsetTop + el.offsetHeight
-					tooltip.style.left = el.offsetLeft + el.offsetWidth - tooltip.offsetWidth;
+					if (tooltip.className.indexOf('invert') == -1)
+					tooltip.className += ' invert'
+					tooltip.style.top = el.offsetTop + el.offsetHeight / 2 - tooltip.offsetHeight / 2 + 'px';
+					tooltip.style.left = el.offsetLeft - tooltip.offsetWidth;
 				} else {
-					tooltip.className = tooltip.className.replace(' top', '')
+					tooltip.className = tooltip.className.replace(' invert', '')
 					tooltip.style.top = el.offsetTop + el.offsetHeight / 2 - tooltip.offsetHeight / 2 + 'px';
 					tooltip.style.left = el.offsetLeft + el.offsetWidth + 'px';	
 				}
