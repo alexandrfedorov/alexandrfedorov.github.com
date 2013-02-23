@@ -273,7 +273,7 @@ function play(id, element) {
 		if (played) hidePlayer(played);
 		played = element;
 		showPlayer(played);
-		if (marginTop && played.className.indexOf('audo') > -1)
+		if (marginTop && played.className.indexOf('audio') > -1)
 			marginTop = 0;
 		if (!api) {
 			api  = document.createElement('script');
