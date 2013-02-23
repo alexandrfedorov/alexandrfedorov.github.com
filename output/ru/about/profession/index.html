@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>
-      Резюме
+      О профессии
       &mdash; Александр Федоров
     </title>
     <base href='/' />
@@ -17,7 +17,7 @@
           document.onclick = function(e) {
             for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
               var href = el.getAttribute('href');
-              if (href) {
+              if (href && el.host == location.host) {
                 // convert absolute path into relative path
                 if (href.charAt(0) == '/')
                   href = href.substring(1);
@@ -30,7 +30,6 @@
                     href += '/'
                   href += 'index.html';
                 }
-                  console.error(href)
                 if (href != el.getAttribute('href')) {
                   el.setAttribute('href', href);
                   e.preventDefault();
@@ -68,7 +67,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href='/about/experience'>
+                  <a href='/about'>
                     Резюме
                   </a>
                 </li>
@@ -231,12 +230,12 @@
           </a>
         </li>
         <li>
-          <a href='/about/experience'>
+          <a href='/about'>
             Резюме
           </a>
         </li>
         <li>
-          <a class='english language' href='/en'>in english</a><a class='english language icon' href='/en'></a></li>
+          <a class='english language' href="/en/about/profession/index.html">in english</a><a class='english language icon' href="/en/about/profession/index.html"></a></li>
       </menu>
     </footer>
   </body>

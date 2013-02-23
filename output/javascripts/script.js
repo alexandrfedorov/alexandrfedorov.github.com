@@ -71,7 +71,29 @@ document.body.onclick = function(e) {
 				}
 				return false;
 		}
+		var href = el.getAttribute('href');
+		if (href && href.indexOf('youtube.com') > -1) {
+			var id = (href.match(/v=(.*?)(?:$|\&|\?)/) || [null, null])[1];
+			for (var parent = el; parent = parent.parentNode;) 
+				if (parent && parent.tagName == 'LI') break;
+			if (id && parent) {
+				play(id, parent);
+				return false;
+			}
+		} else {
+			if (el.tagName == 'LI' && el.className.match(/video|audio/)) {
+				var link = el.getElementsByTagName('a')[0];
+				if (!link) continue;
+				var href = link.getAttribute('href');
+				var id = (href.match(/v=(.*?)(?:$|\&|\?)/) || [null, null])[1];
+				if (id) {
+					play(id, el);
+					return false
+				}
+			}
+		}
 	}
+
 }
 
 
@@ -125,6 +147,8 @@ window.onresize = function() {
 			min.appendChild(child);
 		}
 	}
+	if (played)
+		setPlayer(played)
 }
 
 tooltip = document.createElement('div');
@@ -146,6 +170,16 @@ for (var i = 0, el; el = all[i++];) {
 	}
 }
 
+getElementOffset = function(element) {
+	var x = 0;
+	var y = 0;
+	for (var p = element; p = p.parentNode;)
+		if (getComputedStyleShim(p, 'position', 'position') == 'relative') {
+			x += p.offsetLeft
+			y += p.offsetTop;
+		}
+	return {x: x, y: y};
+}
 document.body.onmouseover = function(e) {
 	for (var el = e.target; el; el = el.parentNode) {
 		if (el.nodeType != 1) continue;
@@ -160,11 +194,7 @@ document.body.onmouseover = function(e) {
 				el.className += ' tooltipped';
 				tooltipped = el;
 				el.appendChild(tooltip)
-				var offset = 0;
-				for (var p = el; p = p.parentNode;)
-					if (getComputedStyleShim(p, 'position', 'position') == 'relative') {
-						offset += p.offsetLeft
-					}
+				var offset = getElementOffset(el).x;
 				if (el.offsetLeft + el.offsetWidth + offset + tooltip.offsetWidth > window.innerWidth) {
 					if (tooltip.className.indexOf('invert') == -1)
 					tooltip.className += ' invert'
@@ -202,4 +232,110 @@ document.body.onmouseout = function(e) {
 			break;
 		}
 	}
+}
+
+function showPlayer(played) {
+	wrap.className += ' visible';
+	played.className += ' selected';
+	document.body.className += ' playing-' + (played.className.indexOf('audio') > -1 ? 'audio' : 'video');
+}
+
+function hidePlayer(played) {
+	wrap.className = wrap.className.replace(' visible', '');
+  var grid = document.getElementsByClassName('columns')[0];
+  if (grid) grid.style.marginTop = 0;
+	document.body.className = document.body.className.replace(' playing-' + (played.className.indexOf('audio') > -1 ? 'audio' : 'video'), '')
+	played.className = played.className.replace(' selected', '')
+}
+
+var player, embed, playing, api, played
+function play(id, element) {
+	if (played == element && id == playing) {
+		if (playing)
+			player.stopVideo()
+		hidePlayer(played);
+		marginTop = 0;
+		playing = played = null;
+		return 
+	} else {
+		if (!embed) {
+			wrap = document.createElement('div');
+			wrap.className = 'player wrap'
+			embed = document.createElement('div');
+			embed.setAttribute('id', 'player');
+			wrap.appendChild(embed);
+			document.body.appendChild(wrap);
+		}
+		playing = id;
+		if (played) hidePlayer(played);
+		played = element;
+		if (!api) {
+			api  = document.createElement('script');
+			api.src = 'http://www.youtube.com/iframe_api';
+			document.body.appendChild(api);
+      onYouTubeIframeAPIReady = function() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: playing || id,
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          },
+			    playerVars: { 'autohidze': 0 },
+        });
+      }
+      function onPlayerReady(event) {
+    	  event.target.playVideo();
+      	embed = document.getElementById('player')
+      	setPlayer(element)
+      }
+      function onPlayerStateChange(event) {
+      	switch (event.data) {
+      		case -1:
+      			if (played && played.className.indexOf('selected') == -1)
+							showPlayer(played);
+      			break;
+      		case 2:
+      			if (played && played.className.indexOf('selected') > -1) {
+	      			hidePlayer(played);
+	      			marginTop = 0;
+	      		}
+      			playing = null;
+      			played = null;
+      			break;
+      	}
+        if (event.data == YT.PlayerState.PLAYING) {
+        }
+      }
+		} else {
+			if (player) {
+				player.stopVideo();
+				player.loadVideoById(playing);
+      	setPlayer(element)
+			}
+		}
+	}
+}
+
+marginTop = 0;
+setPlayer = function(element) {
+	if (!embed) return;
+	var audio = element.className.indexOf('audio') > -1;
+	if (!audio) element = document.getElementsByClassName('columns')[0] || element.parentNode;
+  var offset = getElementOffset(element);
+  offset.x += element.offsetLeft;
+  offset.y += element.offsetTop;
+  wrap.style.left = offset.x + 'px';
+  wrap.style.top = offset.y - marginTop + 'px';
+  if (audio) {
+	  embed.setAttribute('width', 0);
+	  embed.setAttribute('height', 0);
+  } else {
+  	var height = Math.round(element.offsetWidth * 0.66);
+	  embed.setAttribute('width', element.offsetWidth);
+	  embed.setAttribute('height', height);
+	  marginTop = height + 16;
+	  element.style.marginTop = height + 16 + 'px'
+  }
 }

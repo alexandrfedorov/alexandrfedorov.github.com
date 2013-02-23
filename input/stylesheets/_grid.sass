@@ -42,8 +42,12 @@ ul.grid, .columns ul
       h2
         a
           :color #111
+    &:hover, &.selected
       .play.button
         :opacity 1
+    &.selected
+      .play.button:before
+        :content '\2389'
 
     h2
       +adjust-font-size-to(20px)
@@ -91,6 +95,8 @@ ul.grid, .columns ul
 
 
 .columns
+  +legacy-pie-clearfix
+  +transition(margin-top 1s)
   :margin 0 -1.5em
   ul
     :width 33.333%

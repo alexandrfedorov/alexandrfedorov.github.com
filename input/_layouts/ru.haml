@@ -16,7 +16,7 @@
         document.onclick = function(e) {
           for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
             var href = el.getAttribute('href');
-            if (href) {
+            if (href && el.host == location.host) {
               // convert absolute path into relative path
               if (href.charAt(0) == '/')
                 href = href.substring(1);
@@ -29,7 +29,6 @@
                   href += '/'
                 href += 'index.html';
               }
-                console.error(href)
               if (href != el.getAttribute('href')) {
                 el.setAttribute('href', href);
                 e.preventDefault();
@@ -64,7 +63,7 @@
                   %a{:href => "/about/services"}
                     Услуги
                 %li
-                  %a{:href => "/about/experience"}
+                  %a{:href => "/about"}
                     Резюме
                 %li
                   %a.english.language{:href => "{{page.url | to_language: 'en'}}"}<
@@ -146,11 +145,11 @@
           %a{:href => "/about/services"}
             Услуги
         %li
-          %a{:href => "/about/experience"}
+          %a{:href => "/about"}
             Резюме
         %li
-          %a.english.language{:href => "/en"}<
+          %a.english.language{:href => "{{page.url | to_language: 'en'}}"}<
             in english
-          %a.english.language.icon{:href => "/en"}<>
+          %a.english.language.icon{:href => "{{page.url | to_language: 'en'}}"}<>
 
 %script{:src => "javascripts/script.js"}
