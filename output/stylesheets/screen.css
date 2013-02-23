@@ -289,12 +289,8 @@ a.button {
   transition: max-height 1s;
   overflow: hidden;
 }
-/* line 6, ../../input/stylesheets/_player.sass */
-.player.wrap.visible {
-  max-height: 1000px;
-}
 
-/* line 8, ../../input/stylesheets/_player.sass */
+/* line 6, ../../input/stylesheets/_player.sass */
 .play.button {
   font-family: "fontello";
   font-style: normal;
@@ -338,7 +334,7 @@ a.button {
   line-height: 1.45em;
   text-align: center;
 }
-/* line 10, ../../input/stylesheets/_player.sass */
+/* line 8, ../../input/stylesheets/_player.sass */
 .play.button:before {
   content: "\25b6";
   margin-right: -2px;

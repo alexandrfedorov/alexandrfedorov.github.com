@@ -243,7 +243,10 @@ function showPlayer(played) {
 function hidePlayer(played) {
 	wrap.className = wrap.className.replace(' visible', '');
   var grid = document.getElementsByClassName('columns')[0];
-  if (grid) grid.style.marginTop = 0;
+  if (grid) {
+  	grid.style.marginTop = 0;
+  	wrap.style.maxHeight = 0;
+  }
 	document.body.className = document.body.className.replace(' playing-' + (played.className.indexOf('audio') > -1 ? 'audio' : 'video'), '')
 	played.className = played.className.replace(' selected', '')
 }
@@ -269,6 +272,7 @@ function play(id, element) {
 		playing = id;
 		if (played) hidePlayer(played);
 		played = element;
+		showPlayer(played)
 		if (!api) {
 			api  = document.createElement('script');
 			api.src = 'http://www.youtube.com/iframe_api';
@@ -291,22 +295,22 @@ function play(id, element) {
       	setPlayer(element)
       }
       function onPlayerStateChange(event) {
-      	switch (event.data) {
-      		case -1:
-      			if (played && played.className.indexOf('selected') == -1)
-							showPlayer(played);
-      			break;
-      		case 2:
-      			if (played && played.className.indexOf('selected') > -1) {
-	      			hidePlayer(played);
-	      			marginTop = 0;
-	      		}
-      			playing = null;
-      			played = null;
-      			break;
-      	}
-        if (event.data == YT.PlayerState.PLAYING) {
-        }
+      	//switch (event.data) {
+      	//	case -1:
+      	//		if (played && played.className.indexOf('selected') == -1)
+				//			showPlayer(played);
+      	//		break;
+      	//	case 2:
+      	//		if (played && played.className.indexOf('selected') > -1) {
+	      //			hidePlayer(played);
+	      //			marginTop = 0;
+	      //		}
+      	//		playing = null;
+      	//		played = null;
+      	//		break;
+      	//}
+        //if (event.data == YT.PlayerState.PLAYING) {
+        //}
       }
 		} else {
 			if (player) {
@@ -336,6 +340,7 @@ setPlayer = function(element) {
 	  embed.setAttribute('width', element.offsetWidth);
 	  embed.setAttribute('height', height);
 	  marginTop = height + 16;
-	  element.style.marginTop = height + 16 + 'px'
+	  element.style.marginTop = height + 16 + 'px';
+	  wrap.style.maxHeight = height + 'px';
   }
 }
