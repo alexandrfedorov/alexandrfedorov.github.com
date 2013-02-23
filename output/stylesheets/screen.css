@@ -292,6 +292,7 @@ a.button {
 
 /* line 6, ../../input/stylesheets/_player.sass */
 .play.button {
+  margin: 0;
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
@@ -334,7 +335,7 @@ a.button {
   line-height: 1.45em;
   text-align: center;
 }
-/* line 8, ../../input/stylesheets/_player.sass */
+/* line 9, ../../input/stylesheets/_player.sass */
 .play.button:before {
   content: "\25b6";
   margin-right: -2px;
@@ -1194,10 +1195,15 @@ ul.grid > li:hover .play.button, ul.grid > li.selected .play.button, .columns ul
   opacity: 1;
 }
 /* line 49, ../../input/stylesheets/_grid.sass */
-ul.grid > li.selected .play.button:before, .columns ul > li.selected .play.button:before {
-  content: "\2389";
+ul.grid > li.selected .play.button, .columns ul > li.selected .play.button {
+  width: 1.37em;
+  padding-right: 0.08em;
 }
 /* line 52, ../../input/stylesheets/_grid.sass */
+ul.grid > li.selected .play.button:before, .columns ul > li.selected .play.button:before {
+  content: "\25a0";
+}
+/* line 55, ../../input/stylesheets/_grid.sass */
 ul.grid > li h2, .columns ul > li h2 {
   font-size: 1.25em;
   line-height: 1.2em;
@@ -1205,62 +1211,62 @@ ul.grid > li h2, .columns ul > li h2 {
   position: relative;
   display: inline-block;
 }
-/* line 57, ../../input/stylesheets/_grid.sass */
+/* line 60, ../../input/stylesheets/_grid.sass */
 ul.grid > li h2 a, .columns ul > li h2 a {
   line-height: 0.9em;
 }
-/* line 60, ../../input/stylesheets/_grid.sass */
+/* line 63, ../../input/stylesheets/_grid.sass */
 ul.grid > li h2 + strong, .columns ul > li h2 + strong {
   font-family: Georgia;
 }
-/* line 64, ../../input/stylesheets/_grid.sass */
+/* line 67, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip, .columns ul > li dl .tooltip {
   margin-left: 1.5em;
   font-size: 0.875em;
   line-height: 1.71429em;
   font-family: Helvetica;
 }
-/* line 68, ../../input/stylesheets/_grid.sass */
+/* line 71, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.invert, .columns ul > li dl .tooltip.invert {
   margin-left: -12.5em;
   z-index: 101;
   text-align: center;
 }
-/* line 72, ../../input/stylesheets/_grid.sass */
+/* line 75, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.invert > span, .columns ul > li dl .tooltip.invert > span {
   padding-left: 4px;
 }
-/* line 77, ../../input/stylesheets/_grid.sass */
+/* line 80, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip > span, .columns ul > li dl .tooltip > span {
   font-size: 1em;
 }
-/* line 79, ../../input/stylesheets/_grid.sass */
+/* line 82, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid > li dl dd, .columns ul > li dl dt, .columns ul > li dl dd {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 81, ../../input/stylesheets/_grid.sass */
+/* line 84, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, .columns ul > li dl dt {
   float: left;
   width: 10em;
   color: #555555;
 }
-/* line 85, ../../input/stylesheets/_grid.sass */
+/* line 88, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd, .columns ul > li dl dd {
   font-family: Georgia;
   margin-left: 11em;
 }
-/* line 88, ../../input/stylesheets/_grid.sass */
+/* line 91, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd span[tooltip], .columns ul > li dl dd span[tooltip] {
   border-bottom: 1px dotted #333333;
 }
-/* line 92, ../../input/stylesheets/_grid.sass */
+/* line 95, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd.tooltipped:after, .columns ul > li dl dd.tooltipped:after {
   color: #eeeeee;
   text-shadow: 0px 1px 0px #333333;
 }
 
-/* line 97, ../../input/stylesheets/_grid.sass */
+/* line 100, ../../input/stylesheets/_grid.sass */
 .columns {
   *zoom: 1;
   -webkit-transition: margin-top 1s;
@@ -1278,46 +1284,46 @@ ul.grid > li dl dd.tooltipped:after, .columns ul > li dl dd.tooltipped:after {
   overflow: hidden;
   visibility: hidden;
 }
-/* line 101, ../../input/stylesheets/_grid.sass */
+/* line 104, ../../input/stylesheets/_grid.sass */
 .columns ul {
   width: 33.333%;
   float: left;
 }
-/* line 104, ../../input/stylesheets/_grid.sass */
+/* line 107, ../../input/stylesheets/_grid.sass */
 .columns ul > li {
   margin-right: 0.5em;
   margin-left: 0.5em;
 }
-/* line 107, ../../input/stylesheets/_grid.sass */
+/* line 110, ../../input/stylesheets/_grid.sass */
 .columns ul > li {
   float: none;
   width: auto;
 }
 
 @media screen and (max-width: 1124px) {
-  /* line 112, ../../input/stylesheets/_grid.sass */
+  /* line 115, ../../input/stylesheets/_grid.sass */
   .columns ul {
     width: 50%;
   }
-  /* line 114, ../../input/stylesheets/_grid.sass */
+  /* line 117, ../../input/stylesheets/_grid.sass */
   .columns ul + ul {
     width: 50%;
   }
-  /* line 116, ../../input/stylesheets/_grid.sass */
+  /* line 119, ../../input/stylesheets/_grid.sass */
   .columns ul + ul + ul {
     display: none;
   }
 }
 @media screen and (max-width: 700px) {
-  /* line 121, ../../input/stylesheets/_grid.sass */
+  /* line 124, ../../input/stylesheets/_grid.sass */
   .columns ul {
     width: 100%;
   }
-  /* line 123, ../../input/stylesheets/_grid.sass */
+  /* line 126, ../../input/stylesheets/_grid.sass */
   .columns ul > li {
     margin-bottom: 0.75em;
   }
-  /* line 125, ../../input/stylesheets/_grid.sass */
+  /* line 128, ../../input/stylesheets/_grid.sass */
   .columns ul + ul {
     display: none;
   }

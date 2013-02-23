@@ -46,8 +46,11 @@ ul.grid, .columns ul
       .play.button
         :opacity 1
     &.selected
-      .play.button:before
-        :content '\2389'
+      .play.button
+        :width 1.37em
+        :padding-right 0.08em
+        &:before
+          :content '\25a0'
 
     h2
       +adjust-font-size-to(20px)

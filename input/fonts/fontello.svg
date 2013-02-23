@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>
-Created by FontForge 20100429 at Sat Feb 16 13:00:11 2013
+Created by FontForge 20100429 at Sat Feb 23 13:56:35 2013
  By root
 Copyright (C) 2012 by original authors @ fontello.com
 </metadata>
@@ -34,6 +34,8 @@ d="M367 850q46 0 73 -26t27 -70q0 -51 -40 -88.5t-94 -37.5q-47 0 -73.5 25.5t-24.5 
 q45 0 118 60l30 -40q-84 -86 -175 -132t-139 -46z" />
     <glyph glyph-name="uni2389" unicode="&#x2389;" horiz-adv-x="560" 
 d="M545 636v-570q0 -66 -90 -66t-90 66v570q0 64 90 64t90 -64zM105 700q90 0 90 -64v-570q0 -66 -90 -66t-90 66v570q0 64 90 64z" />
+    <glyph glyph-name="filledbox" unicode="&#x25a0;" horiz-adv-x="630" 
+d="M541 650q74 0 74 -64v-470q0 -66 -74 -66h-450q-76 0 -76 66v470q0 36 18 50t58 14h450z" />
     <glyph glyph-name="uni25B6" unicode="&#x25b6;" horiz-adv-x="530" 
 d="M501 376q14 -11 14 -26q0 -13 -14 -24l-428 -266q-25 -16 -41.5 -5.5t-16.5 39.5v514q0 29 16.5 39.5t41.5 -5.5z" />
     <glyph glyph-name="uni2709" unicode="&#x2709;" horiz-adv-x="930" 
