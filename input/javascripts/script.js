@@ -272,7 +272,9 @@ function play(id, element) {
 		playing = id;
 		if (played) hidePlayer(played);
 		played = element;
-		showPlayer(played)
+		showPlayer(played);
+		if (marginTop && played.className.indexOf('audo') > -1)
+			marginTop = 0;
 		if (!api) {
 			api  = document.createElement('script');
 			api.src = 'http://www.youtube.com/iframe_api';
