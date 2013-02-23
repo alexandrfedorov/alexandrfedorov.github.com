@@ -1,0 +1,8 @@
+  %li{:class => "{{post | to_class}}"}
+    %h2 
+      %a{:href => "#"} {{post.title}}
+    %a.play.button{:href => "#"}
+    {% if post.video %}
+    %video
+    {% endif %}
+    {{post.formatted_content | multiline}}

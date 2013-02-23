@@ -12,5 +12,15 @@ plugins:     ./input/_plugins
 future:      true
 lsi:         false
 pygments:    false
-markdown:    maruku
-permalink:   /:categories/:title.html
+markdown:    kramdown
+permalink:   /:categories/index.html
+binarylink:  /:categories/:title.html
+pagelink:    /:basename/index.html
+
+languages:
+  - ru
+  - en
+
+skippable:
+  - introduction
+  - about

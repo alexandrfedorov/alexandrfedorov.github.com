@@ -10,11 +10,40 @@ main
     +padding-leader(1)
     +legacy-pie-clearfix
 
-  h1
-    :display inline-block
-    + menu
-      :margin-left 0.8em
+    > h1
       :display inline-block
+      + menu
+        :margin-left 0.8em
+        :display inline-block
+    > h2
+      +adjust-font-size-to(20px)
+
+    > h1, > h2, > ul, > p, > dl
+      + *
+        +margin-leader
+      + ul, + dl
+        +margin-leader(0.5)
+
+    > ul
+      :list-style square
+      > li
+        :margin-left 1.2em
+      ul
+        :list-style circle
+        > li
+          :margin-left 1.2em
+
+    > dl
+      +legacy-pie-clearfix
+      dt
+        :width 160px
+        :float left
+        :clear left
+        :color #666
+      dd
+        :margin-left 160px
+    img
+      :max-width 100%
 
 .tooltip
   :position absolute

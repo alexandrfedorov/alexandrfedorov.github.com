@@ -75,38 +75,48 @@ html {
 }
 
 /* line 17, ../../input/stylesheets/screen.sass */
+strong, b {
+  font-weight: bold;
+}
+
+/* line 20, ../../input/stylesheets/screen.sass */
+em, i {
+  font-style: italic;
+}
+
+/* line 23, ../../input/stylesheets/screen.sass */
 html {
   background: #d6d2ca url(../images/bedge_grunge.png);
   height: 100%;
   color: #333333;
 }
 
-/* line 22, ../../input/stylesheets/screen.sass */
+/* line 28, ../../input/stylesheets/screen.sass */
 a {
   color: #007511;
 }
-/* line 24, ../../input/stylesheets/screen.sass */
+/* line 30, ../../input/stylesheets/screen.sass */
 a:hover {
   border-bottom-color: transparent;
 }
 
-/* line 28, ../../input/stylesheets/screen.sass */
+/* line 34, ../../input/stylesheets/screen.sass */
 h1 a, h2 a {
   text-shadow: 0 1px 1px white;
 }
 
-/* line 31, ../../input/stylesheets/screen.sass */
+/* line 37, ../../input/stylesheets/screen.sass */
 h1 {
   font-size: 1.5em;
   line-height: 1em;
 }
 
-/* line 34, ../../input/stylesheets/screen.sass */
+/* line 40, ../../input/stylesheets/screen.sass */
 h1, h2 {
   font-family: "Open Sans Condensed";
 }
 
-/* line 37, ../../input/stylesheets/screen.sass */
+/* line 43, ../../input/stylesheets/screen.sass */
 header > section, main > section, .player > section, .contact > section, footer, .introduction > section {
   max-width: 1120px;
   min-width: 600px;
@@ -114,16 +124,16 @@ header > section, main > section, .player > section, .contact > section, footer,
   padding: 0 3em;
 }
 
-/* line 43, ../../input/stylesheets/screen.sass */
-header > section, .player > section, .contact > section, footer, .introduction > section {
+/* line 49, ../../input/stylesheets/screen.sass */
+header > section, .player > section, .contact > section, footer, .introduction > section, body.about main > section {
   max-width: 750px;
 }
 
-/* line 46, ../../input/stylesheets/screen.sass */
+/* line 52, ../../input/stylesheets/screen.sass */
 .introduction > section {
   padding-top: 1.5em;
 }
-/* line 49, ../../input/stylesheets/screen.sass */
+/* line 55, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote {
   font-family: Georgia;
   font-style: italic;
@@ -134,7 +144,7 @@ header > section, .player > section, .contact > section, footer, .introduction >
   margin: 0;
   margin-right: 230px;
 }
-/* line 59, ../../input/stylesheets/screen.sass */
+/* line 65, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote:before {
   display: block;
   content: "\201C";
@@ -144,7 +154,7 @@ header > section, .player > section, .contact > section, footer, .introduction >
   top: 0.223em;
   color: #7a7a7a;
 }
-/* line 67, ../../input/stylesheets/screen.sass */
+/* line 73, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote a {
   line-height: 0.85em;
   color: inherit;
@@ -153,7 +163,7 @@ header > section, .player > section, .contact > section, footer, .introduction >
   -o-transition: color 0.4s;
   transition: color 0.4s;
 }
-/* line 72, ../../input/stylesheets/screen.sass */
+/* line 78, ../../input/stylesheets/screen.sass */
 .introduction > section blockquote:hover a {
   color: #007511;
 }
@@ -628,7 +638,7 @@ menu > li + li:before {
 /* line 52, ../../input/stylesheets/_header.sass */
 menu > li.selected > a {
   border-bottom: 0;
-  color: #333333;
+  color: #666666;
 }
 
 /* line 56, ../../input/stylesheets/_header.sass */
@@ -638,28 +648,36 @@ nav {
 }
 
 /* line 60, ../../input/stylesheets/_header.sass */
-menu .russian.language.icon {
-  width: 23px;
+menu .language.icon {
+  width: 18px;
   height: 18px;
   line-height: 1em;
   border: 0;
   vertical-align: middle;
-  background: url(../images/russian.png) center top no-repeat;
-  background-size: 16px 16px;
   opacity: 0.7;
   display: inline-block;
 }
+/* line 68, ../../input/stylesheets/_header.sass */
+menu .language.icon.russian {
+  background: url(../images/russian.png) center top no-repeat;
+  background-size: 16px 16px;
+}
+/* line 71, ../../input/stylesheets/_header.sass */
+menu .language.icon.english {
+  background: url(../images/english.png) center top no-repeat;
+  background-size: 16px 16px;
+}
 
-/* line 70, ../../input/stylesheets/_header.sass */
+/* line 74, ../../input/stylesheets/_header.sass */
 main {
   display: block;
 }
-/* line 72, ../../input/stylesheets/_header.sass */
+/* line 76, ../../input/stylesheets/_header.sass */
 main menu {
   margin-bottom: 0.75em;
 }
 
-/* line 76, ../../input/stylesheets/_header.sass */
+/* line 80, ../../input/stylesheets/_header.sass */
 header {
   background: white url(../images/gplaypattern.png);
   padding-top: 1.5em;
@@ -703,48 +721,59 @@ header::after {
   -o-transform: skew(15deg) rotate(6deg);
   transform: skew(15deg) rotate(6deg);
 }
-/* line 82, ../../input/stylesheets/_header.sass */
+/* line 86, ../../input/stylesheets/_header.sass */
 header .left {
   float: left;
 }
-/* line 87, ../../input/stylesheets/_header.sass */
+/* line 91, ../../input/stylesheets/_header.sass */
 header menu > li.selected a {
   color: #666666;
 }
-/* line 89, ../../input/stylesheets/_header.sass */
+/* line 93, ../../input/stylesheets/_header.sass */
 header h1 {
   white-space: nowrap;
 }
-/* line 91, ../../input/stylesheets/_header.sass */
-header h1 span {
+/* line 95, ../../input/stylesheets/_header.sass */
+header h1 a {
+  color: #333333;
+}
+/* line 98, ../../input/stylesheets/_header.sass */
+header h1 span, header h1 span a {
   color: #666666;
+}
+/* line 100, ../../input/stylesheets/_header.sass */
+header h1 a {
+  text-decoration: none;
+  border-bottom: 1px solid #cccccc;
+  line-height: 0.85;
+  display: inline-block;
 }
 
 @media (max-width: 700px) {
-  /* line 98, ../../input/stylesheets/_header.sass */
+  /* line 110, ../../input/stylesheets/_header.sass */
   menu > li + li {
     margin-left: 0.05em;
   }
-  /* line 100, ../../input/stylesheets/_header.sass */
+  /* line 112, ../../input/stylesheets/_header.sass */
   menu > li + li > a {
     margin-left: 0.05em;
   }
 
-  /* line 102, ../../input/stylesheets/_header.sass */
+  /* line 114, ../../input/stylesheets/_header.sass */
   header {
     padding-top: 0.75em;
     padding-bottom: 0.75em;
   }
-  /* line 105, ../../input/stylesheets/_header.sass */
+  /* line 117, ../../input/stylesheets/_header.sass */
   header nav {
     padding-bottom: 0.75em;
   }
-  /* line 107, ../../input/stylesheets/_header.sass */
+  /* line 119, ../../input/stylesheets/_header.sass */
   header address {
     float: none;
     width: auto;
   }
-  /* line 110, ../../input/stylesheets/_header.sass */
+  /* line 122, ../../input/stylesheets/_header.sass */
   header .left {
     float: none;
   }
@@ -1037,16 +1066,73 @@ main > section:after {
   visibility: hidden;
 }
 /* line 13, ../../input/stylesheets/_main.sass */
-main h1 {
+main > section > h1 {
   display: inline-block;
 }
 /* line 15, ../../input/stylesheets/_main.sass */
-main h1 + menu {
+main > section > h1 + menu {
   margin-left: 0.8em;
   display: inline-block;
 }
+/* line 18, ../../input/stylesheets/_main.sass */
+main > section > h2 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+}
+/* line 22, ../../input/stylesheets/_main.sass */
+main > section > h1 + *, main > section > h2 + *, main > section > ul + *, main > section > p + *, main > section > dl + * {
+  margin-top: 1.5em;
+}
+/* line 24, ../../input/stylesheets/_main.sass */
+main > section > h1 + ul, main > section > h1 + dl, main > section > h2 + ul, main > section > h2 + dl, main > section > ul + ul, main > section > ul + dl, main > section > p + ul, main > section > p + dl, main > section > dl + ul, main > section > dl + dl {
+  margin-top: 0.75em;
+}
+/* line 27, ../../input/stylesheets/_main.sass */
+main > section > ul {
+  list-style: square;
+}
+/* line 29, ../../input/stylesheets/_main.sass */
+main > section > ul > li {
+  margin-left: 1.2em;
+}
+/* line 31, ../../input/stylesheets/_main.sass */
+main > section > ul ul {
+  list-style: circle;
+}
+/* line 33, ../../input/stylesheets/_main.sass */
+main > section > ul ul > li {
+  margin-left: 1.2em;
+}
+/* line 36, ../../input/stylesheets/_main.sass */
+main > section > dl {
+  *zoom: 1;
+}
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+main > section > dl:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+/* line 38, ../../input/stylesheets/_main.sass */
+main > section > dl dt {
+  width: 160px;
+  float: left;
+  clear: left;
+  color: #666666;
+}
+/* line 43, ../../input/stylesheets/_main.sass */
+main > section > dl dd {
+  margin-left: 160px;
+}
+/* line 45, ../../input/stylesheets/_main.sass */
+main > section img {
+  max-width: 100%;
+}
 
-/* line 19, ../../input/stylesheets/_main.sass */
+/* line 48, ../../input/stylesheets/_main.sass */
 .tooltip {
   position: absolute;
   width: 240px;
@@ -1057,12 +1143,12 @@ main h1 + menu {
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 25, ../../input/stylesheets/_main.sass */
+/* line 54, ../../input/stylesheets/_main.sass */
 .tooltip[hidden] {
   opacity: 0;
   display: block;
 }
-/* line 30, ../../input/stylesheets/_main.sass */
+/* line 59, ../../input/stylesheets/_main.sass */
 .tooltip:not(.invert) > span {
   position: relative;
   -webkit-border-radius: 6px;
@@ -1103,7 +1189,7 @@ main h1 + menu {
   top: 50%;
   margin-top: -12px;
 }
-/* line 32, ../../input/stylesheets/_main.sass */
+/* line 61, ../../input/stylesheets/_main.sass */
 .tooltip > span {
   display: block;
   color: white;
@@ -1112,7 +1198,7 @@ main h1 + menu {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 39, ../../input/stylesheets/_main.sass */
+/* line 68, ../../input/stylesheets/_main.sass */
 .tooltip.invert > span {
   position: relative;
   -webkit-border-radius: 6px;
@@ -1289,96 +1375,94 @@ ul.grid > li h2 + strong, .columns ul > li h2 + strong {
 /* line 60, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip, .columns ul > li dl .tooltip {
   margin-left: 1.5em;
+  font-size: 0.875em;
+  line-height: 1.71429em;
   font-family: Helvetica;
 }
-/* line 63, ../../input/stylesheets/_grid.sass */
+/* line 64, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.invert, .columns ul > li dl .tooltip.invert {
   margin-left: -12.5em;
   z-index: 101;
   text-align: center;
 }
-/* line 67, ../../input/stylesheets/_grid.sass */
+/* line 68, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.invert > span, .columns ul > li dl .tooltip.invert > span {
   padding-left: 4px;
 }
-/* line 72, ../../input/stylesheets/_grid.sass */
+/* line 73, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip > span, .columns ul > li dl .tooltip > span {
   font-size: 1em;
 }
-/* line 74, ../../input/stylesheets/_grid.sass */
+/* line 75, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, ul.grid > li dl dd, .columns ul > li dl dt, .columns ul > li dl dd {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 76, ../../input/stylesheets/_grid.sass */
+/* line 77, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dt, .columns ul > li dl dt {
   float: left;
   width: 10em;
   color: #555555;
 }
-/* line 80, ../../input/stylesheets/_grid.sass */
+/* line 81, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd, .columns ul > li dl dd {
   font-family: Georgia;
   margin-left: 11em;
 }
-/* line 83, ../../input/stylesheets/_grid.sass */
+/* line 84, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd span[tooltip], .columns ul > li dl dd span[tooltip] {
   border-bottom: 1px dotted #333333;
 }
-/* line 87, ../../input/stylesheets/_grid.sass */
+/* line 88, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl dd.tooltipped:after, .columns ul > li dl dd.tooltipped:after {
   color: #eeeeee;
   text-shadow: 0px 1px 0px #333333;
 }
 
-/* line 92, ../../input/stylesheets/_grid.sass */
+/* line 93, ../../input/stylesheets/_grid.sass */
 .columns {
-  margin: 0 -1em;
+  margin: 0 -1.5em;
 }
-/* line 94, ../../input/stylesheets/_grid.sass */
+/* line 95, ../../input/stylesheets/_grid.sass */
 .columns ul {
   width: 33.333%;
   float: left;
 }
 /* line 98, ../../input/stylesheets/_grid.sass */
-.columns ul + ul > li {
-  margin-left: 1em;
+.columns ul > li {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
 /* line 101, ../../input/stylesheets/_grid.sass */
-.columns ul + ul + ul > li {
-  margin-left: 1em;
-}
-/* line 103, ../../input/stylesheets/_grid.sass */
 .columns ul > li {
   float: none;
   width: auto;
-  margin-right: 0;
 }
 
 @media screen and (max-width: 1124px) {
-  /* line 109, ../../input/stylesheets/_grid.sass */
+  /* line 106, ../../input/stylesheets/_grid.sass */
   .columns ul {
     width: 50%;
   }
-  /* line 111, ../../input/stylesheets/_grid.sass */
+  /* line 108, ../../input/stylesheets/_grid.sass */
   .columns ul + ul {
     width: 50%;
   }
-  /* line 113, ../../input/stylesheets/_grid.sass */
+  /* line 110, ../../input/stylesheets/_grid.sass */
   .columns ul + ul + ul {
     display: none;
   }
 }
 @media screen and (max-width: 700px) {
-  /* line 118, ../../input/stylesheets/_grid.sass */
+  /* line 115, ../../input/stylesheets/_grid.sass */
   .columns ul {
     width: 100%;
   }
-  /* line 120, ../../input/stylesheets/_grid.sass */
+  /* line 117, ../../input/stylesheets/_grid.sass */
   .columns ul > li {
     margin-bottom: 0.75em;
   }
-  /* line 122, ../../input/stylesheets/_grid.sass */
+  /* line 119, ../../input/stylesheets/_grid.sass */
   .columns ul + ul {
     display: none;
   }
@@ -1427,28 +1511,33 @@ footer p {
     width: auto;
   }
 }
+/* line 92, ../../input/stylesheets/screen.sass */
+body.about .introduction {
+  display: none;
+}
+
 @media (max-width: 700px) {
-  /* line 87, ../../input/stylesheets/screen.sass */
-  menu .russian.language.icon {
+  /* line 97, ../../input/stylesheets/screen.sass */
+  menu .language.icon {
     display: none;
   }
 
-  /* line 90, ../../input/stylesheets/screen.sass */
+  /* line 100, ../../input/stylesheets/screen.sass */
   header > section, main > section, .player > section, .contact > section, footer, .introduction > section {
     padding-left: 0.5em;
     padding-right: 0.5em;
     min-width: 304px;
   }
 
-  /* line 95, ../../input/stylesheets/screen.sass */
+  /* line 105, ../../input/stylesheets/screen.sass */
   .introduction > section {
     padding-top: 1.125em;
   }
-  /* line 96, ../../input/stylesheets/screen.sass */
+  /* line 106, ../../input/stylesheets/screen.sass */
   .introduction > section blockquote {
     margin-right: 0;
   }
-  /* line 98, ../../input/stylesheets/screen.sass */
+  /* line 108, ../../input/stylesheets/screen.sass */
   .introduction > section blockquote > p {
     font-size: 0.875em;
     line-height: 1.71429em;

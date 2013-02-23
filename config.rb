@@ -1,4 +1,5 @@
 require 'sassy-buttons'
+require 'haml'
 require 'compass-recipes'
 
 # Require any additional compass plugins here.

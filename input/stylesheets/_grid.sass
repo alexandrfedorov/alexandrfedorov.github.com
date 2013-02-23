@@ -59,6 +59,7 @@ ul.grid, .columns ul
     dl
       .tooltip
         :margin-left 1.5em
+        +adjust-font-size-to(14px)
 
         &.invert
           :margin-left -12.5em
@@ -90,20 +91,16 @@ ul.grid, .columns ul
 
 
 .columns
-  :margin 0 -1em
+  :margin 0 -1.5em
   ul
     :width 33.333%
     :float left
-    + ul
-      > li
-        :margin-left 1em
-      + ul
-        > li
-          :margin-left 1em
+    > li
+      :margin-right 0.5em
+      :margin-left 0.5em
     > li
       :float none
       :width auto
-      :margin-right 0
 
 @media screen and (max-width: 1124px)
   .columns ul

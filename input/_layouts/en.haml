@@ -1,0 +1,152 @@
+%html
+  %head
+    %title
+      {{page | to_title: "Звукорежиссёр"}}
+      &mdash; Alexandr Fedorov
+
+    %base{:href => "/"}
+
+    :javascript
+      if (location.pathname.indexOf('output') > -1 || location.host == 'localhost' || location.port != 80) {
+        var base = document.getElementsByTagName('base')[0];
+        var languages = /(en|ru|de)/;
+        var path = location.pathname;
+        var language = (path.match(languages) || [null, null])[1];
+        var root = language ? path.split(language)[0] : path.split('/output/')[0] + '/output/';
+        base.setAttribute('href', root);
+        document.onclick = function(e) {
+          for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
+            var href = el.getAttribute('href');
+            if (href) {
+              // convert absolute path into relative path
+              if (href.charAt(0) == '/')
+                href = href.substring(1);
+              // prepend a current language
+              if (!href.match(languages))
+                href = language + '/' + href;
+              // append index.html for directories
+              if (!href.match(/.html?$/)) {
+                if (href.charAt(href.length - 1) != '/')
+                  href += '/'
+                href += 'index.html';
+              }
+              if (href != el.getAttribute('href')) {
+                el.setAttribute('href', href);
+                e.preventDefault();
+                el.click();
+              }
+              break;
+            }
+          }
+        }
+      }
+
+    %link{:rel => "stylesheet", :href => "stylesheets/screen.css"}
+    %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,cyrillic"}
+
+    %meta{"http-equiv" => "Content-Type", "content" => "text/html; charset=utf-8"}
+  %body{:class => "{{page | to_class}}"}
+    #root
+      %header
+        %section
+          .left
+            %h1 
+              %a{:href => "/about/"} Alexandr Fedorov 
+              %span<> 
+                , 
+                %a{:href => "/about/profession"} sound engineer
+
+            %nav
+              %menu
+                %li.selected
+                  %a{:href => "/"}
+                    Works              
+                %li
+                  %a{:href => "/about/services"}
+                    Services
+                %li
+                  %a{:href => "/about/experience"}
+                    Resume
+                %li
+                  %a.russian.language{:href => "{{page.url | to_language: 'ru'}}"}<
+                    по-русски
+                  %a.russian.language.icon{:href => "{{page.url | to_language: 'ru'}}"}<>
+          %address
+            %dl
+              %dt.tel
+                tel:
+              %dd
+                +79044749621
+              %dt.email
+                email: 
+              %dd
+                %a{:href => "#"} alexandr.fedorov@gmail.com
+
+
+      .contact#contact{:hidden => true}
+        %section
+          %form
+            %fieldset
+              %span.error I'd like to know your name
+              %label{:for => :name} Your name
+              %input#name
+            %fieldset
+              %span.error How can I reach you back?
+              %label{:for => :email} Email
+              %input#email
+            %fieldset
+              %label{:for => :phone} Telephone
+              %input#phone
+
+            %fieldset
+              %label{:for => :subject}
+                Subject
+              %select
+                %option
+                %option Work
+                %option Education
+                %option Information
+            %fieldset
+              %span.error Please, elaborate
+              %label{:for => :message} Message
+              %textarea#message{:rows => 5, :required => true}
+          %section.bar
+            %a.cancel{:href => "#", :rel => "uncontact"}<>
+              Cancel
+            %a.button{:href => "#contact", :rel => "contact"}
+              %span
+                Contact 
+                %span.verbose me now
+
+
+        
+
+      .introduction
+        %section
+          :markdown
+            > A [profession](.) of sound engineering [has come a long way](.) from being a [purely technical](.) process of [audio recording](.) to a fully [creative participation](.) in the process of [making art](.).
+
+      %main
+        %section
+          {{content}}
+      #footer-pusher
+    %footer
+      %p 
+        %a{:href => "/about/experience"}
+          Since 1957 and going strong
+      %menu
+        %li.selected
+          %a{:href => "/"}
+            Works              
+        %li
+          %a{:href => "/about/services"}
+            Services
+        %li
+          %a{:href => "/about/me"}
+            About me
+        %li
+          %a.russian.language{:href => "/ru/"}<
+            по-русски
+          %a.russian.language.icon{:href => "/ru/"}<>
+
+%script{:src => "javascripts/script.js"}

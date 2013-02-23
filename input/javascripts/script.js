@@ -7,27 +7,14 @@ var getComputedStyleShim = function(el, camelCase, hyphenated) {
   return (computed) ? computed.getPropertyValue(hyphenated) : null;
 };
 
-var player = document.getElementsByClassName('player')[0];
-var header = document.getElementsByTagName('header')[0];
-window.onscroll = function() {
-	var y = window.scrollY;
-	var fixed = window.scrollY >= header.offsetHeight - player.offsetHeight ;
-	var now = document.body.className.indexOf(' fixed') > -1
-	if (fixed) {
-		if (!now)
-			document.body.className += ' fixed'
-	} else {
-		if (now)
-			document.body.className = document.body.className.replace(' fixed', '');
-	}
-}
-
-document.body.className = 'ready';
+document.body.className += ' ready';
 
 document.body.onclick = function(e) {
 	for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
 		switch (el.getAttribute('rel')) {
 			case 'uncontact':
+				e.preventDefault();
+				e.stopPropagation();
 				var contact = document.getElementById('contact');
 				if (!contact.getAttribute('hidden')) {
 					contact.setAttribute('hidden', 'hidden');
@@ -37,6 +24,8 @@ document.body.onclick = function(e) {
 				}
 				return false;
 			case 'contact':
+				e.preventDefault();
+				e.stopPropagation();
 				var contact = document.getElementById('contact');
 				if (contact.getAttribute('hidden')) {
 					contact.removeAttribute('hidden');

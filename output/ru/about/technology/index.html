@@ -1,0 +1,190 @@
+<html>
+  <head>
+    <title>
+      Звукорежиссер
+      &mdash; Александр Федоров
+    </title>
+    <base href='/' />
+    <script type='text/javascript'>
+      //<![CDATA[
+        if (location.pathname.indexOf('output') > -1 || location.host == 'localhost' || location.port != 80) {
+          var base = document.getElementsByTagName('base')[0];
+          var languages = /(?:\/|^)(en|ru|de)\//;
+          var path = location.pathname;
+          var language = (path.match(languages) || [null, null])[1];
+          var root = language ? path.split(language)[0] : path.split('/output/')[0] + '/output/';
+          base.setAttribute('href', root);
+          document.onclick = function(e) {
+            for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
+              var href = el.getAttribute('href');
+              if (href) {
+                // convert absolute path into relative path
+                if (href.charAt(0) == '/')
+                  href = href.substring(1);
+                // prepend a current language
+                if (!href.match(languages))
+                  href = language + '/' + href;
+                // append index.html for directories
+                if (!href.match(/.html?$/)) {
+                  if (href.charAt(href.length - 1) != '/')
+                    href += '/'
+                  href += 'index.html';
+                }
+                  console.error(href)
+                if (href != el.getAttribute('href')) {
+                  el.setAttribute('href', href);
+                  e.preventDefault();
+                  el.click();
+                }
+                break;
+              }
+            }
+          }
+        }
+      //]]>
+    </script>
+    <link href='stylesheets/screen.css' rel='stylesheet' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&amp;subset=latin,cyrillic' rel='stylesheet' />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
+  </head>
+  <body class=' ru about'>
+    <div id='root'>
+      <header>
+        <section>
+          <div class='left'>
+            <h1>
+              <a href='/about/'>Александр Федоров</a><span>,
+              <a href='/about/profession'>звукорежиссёр</a></span></h1>
+            <nav>
+              <menu>
+                <li class='selected'>
+                  <a href='/'>
+                    Работы
+                  </a>
+                </li>
+                <li>
+                  <a href='/about/services'>
+                    Услуги
+                  </a>
+                </li>
+                <li>
+                  <a href='/about/experience'>
+                    Резюме
+                  </a>
+                </li>
+                <li>
+                  <a class='english language' href="/en/about/technology/index.html">in english</a><a class='english language icon' href="/en/about/technology/index.html"></a></li>
+              </menu>
+            </nav>
+          </div>
+          <address>
+            <dl>
+              <dt class='tel'>
+                телефон:
+              </dt>
+              <dd>
+                +79044749621
+              </dd>
+              <dt class='email'>
+                почта:
+              </dt>
+              <dd>
+                <a href='#'>alexandr.fedorov@gmail.com</a>
+              </dd>
+            </dl>
+          </address>
+        </section>
+      </header>
+      <div class='contact' hidden='hidden' id='contact'>
+        <section>
+          <form>
+            <fieldset>
+              <span class='error'>Здравстуйте. Как вас зовут?</span>
+              <label for='name'>Ваше имя</label>
+              <input id='name' />
+            </fieldset>
+            <fieldset>
+              <span class='error'>Как мне с вами связаться?</span>
+              <label for='email'>Почта</label>
+              <input id='email' />
+            </fieldset>
+            <fieldset>
+              <label for='phone'>Телефон</label>
+              <input id='phone' />
+            </fieldset>
+            <fieldset>
+              <label for='subject'>
+                Тема
+              </label>
+              <select>
+                <option></option>
+                <option>Работа</option>
+                <option>Обучение</option>
+                <option>Информация</option>
+              </select>
+            </fieldset>
+            <fieldset>
+              <span class='error'>Пожалуйста, продолжайте</span>
+              <label for='message'>Сообщение</label>
+              <textarea id='message' required='required' rows='5'></textarea>
+            </fieldset>
+          </form>
+          <section class='bar'><a class='cancel' href='#' rel='uncontact'>Отмена</a><a class='button' href='#contact' rel='contact'>
+              <span>
+                Связаться
+                <span class='verbose'>со мной</span>
+              </span>
+            </a>
+          </section>
+        </section>
+      </div>
+      <div class='introduction'>
+        <section><blockquote>
+          <a href='/about/profession'>Профессия звукорежиссера</a>
+          прошла путь от выполнения чисто
+          <a href='/about/technology'>технической&nbsp;функции</a>
+          в области
+          <a href='/about/recording'>звукозаписи</a>
+          до полного
+          <a href='/about/services'>творческого участия</a>
+          в создании
+          <a href='/about/sound'>произведений искусства</a>
+        </blockquote></section>
+      </div>
+      <main>
+        <section>
+          <p>Name’s Alex</p>
+
+        </section>
+      </main>
+      <div id='footer-pusher'></div>
+    </div>
+    <footer>
+      <p>
+        <a href='/about/'>
+          C 1957 и без остановки
+        </a>
+      </p>
+      <menu>
+        <li class='selected'>
+          <a href='/'>
+            Работы
+          </a>
+        </li>
+        <li>
+          <a href='/about/services'>
+            Услуги
+          </a>
+        </li>
+        <li>
+          <a href='/about/experience'>
+            Резюме
+          </a>
+        </li>
+        <li>
+          <a class='english language' href='/en'>in english</a><a class='english language icon' href='/en'></a></li>
+      </menu>
+    </footer>
+  </body>
+</html>
+<script src='javascripts/script.js'></script>

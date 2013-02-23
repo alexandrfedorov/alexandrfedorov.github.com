@@ -1,0 +1,184 @@
+<html>
+  <head>
+    <title>
+      Best Thing
+      &mdash; Alexandr Fedorov
+    </title>
+    <base href='/' />
+    <script type='text/javascript'>
+      //<![CDATA[
+        if (location.pathname.indexOf('output') > -1 || location.host == 'localhost' || location.port != 80) {
+          var base = document.getElementsByTagName('base')[0];
+          var languages = /(en|ru|de)/;
+          var path = location.pathname;
+          var language = (path.match(languages) || [null, null])[1];
+          var root = language ? path.split(language)[0] : path.split('/output/')[0] + '/output/';
+          base.setAttribute('href', root);
+          document.onclick = function(e) {
+            for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
+              var href = el.getAttribute('href');
+              if (href) {
+                // convert absolute path into relative path
+                if (href.charAt(0) == '/')
+                  href = href.substring(1);
+                // prepend a current language
+                if (!href.match(languages))
+                  href = language + '/' + href;
+                // append index.html for directories
+                if (!href.match(/.html?$/)) {
+                  if (href.charAt(href.length - 1) != '/')
+                    href += '/'
+                  href += 'index.html';
+                }
+                if (href != el.getAttribute('href')) {
+                  el.setAttribute('href', href);
+                  e.preventDefault();
+                  el.click();
+                }
+                break;
+              }
+            }
+          }
+        }
+      //]]>
+    </script>
+    <link href='stylesheets/screen.css' rel='stylesheet' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&amp;subset=latin,cyrillic' rel='stylesheet' />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
+  </head>
+  <body class='en audio best-thing'>
+    <div id='root'>
+      <header>
+        <section>
+          <div class='left'>
+            <h1>
+              <a href='/about/'>Alexandr Fedorov</a><span>,
+              <a href='/about/profession'>sound engineer</a></span></h1>
+            <nav>
+              <menu>
+                <li class='selected'>
+                  <a href='/'>
+                    Works
+                  </a>
+                </li>
+                <li>
+                  <a href='/about/services'>
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a href='/about/experience'>
+                    Resume
+                  </a>
+                </li>
+                <li>
+                  <a class='russian language' href="/ru/audio/best-thing/index.html">по-русски</a><a class='russian language icon' href="/ru/audio/best-thing/index.html"></a></li>
+              </menu>
+            </nav>
+          </div>
+          <address>
+            <dl>
+              <dt class='tel'>
+                tel:
+              </dt>
+              <dd>
+                +79044749621
+              </dd>
+              <dt class='email'>
+                email:
+              </dt>
+              <dd>
+                <a href='#'>alexandr.fedorov@gmail.com</a>
+              </dd>
+            </dl>
+          </address>
+        </section>
+      </header>
+      <div class='contact' hidden='hidden' id='contact'>
+        <section>
+          <form>
+            <fieldset>
+              <span class='error'>I'd like to know your name</span>
+              <label for='name'>Your name</label>
+              <input id='name' />
+            </fieldset>
+            <fieldset>
+              <span class='error'>How can I reach you back?</span>
+              <label for='email'>Email</label>
+              <input id='email' />
+            </fieldset>
+            <fieldset>
+              <label for='phone'>Telephone</label>
+              <input id='phone' />
+            </fieldset>
+            <fieldset>
+              <label for='subject'>
+                Subject
+              </label>
+              <select>
+                <option></option>
+                <option>Work</option>
+                <option>Education</option>
+                <option>Information</option>
+              </select>
+            </fieldset>
+            <fieldset>
+              <span class='error'>Please, elaborate</span>
+              <label for='message'>Message</label>
+              <textarea id='message' required='required' rows='5'></textarea>
+            </fieldset>
+          </form>
+          <section class='bar'><a class='cancel' href='#' rel='uncontact'>Cancel</a><a class='button' href='#contact' rel='contact'>
+              <span>
+                Contact
+                <span class='verbose'>me now</span>
+              </span>
+            </a>
+          </section>
+        </section>
+      </div>
+      <div class='introduction'>
+        <section>
+          <blockquote>
+          <p>A <a href='.'>profession</a> of sound engineering <a href='.'>has come a long way</a> from being a <a href='.'>purely technical</a> process of <a href='.'>audio recording</a> to a fully <a href='.'>creative participation</a> in the process of <a href='.'>making art</a>.</p>
+          </blockquote>
+        </section>
+      </div>
+      <main>
+        <section>
+          
+<p>Hello world</p>
+
+        </section>
+      </main>
+      <div id='footer-pusher'></div>
+    </div>
+    <footer>
+      <p>
+        <a href='/about/experience'>
+          Since 1957 and going strong
+        </a>
+      </p>
+      <menu>
+        <li class='selected'>
+          <a href='/'>
+            Works
+          </a>
+        </li>
+        <li>
+          <a href='/about/services'>
+            Services
+          </a>
+        </li>
+        <li>
+          <a href='/about/me'>
+            About me
+          </a>
+        </li>
+        <li>
+          <a class='russian language' href='/ru/'>по-русски</a><a class='russian language icon' href='/ru/'></a></li>
+      </menu>
+    </footer>
+  </body>
+</html>
+<script src='javascripts/script.js'></script>

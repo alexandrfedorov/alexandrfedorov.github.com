@@ -24,8 +24,17 @@ module Jekyll
       end
     end
 
+    alias_method :template_old, :template
+    def template
+      if plaintext?
+        template_old
+      else
+        self.site.config["binarylink"]
+      end
+    end
+
     def plaintext?
-       %w[.htm .html .md .MD].include?(self.ext)
+       %w[.htm .html .md .MD .haml].include?(self.ext)
     end
   end
 end
