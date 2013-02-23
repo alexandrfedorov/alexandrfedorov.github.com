@@ -14,7 +14,7 @@ title: Резюме
 : +79044749621
 
 e-mail
-: [al_dr@list.ru](mailto:al_dr@list.ru)
+: [me@alexandrfedorov.com](mailto:me@alexandrfedorov.com)
 
 
 ## Профессиональная деятельность:

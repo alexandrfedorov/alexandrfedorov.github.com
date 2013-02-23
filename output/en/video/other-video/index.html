@@ -7,17 +7,21 @@
     <base href='/' />
     <script type='text/javascript'>
       //<![CDATA[
-        if (location.pathname.indexOf('output') > -1 || location.host == 'localhost' || location.port != 80) {
+        if (location.pathname.indexOf('output') > -1 || location.host.match(/localhost|github/)) {
           var base = document.getElementsByTagName('base')[0];
-          var languages = /(en|ru|de)/;
+          var languages = /(?:\/|^)(en|ru|de)\//;
           var path = location.pathname;
           var language = (path.match(languages) || [null, null])[1];
-          var root = language ? path.split(language)[0] : path.split('/output/')[0] + '/output/';
+          var root = language 
+            ? path.indexOf('/output/') > -1
+              ? path.split(language)[0] 
+              : '/' + language + '/'
+            : path.split('/output/')[0] + '/output/';
           base.setAttribute('href', root);
           document.onclick = function(e) {
             for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
               var href = el.getAttribute('href');
-              if (href) {
+              if (href && el.host == location.host) {
                 // convert absolute path into relative path
                 if (href.charAt(0) == '/')
                   href = href.substring(1);
@@ -36,6 +40,23 @@
                   el.click();
                 }
                 break;
+              }
+            }
+          }
+        } else {
+          document.onclick = function(e) {
+            for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
+              var href = el.getAttribute('href');
+              if (location.host != el.host) continue;
+              var zone = location.host.split('.').pop()
+              if (zone == 'com' && href.substring(0, 4) == '/ru/')
+                href = '//' + location.hostname + href.substring(4);
+              else if (zone == 'ru' && href.substring(0, 4) == '/en/')
+                href = '//' + location.hostname + href.substring(3);
+              if (href != el.getAttribute('href')) {
+                el.setAttribute('href', href);
+                e.preventDefault();
+                el.click();
               }
             }
           }
@@ -88,7 +109,7 @@
                 email:
               </dt>
               <dd>
-                <a href='#'>alexandr.fedorov@gmail.com</a>
+                <a href='#'>me@alexandrfedorov.com</a>
               </dd>
             </dl>
           </address>

@@ -251,13 +251,8 @@ function hidePlayer(played) {
 	played.className = played.className.replace(' selected', '')
 }
 
-var player, embed, playing, api, played, blocked
+var player, embed, playing, api, played
 function play(id, element) {
-	if (blocked) return;
-	blocked = true;
-	setTimeout(function() {
-		blocked = false;
-	}, 1000);
 	if (played == element && id == playing) {
 		if (playing)
 			player.stopVideo()
@@ -277,7 +272,6 @@ function play(id, element) {
 		playing = id;
 		if (played) hidePlayer(played);
 		played = element;
-
 		showPlayer(played);
 		if (marginTop && played.className.indexOf('audio') > -1)
 			marginTop = 0;
