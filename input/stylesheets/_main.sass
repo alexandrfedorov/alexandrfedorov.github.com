@@ -28,11 +28,18 @@ main
     > h2
       +adjust-font-size-to(20px)
 
+    h3
+      :font-weight bold
+
     > h1, > h2, > ul, > p, > dl
       + *
         +margin-leader
       + ul, + dl
         +margin-leader(0.5)
+
+    li
+      p + p, h3, h2
+        +margin-leader
 
     > ul
       :list-style square
@@ -42,6 +49,11 @@ main
         :list-style circle
         > li
           :margin-left 1.2em
+
+    pre
+      +adjust-font-size-to(12px)
+      +margin-leader(0.5)
+      +margin-trailer
 
     > dl
       +legacy-pie-clearfix
