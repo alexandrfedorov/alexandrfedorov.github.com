@@ -4,7 +4,7 @@ module Jekyll
     def initialize(site, base, dir, category, language)
       @site = site
       @base = base
-      @dir = dir
+      @dir = '/' + dir
       @name = 'index.html'
       @category = category
       @language = language
