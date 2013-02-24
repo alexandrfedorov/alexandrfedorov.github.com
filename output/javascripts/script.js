@@ -379,7 +379,7 @@ setPlayer = function(element) {
   offset.x += element.offsetLeft;
   offset.y += element.offsetTop;
   wrap.style.left = offset.x + 'px';
-  wrap.style.top = offset.y - marginTop + 'px';
+  wrap.style.top = offset.y - (marginTop ? marginTop + 30 : 0) + 'px';
   if (audio) {
 	  embed.setAttribute('width', 0);
 	  embed.setAttribute('height', 0);
@@ -387,8 +387,8 @@ setPlayer = function(element) {
   	var height = Math.round(element.offsetWidth * 0.66);
 	  embed.setAttribute('width', element.offsetWidth);
 	  embed.setAttribute('height', height);
-	  marginTop = height + 30;
-	  element.style.marginTop = marginTop + 'px';
+	  marginTop = height;
+	  element.style.marginTop = marginTop + 30 + 'px';
 	  wrap.style.maxHeight = height + 'px';
   }
 }
