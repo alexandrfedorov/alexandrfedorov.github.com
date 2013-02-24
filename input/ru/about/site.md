@@ -114,24 +114,24 @@ http://www.youtube.com/watch?v=2IB7NDUSBOo
 
 * Rubygems - набор инструментов для компиляции сайта. Скопируйте следующий кусок в терминал и дождитесь завершения установки
 
-    gem install jekyll
-    gem install jekyll_ext
-    gem install sass
-    gem install haml
-    gem install compass
-    gem install compass-recipes
-    gem install sassy-buttons
-    gem install jekyll-haml
-    gem install kramdown
+      gem install jekyll
+      gem install jekyll_ext
+      gem install sass
+      gem install haml
+      gem install compass
+      gem install compass-recipes
+      gem install sassy-buttons
+      gem install jekyll-haml
+      gem install kramdown
 
 * Склонировать с github текущую версию сайта. Скопируйте в терминал. 
 
-    cd ~
-    mkdir Sites
-    cd Sites
-    git clone git@github.com:alexandrfedorov/alexandrfedorov.github.com.git
-    cd alexandrfedorov.github.com
-    git checkout gh-pages
+      cd ~
+      mkdir Sites
+      cd Sites
+      git clone git@github.com:alexandrfedorov/alexandrfedorov.github.com.git
+      cd alexandrfedorov.github.com
+      git checkout gh-pages
 
 ## Как происходит повседневная работа с сайтом?
 * После установки, у вас в папке вашего пользователя появилась папка Sites, а в ней alexandrfedorov.github.com. Это ваша рабочая копия сайта.
