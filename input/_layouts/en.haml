@@ -5,63 +5,18 @@
       &mdash; Alexandr Fedorov
 
     %base{:href => "/"}
-
     :javascript
-
-      if (location.pathname.indexOf('output') > -1 || location.host.match(/localhost|github/)) {
+      var path = location.pathname;
+      if (path.indexOf('/output/') > -1) {
         var base = document.getElementsByTagName('base')[0];
         var languages = /(?:\/|^)(en|ru|de)\//;
-        var path = location.pathname;
         var language = (path.match(languages) || [null, null])[1];
         var root = language 
-          ? path.indexOf('/output/') > -1
-            ? path.split(language)[0] 
-            : '/' + language + '/'
+          ? path.split(language)[0] 
           : path.split('/output/')[0] + '/output/';
         base.setAttribute('href', root);
-        document.onclick = function(e) {
-          for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
-            var href = el.getAttribute('href');
-            if (href && el.host == location.host) {
-              // convert absolute path into relative path
-              if (href.charAt(0) == '/')
-                href = href.substring(1);
-              // prepend a current language
-              if (!href.match(languages))
-                href = language + '/' + href;
-              // append index.html for directories
-              if (!href.match(/.html?$/)) {
-                if (href.charAt(href.length - 1) != '/')
-                  href += '/'
-                href += 'index.html';
-              }
-              if (href != el.getAttribute('href')) {
-                el.setAttribute('href', href);
-                e.preventDefault();
-                el.click();
-              }
-              break;
-            }
-          }
-        }
-      } else {
-        document.onclick = function(e) {
-          for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
-            var href = el.getAttribute('href');
-            if (location.host != el.host) continue;
-            var zone = location.host.split('.').pop()
-            if (zone == 'com' && href.substring(0, 4) == '/ru/')
-              href = '//' + location.hostname + href.substring(4);
-            else if (zone == 'ru' && href.substring(0, 4) == '/en/')
-              href = '//' + location.hostname + href.substring(3);
-            if (href != el.getAttribute('href')) {
-              el.setAttribute('href', href);
-              e.preventDefault();
-              el.click();
-            }
-          }
-        }
       }
+    %script{:src => "javascripts/script.js"}
     %link{:rel => "stylesheet", :href => "stylesheets/screen.css"}
     %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,cyrillic"}
 
@@ -75,7 +30,7 @@
               %a{:href => "/about/"} Alexandr Fedorov 
               %span<> 
                 , 
-                %a{:href => "/about/profession"} sound engineer
+                %a{:href => "/about/profession/"} sound engineer
 
             %nav
               %menu
@@ -83,10 +38,10 @@
                   %a{:href => "/"}
                     Works              
                 %li
-                  %a{:href => "/about/services"}
+                  %a{:href => "/about/services/"}
                     Services
                 %li
-                  %a{:href => "/about"}
+                  %a{:href => "/about/"}
                     Resume
                 %li
                   %a.russian.language{:href => "{{page.url | to_language: 'ru'}}"}<
@@ -144,30 +99,39 @@
 
       .introduction
         %section
-          :markdown
-            > A [profession](.) of sound engineering [has come a long way](.) from being a [purely technical](.) process of [audio recording](.) to a fully [creative participation](.) in the process of [making art](.).
-
+          %blockquote
+            A
+            %a{:href => "/about/profession/"} profession 
+            sound engineer has come a long way from being a 
+            %a{:href => "/about/technology/"} purely technical
+            process of 
+            %a{:href => "/about/recording/"} audio recording
+            to a fully
+            %a{:href => "/about/services/"} creative participation
+            in the process of 
+            %a{:href => "/about/sound/"} making art
       %main
         %section
           {{content}}
       #footer-pusher
     %footer
       %p 
-        %a{:href => "/about"}
+        %a{:href => "/about/"}
           Since 1957 and going strong
       %menu
         %li.selected
           %a{:href => "/"}
             Works              
         %li
-          %a{:href => "/about/services"}
+          %a{:href => "/about/services/"}
             Services
         %li
-          %a{:href => "/about/me"}
+          %a{:href => "/about/"}
             About me
         %li
           %a.russian.language{:href => "/ru/"}<
             по-русски
           %a.russian.language.icon{:href => "/ru/"}<>
 
-%script{:src => "javascripts/script.js"}
+%script
+  document.ondomready();

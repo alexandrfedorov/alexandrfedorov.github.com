@@ -2,7 +2,7 @@
 title: Резюме
 ---
 
-# [Резюме.doc](.)
+# [Резюме![скачать резюме](http://www.felpham-bungalow.co.uk/example/Word2007Icon.png)](.)
 
 Дата рождения
 : 23.09.1957 

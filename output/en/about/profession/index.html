@@ -7,74 +7,31 @@
     <base href='/' />
     <script type='text/javascript'>
       //<![CDATA[
-        if (location.pathname.indexOf('output') > -1 || location.host.match(/localhost|github/)) {
+        var path = location.pathname;
+        if (path.indexOf('/output/') > -1) {
           var base = document.getElementsByTagName('base')[0];
           var languages = /(?:\/|^)(en|ru|de)\//;
-          var path = location.pathname;
           var language = (path.match(languages) || [null, null])[1];
           var root = language 
-            ? path.indexOf('/output/') > -1
-              ? path.split(language)[0] 
-              : '/' + language + '/'
+            ? path.split(language)[0] 
             : path.split('/output/')[0] + '/output/';
           base.setAttribute('href', root);
-          document.onclick = function(e) {
-            for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
-              var href = el.getAttribute('href');
-              if (href && el.host == location.host) {
-                // convert absolute path into relative path
-                if (href.charAt(0) == '/')
-                  href = href.substring(1);
-                // prepend a current language
-                if (!href.match(languages))
-                  href = language + '/' + href;
-                // append index.html for directories
-                if (!href.match(/.html?$/)) {
-                  if (href.charAt(href.length - 1) != '/')
-                    href += '/'
-                  href += 'index.html';
-                }
-                if (href != el.getAttribute('href')) {
-                  el.setAttribute('href', href);
-                  e.preventDefault();
-                  el.click();
-                }
-                break;
-              }
-            }
-          }
-        } else {
-          document.onclick = function(e) {
-            for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
-              var href = el.getAttribute('href');
-              if (location.host != el.host) continue;
-              var zone = location.host.split('.').pop()
-              if (zone == 'com' && href.substring(0, 4) == '/ru/')
-                href = '//' + location.hostname + href.substring(4);
-              else if (zone == 'ru' && href.substring(0, 4) == '/en/')
-                href = '//' + location.hostname + href.substring(3);
-              if (href != el.getAttribute('href')) {
-                el.setAttribute('href', href);
-                e.preventDefault();
-                el.click();
-              }
-            }
-          }
         }
       //]]>
     </script>
+    <script src='javascripts/script.js'></script>
     <link href='stylesheets/screen.css' rel='stylesheet' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&amp;subset=latin,cyrillic' rel='stylesheet' />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
   </head>
-  <body class=' en about'>
+  <body class=' en about profession'>
     <div id='root'>
       <header>
         <section>
           <div class='left'>
             <h1>
               <a href='/about/'>Alexandr Fedorov</a><span>,
-              <a href='/about/profession'>sound engineer</a></span></h1>
+              <a href='/about/profession/'>sound engineer</a></span></h1>
             <nav>
               <menu>
                 <li class='selected'>
@@ -83,12 +40,12 @@
                   </a>
                 </li>
                 <li>
-                  <a href='/about/services'>
+                  <a href='/about/services/'>
                     Services
                   </a>
                 </li>
                 <li>
-                  <a href='/about'>
+                  <a href='/about/'>
                     Resume
                   </a>
                 </li>
@@ -161,7 +118,16 @@
       <div class='introduction'>
         <section>
           <blockquote>
-          <p>A <a href='.'>profession</a> of sound engineering <a href='.'>has come a long way</a> from being a <a href='.'>purely technical</a> process of <a href='.'>audio recording</a> to a fully <a href='.'>creative participation</a> in the process of <a href='.'>making art</a>.</p>
+            A
+            <a href='/about/profession/'>profession</a>
+            sound engineer has come a long way from being a
+            <a href='/about/technology/'>purely technical</a>
+            process of
+            <a href='/about/recording/'>audio recording</a>
+            to a fully
+            <a href='/about/services/'>creative participation</a>
+            in the process of
+            <a href='/about/sound/'>making art</a>
           </blockquote>
         </section>
       </div>
@@ -175,7 +141,7 @@
     </div>
     <footer>
       <p>
-        <a href='/about'>
+        <a href='/about/'>
           Since 1957 and going strong
         </a>
       </p>
@@ -186,12 +152,12 @@
           </a>
         </li>
         <li>
-          <a href='/about/services'>
+          <a href='/about/services/'>
             Services
           </a>
         </li>
         <li>
-          <a href='/about/me'>
+          <a href='/about/'>
             About me
           </a>
         </li>
@@ -201,4 +167,6 @@
     </footer>
   </body>
 </html>
-<script src='javascripts/script.js'></script>
+<script>
+  document.ondomready();
+</script>

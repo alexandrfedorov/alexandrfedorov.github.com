@@ -26,7 +26,7 @@ module Jekyll
           slug = self.categories.pop
         end
       end
-      if %w[.html .htm .md .haml].include?(ext) && slug != 'index'
+      if %w[.html .htm .md .haml].include?(ext)
         self.categories << slug
         slug = 'index'
         self.ext = 'html'
@@ -34,6 +34,10 @@ module Jekyll
       self.date = Time.now - id.to_i
       self.slug = slug
       self.ext = ext
+      if slug == 'index'
+        url
+        self.categories.pop
+      end
     end
 
 
@@ -89,7 +93,7 @@ module Jekyll
     alias_method :to_liquid_old, :to_liquid
     def to_liquid
       to_liquid_old.deep_merge({
-        "ext" => @ext,
+        "slug" => @basename,
         "categories" => @dir.split('/')
       })
     end
@@ -151,6 +155,10 @@ module Jekyll
       else
         post["title"]
       end
+    end
+
+    def translate(string, language, site)
+      site["translations"][language][string] rescue string.split('-').select {|w| w.capitalize! || w }.join(' ')  
     end
   end
 end

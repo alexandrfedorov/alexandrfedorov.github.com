@@ -1,0 +1,16 @@
+%menu
+  %li
+    %a{:href => "/"}
+      {{"all_works" | translate: page.layout, site}}
+  {% for category in page.all_categories %}
+  %li
+    %a{:href => "/{{category}}/"}
+      {{category | translate: page.layout, site}}
+  {% endfor %}
+
+%ul.grid
+  {% for post in page.posts %}{% unless post.skippable %}
+  %li{:class => "{{post | to_class}}"}
+    %span.play.button
+    {{post.formatted_content}}
+  {% endunless %}{% endfor %}

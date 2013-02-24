@@ -1,0 +1,185 @@
+<html>
+  <head>
+    <title>
+      Voice
+      &mdash; Alexandr Fedorov
+    </title>
+    <base href='/' />
+    <script type='text/javascript'>
+      //<![CDATA[
+        var path = location.pathname;
+        if (path.indexOf('/output/') > -1) {
+          var base = document.getElementsByTagName('base')[0];
+          var languages = /(?:\/|^)(en|ru|de)\//;
+          var language = (path.match(languages) || [null, null])[1];
+          var root = language 
+            ? path.split(language)[0] 
+            : path.split('/output/')[0] + '/output/';
+          base.setAttribute('href', root);
+        }
+      //]]>
+    </script>
+    <script src='javascripts/script.js'></script>
+    <link href='stylesheets/screen.css' rel='stylesheet' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&amp;subset=latin,cyrillic' rel='stylesheet' />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
+  </head>
+  <body class='en audio voice'>
+    <div id='root'>
+      <header>
+        <section>
+          <div class='left'>
+            <h1>
+              <a href='/about/'>Alexandr Fedorov</a><span>,
+              <a href='/about/profession/'>sound engineer</a></span></h1>
+            <nav>
+              <menu>
+                <li class='selected'>
+                  <a href='/'>
+                    Works
+                  </a>
+                </li>
+                <li>
+                  <a href='/about/services/'>
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a href='/about/'>
+                    Resume
+                  </a>
+                </li>
+                <li>
+                  <a class='russian language' href="/ru/audio/voice/in-the-skies/index.html">по-русски</a><a class='russian language icon' href="/ru/audio/voice/in-the-skies/index.html"></a></li>
+              </menu>
+            </nav>
+          </div>
+          <address>
+            <dl>
+              <dt class='tel'>
+                tel:
+              </dt>
+              <dd>
+                +79044749621
+              </dd>
+              <dt class='email'>
+                email:
+              </dt>
+              <dd>
+                <a href='#'>me@alexandrfedorov.com</a>
+              </dd>
+            </dl>
+          </address>
+        </section>
+      </header>
+      <div class='contact' hidden='hidden' id='contact'>
+        <section>
+          <form>
+            <fieldset>
+              <span class='error'>I'd like to know your name</span>
+              <label for='name'>Your name</label>
+              <input id='name' />
+            </fieldset>
+            <fieldset>
+              <span class='error'>How can I reach you back?</span>
+              <label for='email'>Email</label>
+              <input id='email' />
+            </fieldset>
+            <fieldset>
+              <label for='phone'>Telephone</label>
+              <input id='phone' />
+            </fieldset>
+            <fieldset>
+              <label for='subject'>
+                Subject
+              </label>
+              <select>
+                <option></option>
+                <option>Work</option>
+                <option>Education</option>
+                <option>Information</option>
+              </select>
+            </fieldset>
+            <fieldset>
+              <span class='error'>Please, elaborate</span>
+              <label for='message'>Message</label>
+              <textarea id='message' required='required' rows='5'></textarea>
+            </fieldset>
+          </form>
+          <section class='bar'><a class='cancel' href='#' rel='uncontact'>Cancel</a><a class='button' href='#contact' rel='contact'>
+              <span>
+                Contact
+                <span class='verbose'>me now</span>
+              </span>
+            </a>
+          </section>
+        </section>
+      </div>
+      <div class='introduction'>
+        <section>
+          <blockquote>
+            A
+            <a href='/about/profession/'>profession</a>
+            sound engineer has come a long way from being a
+            <a href='/about/technology/'>purely technical</a>
+            process of
+            <a href='/about/recording/'>audio recording</a>
+            to a fully
+            <a href='/about/services/'>creative participation</a>
+            in the process of
+            <a href='/about/sound/'>making art</a>
+          </blockquote>
+        </section>
+      </div>
+      <main>
+        <section>
+          <h2 id="in-the-skieshttpwwwyoutubecomv2ib7ndusboo"><a href="http://www.youtube.com/v/2IB7NDUSBOo">In the skies</a></h2>
+
+<dl>
+  <dt>Author &amp; performer</dt>
+  <dd><em title="4th Grushensky festival winner">Anvar Ismagilov</em></dd>
+  <dt>Guitar</dt>
+  <dd>Andrey Zloyan</dd>
+  <dt>Piano</dt>
+  <dd>Valery Drozd</dd>
+  <dt>Drums</dt>
+  <dd>Alexey Palitsyn</dd>
+  <dt>Recording &amp; mixing</dt>
+  <dd>Alexandr Fedorov</dd>
+</dl>
+
+        </section>
+      </main>
+      <div id='footer-pusher'></div>
+    </div>
+    <footer>
+      <p>
+        <a href='/about/'>
+          Since 1957 and going strong
+        </a>
+      </p>
+      <menu>
+        <li class='selected'>
+          <a href='/'>
+            Works
+          </a>
+        </li>
+        <li>
+          <a href='/about/services/'>
+            Services
+          </a>
+        </li>
+        <li>
+          <a href='/about/'>
+            About me
+          </a>
+        </li>
+        <li>
+          <a class='russian language' href='/ru/'>по-русски</a><a class='russian language icon' href='/ru/'></a></li>
+      </menu>
+    </footer>
+  </body>
+</html>
+<script>
+  document.ondomready();
+</script>

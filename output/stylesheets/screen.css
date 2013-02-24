@@ -473,19 +473,29 @@ menu > li + li > a {
 menu > li + li:before {
   content: "\b7";
 }
+
 /* line 52, ../../input/stylesheets/_header.sass */
-menu > li.selected > a {
+body[class*="ru ready"] a[href='/'],
+body[class*="ru about services ready"] a[href='/about/services/'],
+body[class*="ru about ready"] a[href='/about/'],
+body[class*="ru about profession"] a[href='/about/profession/'],
+body[class*="ru backing"] a[href='/backing/'],
+body[class*="ru voice"] a[href='/voice/'],
+body[class*="ru video"] a[href='/video/'],
+body[class*="ru soundtracks"] a[href='/soundtracks/'],
+body[class*="ru radioplays"] a[href='/radioplays/'] {
   border-bottom: 0;
   color: #666666;
+  text-decoration: none;
 }
 
-/* line 56, ../../input/stylesheets/_header.sass */
+/* line 68, ../../input/stylesheets/_header.sass */
 nav {
   padding-top: 0.3375em;
   padding-bottom: 1.5em;
 }
 
-/* line 60, ../../input/stylesheets/_header.sass */
+/* line 72, ../../input/stylesheets/_header.sass */
 menu .language.icon {
   width: 18px;
   height: 18px;
@@ -495,27 +505,27 @@ menu .language.icon {
   opacity: 0.7;
   display: inline-block;
 }
-/* line 68, ../../input/stylesheets/_header.sass */
+/* line 80, ../../input/stylesheets/_header.sass */
 menu .language.icon.russian {
   background: url(../images/russian.png) center top no-repeat;
   background-size: 16px 16px;
 }
-/* line 71, ../../input/stylesheets/_header.sass */
+/* line 83, ../../input/stylesheets/_header.sass */
 menu .language.icon.english {
   background: url(../images/english.png) center top no-repeat;
   background-size: 16px 16px;
 }
 
-/* line 74, ../../input/stylesheets/_header.sass */
+/* line 86, ../../input/stylesheets/_header.sass */
 main {
   display: block;
 }
-/* line 76, ../../input/stylesheets/_header.sass */
+/* line 88, ../../input/stylesheets/_header.sass */
 main menu {
   margin-bottom: 0.75em;
 }
 
-/* line 80, ../../input/stylesheets/_header.sass */
+/* line 92, ../../input/stylesheets/_header.sass */
 header {
   background: white url(../images/gplaypattern.png);
   padding-top: 1.5em;
@@ -559,59 +569,59 @@ header::after {
   -o-transform: skew(15deg) rotate(6deg);
   transform: skew(15deg) rotate(6deg);
 }
-/* line 86, ../../input/stylesheets/_header.sass */
+/* line 98, ../../input/stylesheets/_header.sass */
 header .left {
   float: left;
 }
-/* line 91, ../../input/stylesheets/_header.sass */
+/* line 103, ../../input/stylesheets/_header.sass */
 header menu > li.selected a {
   color: #666666;
 }
-/* line 93, ../../input/stylesheets/_header.sass */
+/* line 105, ../../input/stylesheets/_header.sass */
 header h1 {
   white-space: nowrap;
 }
-/* line 95, ../../input/stylesheets/_header.sass */
+/* line 107, ../../input/stylesheets/_header.sass */
 header h1 a {
   color: #333333;
 }
-/* line 98, ../../input/stylesheets/_header.sass */
+/* line 110, ../../input/stylesheets/_header.sass */
 header h1 span, header h1 span a {
   color: #666666;
 }
-/* line 100, ../../input/stylesheets/_header.sass */
+/* line 112, ../../input/stylesheets/_header.sass */
 header h1 a {
   text-decoration: none;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #999999;
   line-height: 0.85;
   display: inline-block;
 }
 
 @media (max-width: 700px) {
-  /* line 110, ../../input/stylesheets/_header.sass */
+  /* line 122, ../../input/stylesheets/_header.sass */
   menu > li + li {
     margin-left: 0.05em;
   }
-  /* line 112, ../../input/stylesheets/_header.sass */
+  /* line 124, ../../input/stylesheets/_header.sass */
   menu > li + li > a {
     margin-left: 0.05em;
   }
 
-  /* line 114, ../../input/stylesheets/_header.sass */
+  /* line 126, ../../input/stylesheets/_header.sass */
   header {
     padding-top: 0.75em;
     padding-bottom: 0.75em;
   }
-  /* line 117, ../../input/stylesheets/_header.sass */
+  /* line 129, ../../input/stylesheets/_header.sass */
   header nav {
     padding-bottom: 0.75em;
   }
-  /* line 119, ../../input/stylesheets/_header.sass */
+  /* line 131, ../../input/stylesheets/_header.sass */
   header address {
     float: none;
     width: auto;
   }
-  /* line 122, ../../input/stylesheets/_header.sass */
+  /* line 134, ../../input/stylesheets/_header.sass */
   header .left {
     float: none;
   }
@@ -857,7 +867,7 @@ body.ready .contact section.bar .cancel {
   }
   /* line 146, ../../input/stylesheets/_contact.sass */
   .contact[hidden] section.bar a.button {
-    margin-left: 220px;
+    margin-left: 200px;
   }
   /* line 148, ../../input/stylesheets/_contact.sass */
   .contact a.button {
@@ -913,35 +923,47 @@ main > section > h1 + menu {
   display: inline-block;
 }
 /* line 19, ../../input/stylesheets/_main.sass */
+main > section > h1 img {
+  width: 30px;
+  height: 30px;
+  vertical-align: top;
+  margin-left: 0.5em;
+  opacity: 0.7;
+}
+/* line 25, ../../input/stylesheets/_main.sass */
+main > section > h1 a:hover img {
+  opacity: 1;
+}
+/* line 28, ../../input/stylesheets/_main.sass */
 main > section > h2 {
   font-size: 1.25em;
   line-height: 1.2em;
 }
-/* line 23, ../../input/stylesheets/_main.sass */
+/* line 32, ../../input/stylesheets/_main.sass */
 main > section > h1 + *, main > section > h2 + *, main > section > ul + *, main > section > p + *, main > section > dl + * {
   margin-top: 1.5em;
 }
-/* line 25, ../../input/stylesheets/_main.sass */
+/* line 34, ../../input/stylesheets/_main.sass */
 main > section > h1 + ul, main > section > h1 + dl, main > section > h2 + ul, main > section > h2 + dl, main > section > ul + ul, main > section > ul + dl, main > section > p + ul, main > section > p + dl, main > section > dl + ul, main > section > dl + dl {
   margin-top: 0.75em;
 }
-/* line 28, ../../input/stylesheets/_main.sass */
+/* line 37, ../../input/stylesheets/_main.sass */
 main > section > ul {
   list-style: square;
 }
-/* line 30, ../../input/stylesheets/_main.sass */
+/* line 39, ../../input/stylesheets/_main.sass */
 main > section > ul > li {
   margin-left: 1.2em;
 }
-/* line 32, ../../input/stylesheets/_main.sass */
+/* line 41, ../../input/stylesheets/_main.sass */
 main > section > ul ul {
   list-style: circle;
 }
-/* line 34, ../../input/stylesheets/_main.sass */
+/* line 43, ../../input/stylesheets/_main.sass */
 main > section > ul ul > li {
   margin-left: 1.2em;
 }
-/* line 37, ../../input/stylesheets/_main.sass */
+/* line 46, ../../input/stylesheets/_main.sass */
 main > section > dl {
   *zoom: 1;
 }
@@ -954,23 +976,23 @@ main > section > dl:after {
   overflow: hidden;
   visibility: hidden;
 }
-/* line 39, ../../input/stylesheets/_main.sass */
+/* line 48, ../../input/stylesheets/_main.sass */
 main > section > dl dt {
   width: 160px;
   float: left;
   clear: left;
   color: #666666;
 }
-/* line 44, ../../input/stylesheets/_main.sass */
+/* line 53, ../../input/stylesheets/_main.sass */
 main > section > dl dd {
   margin-left: 160px;
 }
-/* line 46, ../../input/stylesheets/_main.sass */
+/* line 55, ../../input/stylesheets/_main.sass */
 main > section img {
   max-width: 100%;
 }
 
-/* line 49, ../../input/stylesheets/_main.sass */
+/* line 58, ../../input/stylesheets/_main.sass */
 .tooltip {
   position: absolute;
   width: 240px;
@@ -981,12 +1003,12 @@ main > section img {
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 55, ../../input/stylesheets/_main.sass */
+/* line 64, ../../input/stylesheets/_main.sass */
 .tooltip[hidden] {
   opacity: 0;
   display: block;
 }
-/* line 60, ../../input/stylesheets/_main.sass */
+/* line 69, ../../input/stylesheets/_main.sass */
 .tooltip:not(.invert) > span {
   position: relative;
   -webkit-border-radius: 6px;
@@ -1027,7 +1049,7 @@ main > section img {
   top: 50%;
   margin-top: -12px;
 }
-/* line 62, ../../input/stylesheets/_main.sass */
+/* line 71, ../../input/stylesheets/_main.sass */
 .tooltip > span {
   display: block;
   color: white;
@@ -1036,7 +1058,7 @@ main > section img {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 69, ../../input/stylesheets/_main.sass */
+/* line 78, ../../input/stylesheets/_main.sass */
 .tooltip.invert > span {
   position: relative;
   -webkit-border-radius: 6px;
@@ -1228,7 +1250,7 @@ ul.grid > li dl .tooltip, .columns ul > li dl .tooltip {
 }
 /* line 71, ../../input/stylesheets/_grid.sass */
 ul.grid > li dl .tooltip.invert, .columns ul > li dl .tooltip.invert {
-  margin-left: -12.5em;
+  margin-left: -13.5em;
   z-index: 101;
   text-align: center;
 }
@@ -1383,22 +1405,32 @@ body.about .introduction {
     display: none;
   }
 
-  /* line 100, ../../input/stylesheets/screen.sass */
+  /* line 101, ../../input/stylesheets/screen.sass */
+  main > section > h1 + menu {
+    margin-top: 0em;
+    display: inline;
+  }
+  /* line 104, ../../input/stylesheets/screen.sass */
+  main > section .columns {
+    margin-top: 0.75em;
+  }
+
+  /* line 106, ../../input/stylesheets/screen.sass */
   header > section, main > section, .player > section, .contact > section, footer, .introduction > section {
     padding-left: 0.5em;
     padding-right: 0.5em;
     min-width: 304px;
   }
 
-  /* line 105, ../../input/stylesheets/screen.sass */
+  /* line 111, ../../input/stylesheets/screen.sass */
   .introduction > section {
     padding-top: 1.125em;
   }
-  /* line 106, ../../input/stylesheets/screen.sass */
+  /* line 112, ../../input/stylesheets/screen.sass */
   .introduction > section blockquote {
     margin-right: 0;
   }
-  /* line 108, ../../input/stylesheets/screen.sass */
+  /* line 114, ../../input/stylesheets/screen.sass */
   .introduction > section blockquote > p {
     font-size: 0.875em;
     line-height: 1.71429em;

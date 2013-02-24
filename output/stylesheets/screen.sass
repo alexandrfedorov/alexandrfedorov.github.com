@@ -97,6 +97,12 @@ body.about
   menu .language.icon
     :display none
 
+  main > section
+    > h1 + menu
+      +margin-leader(0)
+      :display inline
+    .columns
+      +margin-leader(0.5)
   header > section, main > section, .player > section, .contact > section, footer, .introduction > section
     :padding-left 0.5em
     :padding-right 0.5em

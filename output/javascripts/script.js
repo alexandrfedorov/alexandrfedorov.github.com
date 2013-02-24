@@ -1,4 +1,50 @@
+if (location.pathname.indexOf('output') > -1 || location.host.match(/localhost|github/)) {
+  document.onclick = function(e) {
+    for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
+      var href = el.getAttribute('href');
+      if (href && el.host == location.host) {
+        // convert absolute path into relative path
+        if (href.charAt(0) == '/')
+          href = href.substring(1);
+        // prepend a current language
+        if (!href.match(languages))
+          href = language + '/' + href;
+        // append index.html for directories
+        if (!href.match(/.html?$/)) {
+          if (href.charAt(href.length - 1) != '/')
+            href += '/'
+          href += 'index.html';
+        }
+        if (href != el.getAttribute('href')) {
+          el.setAttribute('href', href);
+          e.preventDefault();
+          el.click();
+        }
+        break;
+      }
+    }
+  }
+} else {
+  document.onclick = function(e) {
+    for (var el = e.target; el && el.nodeType != 9; el = el.parentNode) {
+      var href = el.getAttribute('href');
+      if (location.host != el.host) continue;
+      var zone = location.host.split('.').pop()
+      if (zone == 'com' && href.substring(0, 4) == '/ru/')
+        href = '//' + location.hostname.replace(/\..*?$/, '.ru') + href.substring(3);
+      else if (zone == 'ru' && href.substring(0, 4) == '/en/')
+        href = '//' + location.hostname.replace(/\..*?$/, '.com') + href.substring(3);
+      href = href.replace(/index.html?$/, '')
+      if (href != el.getAttribute('href')) {
+        el.setAttribute('href', href);
+        e.preventDefault();
+        el.click();
+      }
+    }
+  }
+}
 
+document.ondomready = function() {
 
 var getComputedStyleShim = function(el, camelCase, hyphenated) {
   if (el.currentStyle) return el.currentStyle[camelCase];
@@ -341,8 +387,10 @@ setPlayer = function(element) {
   	var height = Math.round(element.offsetWidth * 0.66);
 	  embed.setAttribute('width', element.offsetWidth);
 	  embed.setAttribute('height', height);
-	  marginTop = height + 16;
-	  element.style.marginTop = height + 16 + 'px';
+	  marginTop = height + 30;
+	  element.style.marginTop = marginTop + 'px';
 	  wrap.style.maxHeight = height + 'px';
   }
+}
+
 }

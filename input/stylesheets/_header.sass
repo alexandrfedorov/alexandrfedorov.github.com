@@ -48,10 +48,22 @@ menu
         :margin-left 0.2em
       &:before
         :content "\b7"
-    &.selected
-      > a
-        :border-bottom 0
-        :color #666
+
+body[class*="ru ready"] a[href='/'],
+body[class*="ru about services ready"] a[href='/about/services/'],
+body[class*="ru about ready"] a[href='/about/'],
+body[class*="ru about profession"] a[href='/about/profession/'],
+body[class*="ru backing"] a[href='/backing/'],
+body[class*="ru voice"] a[href='/voice/'],
+body[class*="ru video"] a[href='/video/'],
+body[class*="ru soundtracks"] a[href='/soundtracks/'],
+body[class*="ru radioplays"] a[href='/radioplays/']
+  :border-bottom 0
+  :color #666
+  :text-decoration none
+
+
+
 
 nav
   +padding-leader(.225)
@@ -99,7 +111,7 @@ header
         :color #666
     a
       :text-decoration none
-      :border-bottom 1px solid #ccc
+      :border-bottom 1px solid #999
       :line-height 0.85
       :display inline-block
 

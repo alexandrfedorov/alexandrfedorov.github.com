@@ -24,3 +24,16 @@ languages:
 skippable:
   - introduction
   - about
+
+skip_categories:
+  - audio
+
+translations:
+  ru:
+    all_works: "Все работы"
+    backing: "Минусовка"
+    voice: "Плюсовка"
+    production: "Обработка"
+    video: "Видео"
+    radioplays: "Радиоспектакли"
+    soundtracks: "Саундтреки"
